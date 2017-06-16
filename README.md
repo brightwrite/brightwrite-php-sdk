@@ -18,12 +18,6 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 ```
 {
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/brightwrite/brightwrite-php-sdk.git"
-    }
-  ],
   "require": {
     "brightwrite/brightwrite-php-sdk": "*@dev"
   }
