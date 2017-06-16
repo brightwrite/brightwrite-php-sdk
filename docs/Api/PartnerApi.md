@@ -16,7 +16,6 @@ Pricing request for car rental business
 Accepts information about quoted policy and related booking information and returns price recommendation for given customer
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -70,7 +69,10 @@ Takes in information about quote conversions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: apiKeyHeader
 BrightWrite\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// BrightWrite\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 $api_instance = new BrightWrite\Api\PartnerApi();
 $conversion = new \BrightWrite\Model\QuoteConversion(); // \BrightWrite\Model\QuoteConversion | QuoteConversion

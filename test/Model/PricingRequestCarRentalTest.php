@@ -95,4 +95,84 @@ class PricingRequestCarRentalTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test attribute "policyDestinationCountryCode"
+     */
+    public function testPropertyPolicyDestinationCountryCode()
+    {
+
+    }
+
+    /**
+     * Test attribute "policyType"
+     */
+    public function testPropertyPolicyType()
+    {
+
+    }
+
+    /**
+     * Test attribute "requestedLiability"
+     */
+    public function testPropertyRequestedLiability()
+    {
+
+    }
+
+    /**
+     * Test attribute "requestedExcessRangeLow"
+     */
+    public function testPropertyRequestedExcessRangeLow()
+    {
+
+    }
+
+    /**
+     * Test attribute "requestedExcessRangeHigh"
+     */
+    public function testPropertyRequestedExcessRangeHigh()
+    {
+
+    }
+
+    /**
+     * Test attribute "policyExcess"
+     */
+    public function testPropertyPolicyExcess()
+    {
+
+    }
+
+    /**
+     * Test attribute "policyLiability"
+     */
+    public function testPropertyPolicyLiability()
+    {
+
+    }
+
+    /**
+     * Test attribute "currencyForExcessAndLiability"
+     */
+    public function testPropertyCurrencyForExcessAndLiability()
+    {
+
+    }
+
+    /**
+     * Test attribute "rentalCarBooking"
+     */
+    public function testPropertyRentalCarBooking()
+    {
+
+    }
+
+    /**
+     * Test attribute "partnerId"
+     */
+    public function testPropertyPartnerId()
+    {
+
+    }
+
 }
