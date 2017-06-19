@@ -1,6 +1,6 @@
 {
     "name": "brightwrite/brightwrite-php-sdk",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "PHP client for BrightWrite API",
     "keywords": [
         "swagger",

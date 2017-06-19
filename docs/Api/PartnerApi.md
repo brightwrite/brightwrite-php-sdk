@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **brightwriteControllerPricingRequestCarRentalAction**
-> brightwriteControllerPricingRequestCarRentalAction($pricingRequest)
+> \BrightWrite\Model\PricingResponse brightwriteControllerPricingRequestCarRentalAction($pricingRequest)
 
 Pricing request for car rental business
 
@@ -29,7 +29,8 @@ $api_instance = new BrightWrite\Api\PartnerApi();
 $pricingRequest = new \BrightWrite\Model\PricingRequestCarRental(); // \BrightWrite\Model\PricingRequestCarRental | Pricing request should contain information about quoted policy and related booking information
 
 try {
-    $api_instance->brightwriteControllerPricingRequestCarRentalAction($pricingRequest);
+    $result = $api_instance->brightwriteControllerPricingRequestCarRentalAction($pricingRequest);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnerApi->brightwriteControllerPricingRequestCarRentalAction: ', $e->getMessage(), PHP_EOL;
 }
@@ -44,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\BrightWrite\Model\PricingResponse**](../Model/PricingResponse.md)
 
 ### Authorization
 

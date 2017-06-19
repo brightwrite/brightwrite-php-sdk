@@ -1,6 +1,6 @@
 <?php
 /**
- * RentalCarLocationTest
+ * PricingResponseTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace BrightWrite;
 
 /**
- * RentalCarLocationTest Class Doc Comment
+ * PricingResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description RentalCarLocation
+// * @description PricingResponse
 /**
  * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RentalCarLocationTest extends \PHPUnit_Framework_TestCase
+class PricingResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,41 +88,57 @@ class RentalCarLocationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "RentalCarLocation"
+     * Test "PricingResponse"
      */
-    public function testRentalCarLocation()
+    public function testPricingResponse()
     {
 
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "partnerId"
      */
-    public function testPropertyCity()
+    public function testPropertyPartnerId()
     {
 
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "pricingRequestId"
      */
-    public function testPropertyState()
+    public function testPropertyPricingRequestId()
     {
 
     }
 
     /**
-     * Test attribute "branchName"
+     * Test attribute "price"
      */
-    public function testPropertyBranchName()
+    public function testPropertyPrice()
     {
 
     }
 
     /**
-     * Test attribute "country"
+     * Test attribute "currency"
      */
-    public function testPropertyCountry()
+    public function testPropertyCurrency()
+    {
+
+    }
+
+    /**
+     * Test attribute "group"
+     */
+    public function testPropertyGroup()
+    {
+
+    }
+
+    /**
+     * Test attribute "pricingRule"
+     */
+    public function testPropertyPricingRule()
     {
 
     }
