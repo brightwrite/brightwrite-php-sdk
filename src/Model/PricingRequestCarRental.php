@@ -242,8 +242,8 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
             $invalid_properties[] = "invalid value for 'policyExcess', must be smaller than or equal to 1000000.0.";
         }
 
-        if (($this->container['policyExcess'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'policyExcess', must be bigger than or equal to 0.01.";
+        if (($this->container['policyExcess'] < 0)) {
+            $invalid_properties[] = "invalid value for 'policyExcess', must be bigger than or equal to 0.";
         }
 
         if ($this->container['policyLiability'] === null) {
@@ -335,7 +335,7 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         if ($this->container['policyExcess'] > 1000000.0) {
             return false;
         }
-        if ($this->container['policyExcess'] < 0.01) {
+        if ($this->container['policyExcess'] < 0) {
             return false;
         }
         if ($this->container['policyLiability'] === null) {
@@ -535,8 +535,8 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         if (($policyExcess > 1000000.0)) {
             throw new \InvalidArgumentException('invalid value for $policyExcess when calling PricingRequestCarRental., must be smaller than or equal to 1000000.0.');
         }
-        if (($policyExcess < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $policyExcess when calling PricingRequestCarRental., must be bigger than or equal to 0.01.');
+        if (($policyExcess < 0)) {
+            throw new \InvalidArgumentException('invalid value for $policyExcess when calling PricingRequestCarRental., must be bigger than or equal to 0.');
         }
 
         $this->container['policyExcess'] = $policyExcess;

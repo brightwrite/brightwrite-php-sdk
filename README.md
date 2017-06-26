@@ -53,8 +53,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKeyHeader
 BrightWrite\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// BrightWrite\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 $api_instance = new BrightWrite\Api\PartnerApi();
 $pricingRequest = new \BrightWrite\Model\PricingRequestCarRental(); // \BrightWrite\Model\PricingRequestCarRental | Pricing request should contain information about quoted policy and related booking information
@@ -65,8 +63,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PartnerApi->brightwriteControllerPricingRequestCarRentalAction: ', $e->getMessage(), PHP_EOL;
 }
-
-?>
 ```
 
 ## Documentation for API Endpoints
@@ -99,6 +95,3 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: x-api-key
 - **Location**: HTTP header
-
-
-## Author
