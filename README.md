@@ -86,12 +86,3 @@ Class | Method | HTTP request | Description
  - [QuoteConversion](docs/Model/QuoteConversion.md)
  - [RentalCarLocation](docs/Model/RentalCarLocation.md)
 
-
-## Documentation For Authorization
-
-
-## apiKeyHeader
-
-- **Type**: API key
-- **API key parameter name**: x-api-key
-- **Location**: HTTP header
