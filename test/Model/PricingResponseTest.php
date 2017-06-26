@@ -128,9 +128,9 @@ class PricingResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "group"
+     * Test attribute "segment"
      */
-    public function testPropertyGroup()
+    public function testPropertySegment()
     {
 
     }
@@ -139,6 +139,22 @@ class PricingResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "pricingRule"
      */
     public function testPropertyPricingRule()
+    {
+
+    }
+
+    /**
+     * Test attribute "group"
+     */
+    public function testPropertyGroup()
+    {
+
+    }
+
+    /**
+     * Test attribute "modifier"
+     */
+    public function testPropertyModifier()
     {
 
     }

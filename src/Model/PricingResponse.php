@@ -70,8 +70,10 @@ class PricingResponse implements ArrayAccess
         'pricingRequestId' => 'string',
         'price' => 'double',
         'currency' => 'string',
+        'segment' => 'string',
+        'pricingRule' => 'string',
         'group' => 'string',
-        'pricingRule' => 'string'
+        'modifier' => 'float'
     ];
 
     public static function swaggerTypes()
@@ -88,8 +90,10 @@ class PricingResponse implements ArrayAccess
         'pricingRequestId' => 'pricingRequestId',
         'price' => 'price',
         'currency' => 'currency',
+        'segment' => 'segment',
+        'pricingRule' => 'pricingRule',
         'group' => 'group',
-        'pricingRule' => 'pricingRule'
+        'modifier' => 'modifier'
     ];
 
 
@@ -102,8 +106,10 @@ class PricingResponse implements ArrayAccess
         'pricingRequestId' => 'setPricingRequestId',
         'price' => 'setPrice',
         'currency' => 'setCurrency',
+        'segment' => 'setSegment',
+        'pricingRule' => 'setPricingRule',
         'group' => 'setGroup',
-        'pricingRule' => 'setPricingRule'
+        'modifier' => 'setModifier'
     ];
 
 
@@ -116,8 +122,10 @@ class PricingResponse implements ArrayAccess
         'pricingRequestId' => 'getPricingRequestId',
         'price' => 'getPrice',
         'currency' => 'getCurrency',
+        'segment' => 'getSegment',
+        'pricingRule' => 'getPricingRule',
         'group' => 'getGroup',
-        'pricingRule' => 'getPricingRule'
+        'modifier' => 'getModifier'
     ];
 
     public static function attributeMap()
@@ -155,8 +163,10 @@ class PricingResponse implements ArrayAccess
         $this->container['pricingRequestId'] = isset($data['pricingRequestId']) ? $data['pricingRequestId'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['group'] = isset($data['group']) ? $data['group'] : null;
+        $this->container['segment'] = isset($data['segment']) ? $data['segment'] : null;
         $this->container['pricingRule'] = isset($data['pricingRule']) ? $data['pricingRule'] : null;
+        $this->container['group'] = isset($data['group']) ? $data['group'] : null;
+        $this->container['modifier'] = isset($data['modifier']) ? $data['modifier'] : null;
     }
 
     /**
@@ -291,22 +301,22 @@ class PricingResponse implements ArrayAccess
     }
 
     /**
-     * Gets group
+     * Gets segment
      * @return string
      */
-    public function getGroup()
+    public function getSegment()
     {
-        return $this->container['group'];
+        return $this->container['segment'];
     }
 
     /**
-     * Sets group
-     * @param string $group
+     * Sets segment
+     * @param string $segment
      * @return $this
      */
-    public function setGroup($group)
+    public function setSegment($segment)
     {
-        $this->container['group'] = $group;
+        $this->container['segment'] = $segment;
 
         return $this;
     }
@@ -328,6 +338,48 @@ class PricingResponse implements ArrayAccess
     public function setPricingRule($pricingRule)
     {
         $this->container['pricingRule'] = $pricingRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets group
+     * @return string
+     */
+    public function getGroup()
+    {
+        return $this->container['group'];
+    }
+
+    /**
+     * Sets group
+     * @param string $group
+     * @return $this
+     */
+    public function setGroup($group)
+    {
+        $this->container['group'] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Gets modifier
+     * @return float
+     */
+    public function getModifier()
+    {
+        return $this->container['modifier'];
+    }
+
+    /**
+     * Sets modifier
+     * @param float $modifier
+     * @return $this
+     */
+    public function setModifier($modifier)
+    {
+        $this->container['modifier'] = $modifier;
 
         return $this;
     }
