@@ -66,20 +66,21 @@ class BookingRentalCar implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'totalPrice' => 'double',
+        'rentalCarBookingId' => 'string',
         'dropOffLocation' => '\BrightWrite\Model\RentalCarLocation',
-        'priceCurrency' => 'string',
-        'pickupLocation' => '\BrightWrite\Model\RentalCarLocation',
-        'taxesAndFees' => 'double',
+        'pickUpLocation' => '\BrightWrite\Model\RentalCarLocation',
         'subtotalPrice' => 'double',
+        'taxesAndFees' => 'double',
+        'totalPrice' => 'double',
+        'priceCurrency' => 'string',
         'pickupDateTime' => '\DateTime',
-        'provider' => 'string',
         'dropOffDateTime' => '\DateTime',
-        'toddlerSeatCount' => 'int',
+        'provider' => 'string',
         'driverCount' => 'int',
+        'toddlerSeatCount' => 'int',
         'infantChildSeatCount' => 'int',
         'sIPPCode' => 'string',
-        'rentalCarBookingID' => 'string'
+        'vehicleType' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -92,20 +93,21 @@ class BookingRentalCar implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalPrice' => 'totalPrice',
+        'rentalCarBookingId' => 'rentalCarBookingId',
         'dropOffLocation' => 'dropOffLocation',
-        'priceCurrency' => 'priceCurrency',
-        'pickupLocation' => 'pickupLocation',
-        'taxesAndFees' => 'taxesAndFees',
+        'pickUpLocation' => 'pickUpLocation',
         'subtotalPrice' => 'subtotalPrice',
+        'taxesAndFees' => 'taxesAndFees',
+        'totalPrice' => 'totalPrice',
+        'priceCurrency' => 'priceCurrency',
         'pickupDateTime' => 'pickupDateTime',
-        'provider' => 'provider',
         'dropOffDateTime' => 'dropOffDateTime',
-        'toddlerSeatCount' => 'toddlerSeatCount',
+        'provider' => 'provider',
         'driverCount' => 'driverCount',
+        'toddlerSeatCount' => 'toddlerSeatCount',
         'infantChildSeatCount' => 'infantChildSeatCount',
         'sIPPCode' => 'SIPPCode',
-        'rentalCarBookingID' => 'rentalCarBookingID'
+        'vehicleType' => 'vehicleType'
     ];
 
 
@@ -114,20 +116,21 @@ class BookingRentalCar implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'totalPrice' => 'setTotalPrice',
+        'rentalCarBookingId' => 'setRentalCarBookingId',
         'dropOffLocation' => 'setDropOffLocation',
-        'priceCurrency' => 'setPriceCurrency',
-        'pickupLocation' => 'setPickupLocation',
-        'taxesAndFees' => 'setTaxesAndFees',
+        'pickUpLocation' => 'setPickUpLocation',
         'subtotalPrice' => 'setSubtotalPrice',
+        'taxesAndFees' => 'setTaxesAndFees',
+        'totalPrice' => 'setTotalPrice',
+        'priceCurrency' => 'setPriceCurrency',
         'pickupDateTime' => 'setPickupDateTime',
-        'provider' => 'setProvider',
         'dropOffDateTime' => 'setDropOffDateTime',
-        'toddlerSeatCount' => 'setToddlerSeatCount',
+        'provider' => 'setProvider',
         'driverCount' => 'setDriverCount',
+        'toddlerSeatCount' => 'setToddlerSeatCount',
         'infantChildSeatCount' => 'setInfantChildSeatCount',
         'sIPPCode' => 'setSIPPCode',
-        'rentalCarBookingID' => 'setRentalCarBookingID'
+        'vehicleType' => 'setVehicleType'
     ];
 
 
@@ -136,20 +139,21 @@ class BookingRentalCar implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'totalPrice' => 'getTotalPrice',
+        'rentalCarBookingId' => 'getRentalCarBookingId',
         'dropOffLocation' => 'getDropOffLocation',
-        'priceCurrency' => 'getPriceCurrency',
-        'pickupLocation' => 'getPickupLocation',
-        'taxesAndFees' => 'getTaxesAndFees',
+        'pickUpLocation' => 'getPickUpLocation',
         'subtotalPrice' => 'getSubtotalPrice',
+        'taxesAndFees' => 'getTaxesAndFees',
+        'totalPrice' => 'getTotalPrice',
+        'priceCurrency' => 'getPriceCurrency',
         'pickupDateTime' => 'getPickupDateTime',
-        'provider' => 'getProvider',
         'dropOffDateTime' => 'getDropOffDateTime',
-        'toddlerSeatCount' => 'getToddlerSeatCount',
+        'provider' => 'getProvider',
         'driverCount' => 'getDriverCount',
+        'toddlerSeatCount' => 'getToddlerSeatCount',
         'infantChildSeatCount' => 'getInfantChildSeatCount',
         'sIPPCode' => 'getSIPPCode',
-        'rentalCarBookingID' => 'getRentalCarBookingID'
+        'vehicleType' => 'getVehicleType'
     ];
 
     public static function attributeMap()
@@ -167,8 +171,34 @@ class BookingRentalCar implements ArrayAccess
         return self::$getters;
     }
 
+    const VEHICLE_TYPE_CAR = 'car';
+    const VEHICLE_TYPE_MOTORHOME = 'motorhome';
+    const VEHICLE_TYPE_CAMPERVAN = 'campervan';
+    const VEHICLE_TYPE__4X4 = '4x4';
+    const VEHICLE_TYPE_MINIBUS = 'minibus';
+    const VEHICLE_TYPE_LIGHTTRUCK = 'lighttruck';
+    const VEHICLE_TYPE_BUS = 'bus';
+    const VEHICLE_TYPE_NOT_CLASSIFIED = 'not_classified';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getVehicleTypeAllowableValues()
+    {
+        return [
+            self::VEHICLE_TYPE_CAR,
+            self::VEHICLE_TYPE_MOTORHOME,
+            self::VEHICLE_TYPE_CAMPERVAN,
+            self::VEHICLE_TYPE__4X4,
+            self::VEHICLE_TYPE_MINIBUS,
+            self::VEHICLE_TYPE_LIGHTTRUCK,
+            self::VEHICLE_TYPE_BUS,
+            self::VEHICLE_TYPE_NOT_CLASSIFIED,
+        ];
+    }
     
 
     /**
@@ -183,20 +213,21 @@ class BookingRentalCar implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['totalPrice'] = isset($data['totalPrice']) ? $data['totalPrice'] : null;
+        $this->container['rentalCarBookingId'] = isset($data['rentalCarBookingId']) ? $data['rentalCarBookingId'] : null;
         $this->container['dropOffLocation'] = isset($data['dropOffLocation']) ? $data['dropOffLocation'] : null;
-        $this->container['priceCurrency'] = isset($data['priceCurrency']) ? $data['priceCurrency'] : null;
-        $this->container['pickupLocation'] = isset($data['pickupLocation']) ? $data['pickupLocation'] : null;
-        $this->container['taxesAndFees'] = isset($data['taxesAndFees']) ? $data['taxesAndFees'] : null;
+        $this->container['pickUpLocation'] = isset($data['pickUpLocation']) ? $data['pickUpLocation'] : null;
         $this->container['subtotalPrice'] = isset($data['subtotalPrice']) ? $data['subtotalPrice'] : null;
+        $this->container['taxesAndFees'] = isset($data['taxesAndFees']) ? $data['taxesAndFees'] : null;
+        $this->container['totalPrice'] = isset($data['totalPrice']) ? $data['totalPrice'] : null;
+        $this->container['priceCurrency'] = isset($data['priceCurrency']) ? $data['priceCurrency'] : null;
         $this->container['pickupDateTime'] = isset($data['pickupDateTime']) ? $data['pickupDateTime'] : null;
-        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
         $this->container['dropOffDateTime'] = isset($data['dropOffDateTime']) ? $data['dropOffDateTime'] : null;
-        $this->container['toddlerSeatCount'] = isset($data['toddlerSeatCount']) ? $data['toddlerSeatCount'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
         $this->container['driverCount'] = isset($data['driverCount']) ? $data['driverCount'] : null;
+        $this->container['toddlerSeatCount'] = isset($data['toddlerSeatCount']) ? $data['toddlerSeatCount'] : null;
         $this->container['infantChildSeatCount'] = isset($data['infantChildSeatCount']) ? $data['infantChildSeatCount'] : null;
         $this->container['sIPPCode'] = isset($data['sIPPCode']) ? $data['sIPPCode'] : null;
-        $this->container['rentalCarBookingID'] = isset($data['rentalCarBookingID']) ? $data['rentalCarBookingID'] : null;
+        $this->container['vehicleType'] = isset($data['vehicleType']) ? $data['vehicleType'] : null;
     }
 
     /**
@@ -207,79 +238,58 @@ class BookingRentalCar implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['totalPrice'] === null) {
-            $invalid_properties[] = "'totalPrice' can't be null";
-        }
-        if (($this->container['totalPrice'] > 100000.0)) {
-            $invalid_properties[] = "invalid value for 'totalPrice', must be smaller than or equal to 100000.0.";
+        if (!is_null($this->container['rentalCarBookingId']) && (strlen($this->container['rentalCarBookingId']) > 64)) {
+            $invalid_properties[] = "invalid value for 'rentalCarBookingId', the character length must be smaller than or equal to 64.";
         }
 
-        if (($this->container['totalPrice'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'totalPrice', must be bigger than or equal to 0.01.";
+        if (!is_null($this->container['rentalCarBookingId']) && (strlen($this->container['rentalCarBookingId']) < 1)) {
+            $invalid_properties[] = "invalid value for 'rentalCarBookingId', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['dropOffLocation'] === null) {
             $invalid_properties[] = "'dropOffLocation' can't be null";
         }
-        if ($this->container['priceCurrency'] === null) {
-            $invalid_properties[] = "'priceCurrency' can't be null";
+        if ($this->container['pickUpLocation'] === null) {
+            $invalid_properties[] = "'pickUpLocation' can't be null";
         }
-        if ((strlen($this->container['priceCurrency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'priceCurrency', the character length must be smaller than or equal to 3.";
-        }
-
-        if ((strlen($this->container['priceCurrency']) < 3)) {
-            $invalid_properties[] = "invalid value for 'priceCurrency', the character length must be bigger than or equal to 3.";
-        }
-
-        if ($this->container['pickupLocation'] === null) {
-            $invalid_properties[] = "'pickupLocation' can't be null";
-        }
-        if ($this->container['taxesAndFees'] === null) {
-            $invalid_properties[] = "'taxesAndFees' can't be null";
-        }
-        if (($this->container['taxesAndFees'] > 100000.0)) {
-            $invalid_properties[] = "invalid value for 'taxesAndFees', must be smaller than or equal to 100000.0.";
-        }
-
-        if (($this->container['taxesAndFees'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'taxesAndFees', must be bigger than or equal to 0.01.";
-        }
-
-        if ($this->container['subtotalPrice'] === null) {
-            $invalid_properties[] = "'subtotalPrice' can't be null";
-        }
-        if (($this->container['subtotalPrice'] > 100000.0)) {
+        if (!is_null($this->container['subtotalPrice']) && ($this->container['subtotalPrice'] > 100000.0)) {
             $invalid_properties[] = "invalid value for 'subtotalPrice', must be smaller than or equal to 100000.0.";
         }
 
-        if (($this->container['subtotalPrice'] < 0.01)) {
+        if (!is_null($this->container['subtotalPrice']) && ($this->container['subtotalPrice'] < 0.01)) {
             $invalid_properties[] = "invalid value for 'subtotalPrice', must be bigger than or equal to 0.01.";
         }
 
-        if ($this->container['pickupDateTime'] === null) {
-            $invalid_properties[] = "'pickupDateTime' can't be null";
+        if (!is_null($this->container['taxesAndFees']) && ($this->container['taxesAndFees'] > 100000.0)) {
+            $invalid_properties[] = "invalid value for 'taxesAndFees', must be smaller than or equal to 100000.0.";
         }
-        if ($this->container['provider'] === null) {
-            $invalid_properties[] = "'provider' can't be null";
+
+        if (!is_null($this->container['taxesAndFees']) && ($this->container['taxesAndFees'] < 0.01)) {
+            $invalid_properties[] = "invalid value for 'taxesAndFees', must be bigger than or equal to 0.01.";
         }
-        if ((strlen($this->container['provider']) > 64)) {
+
+        if (!is_null($this->container['totalPrice']) && ($this->container['totalPrice'] > 100000.0)) {
+            $invalid_properties[] = "invalid value for 'totalPrice', must be smaller than or equal to 100000.0.";
+        }
+
+        if (!is_null($this->container['totalPrice']) && ($this->container['totalPrice'] < 0.01)) {
+            $invalid_properties[] = "invalid value for 'totalPrice', must be bigger than or equal to 0.01.";
+        }
+
+        if (!is_null($this->container['priceCurrency']) && (strlen($this->container['priceCurrency']) > 3)) {
+            $invalid_properties[] = "invalid value for 'priceCurrency', the character length must be smaller than or equal to 3.";
+        }
+
+        if (!is_null($this->container['priceCurrency']) && (strlen($this->container['priceCurrency']) < 3)) {
+            $invalid_properties[] = "invalid value for 'priceCurrency', the character length must be bigger than or equal to 3.";
+        }
+
+        if (!is_null($this->container['provider']) && (strlen($this->container['provider']) > 64)) {
             $invalid_properties[] = "invalid value for 'provider', the character length must be smaller than or equal to 64.";
         }
 
-        if ((strlen($this->container['provider']) < 2)) {
+        if (!is_null($this->container['provider']) && (strlen($this->container['provider']) < 2)) {
             $invalid_properties[] = "invalid value for 'provider', the character length must be bigger than or equal to 2.";
-        }
-
-        if ($this->container['dropOffDateTime'] === null) {
-            $invalid_properties[] = "'dropOffDateTime' can't be null";
-        }
-        if (!is_null($this->container['toddlerSeatCount']) && ($this->container['toddlerSeatCount'] > 4)) {
-            $invalid_properties[] = "invalid value for 'toddlerSeatCount', must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['toddlerSeatCount']) && ($this->container['toddlerSeatCount'] < 0)) {
-            $invalid_properties[] = "invalid value for 'toddlerSeatCount', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['driverCount']) && ($this->container['driverCount'] > 4)) {
@@ -288,6 +298,14 @@ class BookingRentalCar implements ArrayAccess
 
         if (!is_null($this->container['driverCount']) && ($this->container['driverCount'] < 0)) {
             $invalid_properties[] = "invalid value for 'driverCount', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['toddlerSeatCount']) && ($this->container['toddlerSeatCount'] > 4)) {
+            $invalid_properties[] = "invalid value for 'toddlerSeatCount', must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['toddlerSeatCount']) && ($this->container['toddlerSeatCount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'toddlerSeatCount', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['infantChildSeatCount']) && ($this->container['infantChildSeatCount'] > 4)) {
@@ -306,15 +324,9 @@ class BookingRentalCar implements ArrayAccess
             $invalid_properties[] = "invalid value for 'sIPPCode', the character length must be bigger than or equal to 4.";
         }
 
-        if ($this->container['rentalCarBookingID'] === null) {
-            $invalid_properties[] = "'rentalCarBookingID' can't be null";
-        }
-        if ((strlen($this->container['rentalCarBookingID']) > 64)) {
-            $invalid_properties[] = "invalid value for 'rentalCarBookingID', the character length must be smaller than or equal to 64.";
-        }
-
-        if ((strlen($this->container['rentalCarBookingID']) < 1)) {
-            $invalid_properties[] = "invalid value for 'rentalCarBookingID', the character length must be bigger than or equal to 1.";
+        $allowed_values = ["car", "motorhome", "campervan", "4x4", "minibus", "lighttruck", "bus", "not_classified"];
+        if (!in_array($this->container['vehicleType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'vehicleType', must be one of 'car', 'motorhome', 'campervan', '4x4', 'minibus', 'lighttruck', 'bus', 'not_classified'.";
         }
 
         return $invalid_properties;
@@ -328,40 +340,16 @@ class BookingRentalCar implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['totalPrice'] === null) {
+        if (strlen($this->container['rentalCarBookingId']) > 64) {
             return false;
         }
-        if ($this->container['totalPrice'] > 100000.0) {
-            return false;
-        }
-        if ($this->container['totalPrice'] < 0.01) {
+        if (strlen($this->container['rentalCarBookingId']) < 1) {
             return false;
         }
         if ($this->container['dropOffLocation'] === null) {
             return false;
         }
-        if ($this->container['priceCurrency'] === null) {
-            return false;
-        }
-        if (strlen($this->container['priceCurrency']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['priceCurrency']) < 3) {
-            return false;
-        }
-        if ($this->container['pickupLocation'] === null) {
-            return false;
-        }
-        if ($this->container['taxesAndFees'] === null) {
-            return false;
-        }
-        if ($this->container['taxesAndFees'] > 100000.0) {
-            return false;
-        }
-        if ($this->container['taxesAndFees'] < 0.01) {
-            return false;
-        }
-        if ($this->container['subtotalPrice'] === null) {
+        if ($this->container['pickUpLocation'] === null) {
             return false;
         }
         if ($this->container['subtotalPrice'] > 100000.0) {
@@ -370,10 +358,22 @@ class BookingRentalCar implements ArrayAccess
         if ($this->container['subtotalPrice'] < 0.01) {
             return false;
         }
-        if ($this->container['pickupDateTime'] === null) {
+        if ($this->container['taxesAndFees'] > 100000.0) {
             return false;
         }
-        if ($this->container['provider'] === null) {
+        if ($this->container['taxesAndFees'] < 0.01) {
+            return false;
+        }
+        if ($this->container['totalPrice'] > 100000.0) {
+            return false;
+        }
+        if ($this->container['totalPrice'] < 0.01) {
+            return false;
+        }
+        if (strlen($this->container['priceCurrency']) > 3) {
+            return false;
+        }
+        if (strlen($this->container['priceCurrency']) < 3) {
             return false;
         }
         if (strlen($this->container['provider']) > 64) {
@@ -382,19 +382,16 @@ class BookingRentalCar implements ArrayAccess
         if (strlen($this->container['provider']) < 2) {
             return false;
         }
-        if ($this->container['dropOffDateTime'] === null) {
+        if ($this->container['driverCount'] > 4) {
+            return false;
+        }
+        if ($this->container['driverCount'] < 0) {
             return false;
         }
         if ($this->container['toddlerSeatCount'] > 4) {
             return false;
         }
         if ($this->container['toddlerSeatCount'] < 0) {
-            return false;
-        }
-        if ($this->container['driverCount'] > 4) {
-            return false;
-        }
-        if ($this->container['driverCount'] < 0) {
             return false;
         }
         if ($this->container['infantChildSeatCount'] > 4) {
@@ -409,13 +406,8 @@ class BookingRentalCar implements ArrayAccess
         if (strlen($this->container['sIPPCode']) < 4) {
             return false;
         }
-        if ($this->container['rentalCarBookingID'] === null) {
-            return false;
-        }
-        if (strlen($this->container['rentalCarBookingID']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['rentalCarBookingID']) < 1) {
+        $allowed_values = ["car", "motorhome", "campervan", "4x4", "minibus", "lighttruck", "bus", "not_classified"];
+        if (!in_array($this->container['vehicleType'], $allowed_values)) {
             return false;
         }
         return true;
@@ -423,30 +415,29 @@ class BookingRentalCar implements ArrayAccess
 
 
     /**
-     * Gets totalPrice
-     * @return double
+     * Gets rentalCarBookingId
+     * @return string
      */
-    public function getTotalPrice()
+    public function getRentalCarBookingId()
     {
-        return $this->container['totalPrice'];
+        return $this->container['rentalCarBookingId'];
     }
 
     /**
-     * Sets totalPrice
-     * @param double $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees.
+     * Sets rentalCarBookingId
+     * @param string $rentalCarBookingId Internal ID used by distributors to identify the booking. This should match the booking ID BrightWrite collects from the tags on the distributor website. For a booking that has flights and rental cars, the booking IDs would match.
      * @return $this
      */
-    public function setTotalPrice($totalPrice)
+    public function setRentalCarBookingId($rentalCarBookingId)
     {
-
-        if (($totalPrice > 100000.0)) {
-            throw new \InvalidArgumentException('invalid value for $totalPrice when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
+        if (!is_null($rentalCarBookingId) && (strlen($rentalCarBookingId) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $rentalCarBookingId when calling BookingRentalCar., must be smaller than or equal to 64.');
         }
-        if (($totalPrice < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $totalPrice when calling BookingRentalCar., must be bigger than or equal to 0.01.');
+        if (!is_null($rentalCarBookingId) && (strlen($rentalCarBookingId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $rentalCarBookingId when calling BookingRentalCar., must be bigger than or equal to 1.');
         }
 
-        $this->container['totalPrice'] = $totalPrice;
+        $this->container['rentalCarBookingId'] = $rentalCarBookingId;
 
         return $this;
     }
@@ -473,79 +464,22 @@ class BookingRentalCar implements ArrayAccess
     }
 
     /**
-     * Gets priceCurrency
-     * @return string
-     */
-    public function getPriceCurrency()
-    {
-        return $this->container['priceCurrency'];
-    }
-
-    /**
-     * Sets priceCurrency
-     * @param string $priceCurrency Currency in which all pricing info is specified three letters code as described by ISO 4217.
-     * @return $this
-     */
-    public function setPriceCurrency($priceCurrency)
-    {
-        if ((strlen($priceCurrency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $priceCurrency when calling BookingRentalCar., must be smaller than or equal to 3.');
-        }
-        if ((strlen($priceCurrency) < 3)) {
-            throw new \InvalidArgumentException('invalid length for $priceCurrency when calling BookingRentalCar., must be bigger than or equal to 3.');
-        }
-
-        $this->container['priceCurrency'] = $priceCurrency;
-
-        return $this;
-    }
-
-    /**
-     * Gets pickupLocation
+     * Gets pickUpLocation
      * @return \BrightWrite\Model\RentalCarLocation
      */
-    public function getPickupLocation()
+    public function getPickUpLocation()
     {
-        return $this->container['pickupLocation'];
+        return $this->container['pickUpLocation'];
     }
 
     /**
-     * Sets pickupLocation
-     * @param \BrightWrite\Model\RentalCarLocation $pickupLocation
+     * Sets pickUpLocation
+     * @param \BrightWrite\Model\RentalCarLocation $pickUpLocation
      * @return $this
      */
-    public function setPickupLocation($pickupLocation)
+    public function setPickUpLocation($pickUpLocation)
     {
-        $this->container['pickupLocation'] = $pickupLocation;
-
-        return $this;
-    }
-
-    /**
-     * Gets taxesAndFees
-     * @return double
-     */
-    public function getTaxesAndFees()
-    {
-        return $this->container['taxesAndFees'];
-    }
-
-    /**
-     * Sets taxesAndFees
-     * @param double $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice.
-     * @return $this
-     */
-    public function setTaxesAndFees($taxesAndFees)
-    {
-
-        if (($taxesAndFees > 100000.0)) {
-            throw new \InvalidArgumentException('invalid value for $taxesAndFees when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
-        }
-        if (($taxesAndFees < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $taxesAndFees when calling BookingRentalCar., must be bigger than or equal to 0.01.');
-        }
-
-        $this->container['taxesAndFees'] = $taxesAndFees;
+        $this->container['pickUpLocation'] = $pickUpLocation;
 
         return $this;
     }
@@ -567,14 +501,100 @@ class BookingRentalCar implements ArrayAccess
     public function setSubtotalPrice($subtotalPrice)
     {
 
-        if (($subtotalPrice > 100000.0)) {
+        if (!is_null($subtotalPrice) && ($subtotalPrice > 100000.0)) {
             throw new \InvalidArgumentException('invalid value for $subtotalPrice when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
         }
-        if (($subtotalPrice < 0.01)) {
+        if (!is_null($subtotalPrice) && ($subtotalPrice < 0.01)) {
             throw new \InvalidArgumentException('invalid value for $subtotalPrice when calling BookingRentalCar., must be bigger than or equal to 0.01.');
         }
 
         $this->container['subtotalPrice'] = $subtotalPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxesAndFees
+     * @return double
+     */
+    public function getTaxesAndFees()
+    {
+        return $this->container['taxesAndFees'];
+    }
+
+    /**
+     * Sets taxesAndFees
+     * @param double $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice.
+     * @return $this
+     */
+    public function setTaxesAndFees($taxesAndFees)
+    {
+
+        if (!is_null($taxesAndFees) && ($taxesAndFees > 100000.0)) {
+            throw new \InvalidArgumentException('invalid value for $taxesAndFees when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
+        }
+        if (!is_null($taxesAndFees) && ($taxesAndFees < 0.01)) {
+            throw new \InvalidArgumentException('invalid value for $taxesAndFees when calling BookingRentalCar., must be bigger than or equal to 0.01.');
+        }
+
+        $this->container['taxesAndFees'] = $taxesAndFees;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalPrice
+     * @return double
+     */
+    public function getTotalPrice()
+    {
+        return $this->container['totalPrice'];
+    }
+
+    /**
+     * Sets totalPrice
+     * @param double $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees.
+     * @return $this
+     */
+    public function setTotalPrice($totalPrice)
+    {
+
+        if (!is_null($totalPrice) && ($totalPrice > 100000.0)) {
+            throw new \InvalidArgumentException('invalid value for $totalPrice when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
+        }
+        if (!is_null($totalPrice) && ($totalPrice < 0.01)) {
+            throw new \InvalidArgumentException('invalid value for $totalPrice when calling BookingRentalCar., must be bigger than or equal to 0.01.');
+        }
+
+        $this->container['totalPrice'] = $totalPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceCurrency
+     * @return string
+     */
+    public function getPriceCurrency()
+    {
+        return $this->container['priceCurrency'];
+    }
+
+    /**
+     * Sets priceCurrency
+     * @param string $priceCurrency Currency in which all pricing info is specified three letters code as described by ISO 4217.
+     * @return $this
+     */
+    public function setPriceCurrency($priceCurrency)
+    {
+        if (!is_null($priceCurrency) && (strlen($priceCurrency) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $priceCurrency when calling BookingRentalCar., must be smaller than or equal to 3.');
+        }
+        if (!is_null($priceCurrency) && (strlen($priceCurrency) < 3)) {
+            throw new \InvalidArgumentException('invalid length for $priceCurrency when calling BookingRentalCar., must be bigger than or equal to 3.');
+        }
+
+        $this->container['priceCurrency'] = $priceCurrency;
 
         return $this;
     }
@@ -601,34 +621,6 @@ class BookingRentalCar implements ArrayAccess
     }
 
     /**
-     * Gets provider
-     * @return string
-     */
-    public function getProvider()
-    {
-        return $this->container['provider'];
-    }
-
-    /**
-     * Sets provider
-     * @param string $provider Service provider, i.e. rental car agency.
-     * @return $this
-     */
-    public function setProvider($provider)
-    {
-        if ((strlen($provider) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $provider when calling BookingRentalCar., must be smaller than or equal to 64.');
-        }
-        if ((strlen($provider) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $provider when calling BookingRentalCar., must be bigger than or equal to 2.');
-        }
-
-        $this->container['provider'] = $provider;
-
-        return $this;
-    }
-
-    /**
      * Gets dropOffDateTime
      * @return \DateTime
      */
@@ -650,30 +642,29 @@ class BookingRentalCar implements ArrayAccess
     }
 
     /**
-     * Gets toddlerSeatCount
-     * @return int
+     * Gets provider
+     * @return string
      */
-    public function getToddlerSeatCount()
+    public function getProvider()
     {
-        return $this->container['toddlerSeatCount'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets toddlerSeatCount
-     * @param int $toddlerSeatCount How many toddler car seats are required.
+     * Sets provider
+     * @param string $provider Service provider, i.e. rental car agency.
      * @return $this
      */
-    public function setToddlerSeatCount($toddlerSeatCount)
+    public function setProvider($provider)
     {
-
-        if (!is_null($toddlerSeatCount) && ($toddlerSeatCount > 4)) {
-            throw new \InvalidArgumentException('invalid value for $toddlerSeatCount when calling BookingRentalCar., must be smaller than or equal to 4.');
+        if (!is_null($provider) && (strlen($provider) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $provider when calling BookingRentalCar., must be smaller than or equal to 64.');
         }
-        if (!is_null($toddlerSeatCount) && ($toddlerSeatCount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $toddlerSeatCount when calling BookingRentalCar., must be bigger than or equal to 0.');
+        if (!is_null($provider) && (strlen($provider) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $provider when calling BookingRentalCar., must be bigger than or equal to 2.');
         }
 
-        $this->container['toddlerSeatCount'] = $toddlerSeatCount;
+        $this->container['provider'] = $provider;
 
         return $this;
     }
@@ -703,6 +694,35 @@ class BookingRentalCar implements ArrayAccess
         }
 
         $this->container['driverCount'] = $driverCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets toddlerSeatCount
+     * @return int
+     */
+    public function getToddlerSeatCount()
+    {
+        return $this->container['toddlerSeatCount'];
+    }
+
+    /**
+     * Sets toddlerSeatCount
+     * @param int $toddlerSeatCount How many toddler car seats are required.
+     * @return $this
+     */
+    public function setToddlerSeatCount($toddlerSeatCount)
+    {
+
+        if (!is_null($toddlerSeatCount) && ($toddlerSeatCount > 4)) {
+            throw new \InvalidArgumentException('invalid value for $toddlerSeatCount when calling BookingRentalCar., must be smaller than or equal to 4.');
+        }
+        if (!is_null($toddlerSeatCount) && ($toddlerSeatCount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $toddlerSeatCount when calling BookingRentalCar., must be bigger than or equal to 0.');
+        }
+
+        $this->container['toddlerSeatCount'] = $toddlerSeatCount;
 
         return $this;
     }
@@ -765,29 +785,26 @@ class BookingRentalCar implements ArrayAccess
     }
 
     /**
-     * Gets rentalCarBookingID
+     * Gets vehicleType
      * @return string
      */
-    public function getRentalCarBookingID()
+    public function getVehicleType()
     {
-        return $this->container['rentalCarBookingID'];
+        return $this->container['vehicleType'];
     }
 
     /**
-     * Sets rentalCarBookingID
-     * @param string $rentalCarBookingID Internal ID used by distributors to identify the booking. This should match the booking ID BrightWrite collects from the tags on the distributor website. For a booking that has flights and rental cars, the booking IDs would match.
+     * Sets vehicleType
+     * @param string $vehicleType
      * @return $this
      */
-    public function setRentalCarBookingID($rentalCarBookingID)
+    public function setVehicleType($vehicleType)
     {
-        if ((strlen($rentalCarBookingID) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $rentalCarBookingID when calling BookingRentalCar., must be smaller than or equal to 64.');
+        $allowed_values = array('car', 'motorhome', 'campervan', '4x4', 'minibus', 'lighttruck', 'bus', 'not_classified');
+        if (!is_null($vehicleType) && (!in_array($vehicleType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'vehicleType', must be one of 'car', 'motorhome', 'campervan', '4x4', 'minibus', 'lighttruck', 'bus', 'not_classified'");
         }
-        if ((strlen($rentalCarBookingID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $rentalCarBookingID when calling BookingRentalCar., must be bigger than or equal to 1.');
-        }
-
-        $this->container['rentalCarBookingID'] = $rentalCarBookingID;
+        $this->container['vehicleType'] = $vehicleType;
 
         return $this;
     }

@@ -66,9 +66,9 @@ class QuoteConversion implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'underwriterQuoteId' => 'string',
-        'distributorQuoteId' => 'string',
-        'pricingRequestId' => 'string'
+        'partnerQuoteId' => 'string',
+        'pricingRequestId' => 'string',
+        'pricingRequest' => '\BrightWrite\Model\PricingRequestCarRental'
     ];
 
     public static function swaggerTypes()
@@ -81,9 +81,9 @@ class QuoteConversion implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'underwriterQuoteId' => 'underwriterQuoteId',
-        'distributorQuoteId' => 'distributorQuoteId',
-        'pricingRequestId' => 'pricingRequestId'
+        'partnerQuoteId' => 'partnerQuoteId',
+        'pricingRequestId' => 'pricingRequestId',
+        'pricingRequest' => 'pricingRequest'
     ];
 
 
@@ -92,9 +92,9 @@ class QuoteConversion implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'underwriterQuoteId' => 'setUnderwriterQuoteId',
-        'distributorQuoteId' => 'setDistributorQuoteId',
-        'pricingRequestId' => 'setPricingRequestId'
+        'partnerQuoteId' => 'setPartnerQuoteId',
+        'pricingRequestId' => 'setPricingRequestId',
+        'pricingRequest' => 'setPricingRequest'
     ];
 
 
@@ -103,9 +103,9 @@ class QuoteConversion implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'underwriterQuoteId' => 'getUnderwriterQuoteId',
-        'distributorQuoteId' => 'getDistributorQuoteId',
-        'pricingRequestId' => 'getPricingRequestId'
+        'partnerQuoteId' => 'getPartnerQuoteId',
+        'pricingRequestId' => 'getPricingRequestId',
+        'pricingRequest' => 'getPricingRequest'
     ];
 
     public static function attributeMap()
@@ -139,9 +139,9 @@ class QuoteConversion implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['underwriterQuoteId'] = isset($data['underwriterQuoteId']) ? $data['underwriterQuoteId'] : null;
-        $this->container['distributorQuoteId'] = isset($data['distributorQuoteId']) ? $data['distributorQuoteId'] : null;
+        $this->container['partnerQuoteId'] = isset($data['partnerQuoteId']) ? $data['partnerQuoteId'] : null;
         $this->container['pricingRequestId'] = isset($data['pricingRequestId']) ? $data['pricingRequestId'] : null;
+        $this->container['pricingRequest'] = isset($data['pricingRequest']) ? $data['pricingRequest'] : null;
     }
 
     /**
@@ -152,20 +152,12 @@ class QuoteConversion implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['underwriterQuoteId']) && (strlen($this->container['underwriterQuoteId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'underwriterQuoteId', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) > 64)) {
+            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be smaller than or equal to 64.";
         }
 
-        if (!is_null($this->container['underwriterQuoteId']) && (strlen($this->container['underwriterQuoteId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'underwriterQuoteId', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['distributorQuoteId']) && (strlen($this->container['distributorQuoteId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'distributorQuoteId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['distributorQuoteId']) && (strlen($this->container['distributorQuoteId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'distributorQuoteId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) < 2)) {
+            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be bigger than or equal to 2.";
         }
 
         if (!is_null($this->container['pricingRequestId']) && (strlen($this->container['pricingRequestId']) > 100)) {
@@ -187,16 +179,10 @@ class QuoteConversion implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['underwriterQuoteId']) > 64) {
+        if (strlen($this->container['partnerQuoteId']) > 64) {
             return false;
         }
-        if (strlen($this->container['underwriterQuoteId']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['distributorQuoteId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['distributorQuoteId']) < 2) {
+        if (strlen($this->container['partnerQuoteId']) < 2) {
             return false;
         }
         if (strlen($this->container['pricingRequestId']) > 100) {
@@ -210,57 +196,29 @@ class QuoteConversion implements ArrayAccess
 
 
     /**
-     * Gets underwriterQuoteId
+     * Gets partnerQuoteId
      * @return string
      */
-    public function getUnderwriterQuoteId()
+    public function getPartnerQuoteId()
     {
-        return $this->container['underwriterQuoteId'];
+        return $this->container['partnerQuoteId'];
     }
 
     /**
-     * Sets underwriterQuoteId
-     * @param string $underwriterQuoteId Quote identifier in underwriters database.
+     * Sets partnerQuoteId
+     * @param string $partnerQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript.
      * @return $this
      */
-    public function setUnderwriterQuoteId($underwriterQuoteId)
+    public function setPartnerQuoteId($partnerQuoteId)
     {
-        if (!is_null($underwriterQuoteId) && (strlen($underwriterQuoteId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $underwriterQuoteId when calling QuoteConversion., must be smaller than or equal to 64.');
+        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling QuoteConversion., must be smaller than or equal to 64.');
         }
-        if (!is_null($underwriterQuoteId) && (strlen($underwriterQuoteId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $underwriterQuoteId when calling QuoteConversion., must be bigger than or equal to 2.');
-        }
-
-        $this->container['underwriterQuoteId'] = $underwriterQuoteId;
-
-        return $this;
-    }
-
-    /**
-     * Gets distributorQuoteId
-     * @return string
-     */
-    public function getDistributorQuoteId()
-    {
-        return $this->container['distributorQuoteId'];
-    }
-
-    /**
-     * Sets distributorQuoteId
-     * @param string $distributorQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript.
-     * @return $this
-     */
-    public function setDistributorQuoteId($distributorQuoteId)
-    {
-        if (!is_null($distributorQuoteId) && (strlen($distributorQuoteId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $distributorQuoteId when calling QuoteConversion., must be smaller than or equal to 64.');
-        }
-        if (!is_null($distributorQuoteId) && (strlen($distributorQuoteId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $distributorQuoteId when calling QuoteConversion., must be bigger than or equal to 2.');
+        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling QuoteConversion., must be bigger than or equal to 2.');
         }
 
-        $this->container['distributorQuoteId'] = $distributorQuoteId;
+        $this->container['partnerQuoteId'] = $partnerQuoteId;
 
         return $this;
     }
@@ -289,6 +247,27 @@ class QuoteConversion implements ArrayAccess
         }
 
         $this->container['pricingRequestId'] = $pricingRequestId;
+
+        return $this;
+    }
+
+    /**
+     * Gets pricingRequest
+     * @return \BrightWrite\Model\PricingRequestCarRental
+     */
+    public function getPricingRequest()
+    {
+        return $this->container['pricingRequest'];
+    }
+
+    /**
+     * Sets pricingRequest
+     * @param \BrightWrite\Model\PricingRequestCarRental $pricingRequest Partners can provide more information in pricing request when booking was confirmed.
+     * @return $this
+     */
+    public function setPricingRequest($pricingRequest)
+    {
+        $this->container['pricingRequest'] = $pricingRequest;
 
         return $this;
     }

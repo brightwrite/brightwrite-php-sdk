@@ -69,13 +69,10 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         'policyDestinationCountryCode' => 'string',
         'policyType' => 'string',
         'requestedLiability' => 'double',
-        'requestedExcessRangeLow' => 'double',
-        'requestedExcessRangeHigh' => 'double',
         'policyExcess' => 'double',
         'policyLiability' => 'double',
         'currencyForExcessAndLiability' => 'string',
-        'rentalCarBooking' => '\BrightWrite\Model\BookingRentalCar',
-        'partnerId' => 'string'
+        'rentalCarBooking' => '\BrightWrite\Model\BookingRentalCar'
     ];
 
     public static function swaggerTypes()
@@ -91,13 +88,10 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         'policyDestinationCountryCode' => 'policyDestinationCountryCode',
         'policyType' => 'policyType',
         'requestedLiability' => 'requestedLiability',
-        'requestedExcessRangeLow' => 'requestedExcessRangeLow',
-        'requestedExcessRangeHigh' => 'requestedExcessRangeHigh',
         'policyExcess' => 'policyExcess',
         'policyLiability' => 'policyLiability',
         'currencyForExcessAndLiability' => 'currencyForExcessAndLiability',
-        'rentalCarBooking' => 'rentalCarBooking',
-        'partnerId' => 'partnerId'
+        'rentalCarBooking' => 'rentalCarBooking'
     ];
 
 
@@ -109,13 +103,10 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         'policyDestinationCountryCode' => 'setPolicyDestinationCountryCode',
         'policyType' => 'setPolicyType',
         'requestedLiability' => 'setRequestedLiability',
-        'requestedExcessRangeLow' => 'setRequestedExcessRangeLow',
-        'requestedExcessRangeHigh' => 'setRequestedExcessRangeHigh',
         'policyExcess' => 'setPolicyExcess',
         'policyLiability' => 'setPolicyLiability',
         'currencyForExcessAndLiability' => 'setCurrencyForExcessAndLiability',
-        'rentalCarBooking' => 'setRentalCarBooking',
-        'partnerId' => 'setPartnerId'
+        'rentalCarBooking' => 'setRentalCarBooking'
     ];
 
 
@@ -127,13 +118,10 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         'policyDestinationCountryCode' => 'getPolicyDestinationCountryCode',
         'policyType' => 'getPolicyType',
         'requestedLiability' => 'getRequestedLiability',
-        'requestedExcessRangeLow' => 'getRequestedExcessRangeLow',
-        'requestedExcessRangeHigh' => 'getRequestedExcessRangeHigh',
         'policyExcess' => 'getPolicyExcess',
         'policyLiability' => 'getPolicyLiability',
         'currencyForExcessAndLiability' => 'getCurrencyForExcessAndLiability',
-        'rentalCarBooking' => 'getRentalCarBooking',
-        'partnerId' => 'getPartnerId'
+        'rentalCarBooking' => 'getRentalCarBooking'
     ];
 
     public static function attributeMap()
@@ -172,13 +160,10 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         $this->container['policyDestinationCountryCode'] = isset($data['policyDestinationCountryCode']) ? $data['policyDestinationCountryCode'] : null;
         $this->container['policyType'] = isset($data['policyType']) ? $data['policyType'] : null;
         $this->container['requestedLiability'] = isset($data['requestedLiability']) ? $data['requestedLiability'] : null;
-        $this->container['requestedExcessRangeLow'] = isset($data['requestedExcessRangeLow']) ? $data['requestedExcessRangeLow'] : null;
-        $this->container['requestedExcessRangeHigh'] = isset($data['requestedExcessRangeHigh']) ? $data['requestedExcessRangeHigh'] : null;
         $this->container['policyExcess'] = isset($data['policyExcess']) ? $data['policyExcess'] : null;
         $this->container['policyLiability'] = isset($data['policyLiability']) ? $data['policyLiability'] : null;
         $this->container['currencyForExcessAndLiability'] = isset($data['currencyForExcessAndLiability']) ? $data['currencyForExcessAndLiability'] : null;
         $this->container['rentalCarBooking'] = isset($data['rentalCarBooking']) ? $data['rentalCarBooking'] : null;
-        $this->container['partnerId'] = isset($data['partnerId']) ? $data['partnerId'] : null;
     }
 
     /**
@@ -219,22 +204,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
             $invalid_properties[] = "invalid value for 'requestedLiability', must be bigger than or equal to 0.01.";
         }
 
-        if (!is_null($this->container['requestedExcessRangeLow']) && ($this->container['requestedExcessRangeLow'] > 1000000.0)) {
-            $invalid_properties[] = "invalid value for 'requestedExcessRangeLow', must be smaller than or equal to 1000000.0.";
-        }
-
-        if (!is_null($this->container['requestedExcessRangeLow']) && ($this->container['requestedExcessRangeLow'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'requestedExcessRangeLow', must be bigger than or equal to 0.01.";
-        }
-
-        if (!is_null($this->container['requestedExcessRangeHigh']) && ($this->container['requestedExcessRangeHigh'] > 1000000.0)) {
-            $invalid_properties[] = "invalid value for 'requestedExcessRangeHigh', must be smaller than or equal to 1000000.0.";
-        }
-
-        if (!is_null($this->container['requestedExcessRangeHigh']) && ($this->container['requestedExcessRangeHigh'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'requestedExcessRangeHigh', must be bigger than or equal to 0.01.";
-        }
-
         if ($this->container['policyExcess'] === null) {
             $invalid_properties[] = "'policyExcess' can't be null";
         }
@@ -271,17 +240,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         if ($this->container['rentalCarBooking'] === null) {
             $invalid_properties[] = "'rentalCarBooking' can't be null";
         }
-        if ($this->container['partnerId'] === null) {
-            $invalid_properties[] = "'partnerId' can't be null";
-        }
-        if ((strlen($this->container['partnerId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'partnerId', the character length must be smaller than or equal to 64.";
-        }
-
-        if ((strlen($this->container['partnerId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerId', the character length must be bigger than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -317,18 +275,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         if ($this->container['requestedLiability'] < 0.01) {
             return false;
         }
-        if ($this->container['requestedExcessRangeLow'] > 1000000.0) {
-            return false;
-        }
-        if ($this->container['requestedExcessRangeLow'] < 0.01) {
-            return false;
-        }
-        if ($this->container['requestedExcessRangeHigh'] > 1000000.0) {
-            return false;
-        }
-        if ($this->container['requestedExcessRangeHigh'] < 0.01) {
-            return false;
-        }
         if ($this->container['policyExcess'] === null) {
             return false;
         }
@@ -357,15 +303,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
             return false;
         }
         if ($this->container['rentalCarBooking'] === null) {
-            return false;
-        }
-        if ($this->container['partnerId'] === null) {
-            return false;
-        }
-        if (strlen($this->container['partnerId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['partnerId']) < 2) {
             return false;
         }
         return true;
@@ -453,64 +390,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         }
 
         $this->container['requestedLiability'] = $requestedLiability;
-
-        return $this;
-    }
-
-    /**
-     * Gets requestedExcessRangeLow
-     * @return double
-     */
-    public function getRequestedExcessRangeLow()
-    {
-        return $this->container['requestedExcessRangeLow'];
-    }
-
-    /**
-     * Sets requestedExcessRangeLow
-     * @param double $requestedExcessRangeLow Low range that the distributor has requested for the excess for the vehicle (in the RC.com API this is called the std liability).
-     * @return $this
-     */
-    public function setRequestedExcessRangeLow($requestedExcessRangeLow)
-    {
-
-        if (!is_null($requestedExcessRangeLow) && ($requestedExcessRangeLow > 1000000.0)) {
-            throw new \InvalidArgumentException('invalid value for $requestedExcessRangeLow when calling PricingRequestCarRental., must be smaller than or equal to 1000000.0.');
-        }
-        if (!is_null($requestedExcessRangeLow) && ($requestedExcessRangeLow < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $requestedExcessRangeLow when calling PricingRequestCarRental., must be bigger than or equal to 0.01.');
-        }
-
-        $this->container['requestedExcessRangeLow'] = $requestedExcessRangeLow;
-
-        return $this;
-    }
-
-    /**
-     * Gets requestedExcessRangeHigh
-     * @return double
-     */
-    public function getRequestedExcessRangeHigh()
-    {
-        return $this->container['requestedExcessRangeHigh'];
-    }
-
-    /**
-     * Sets requestedExcessRangeHigh
-     * @param double $requestedExcessRangeHigh High range that the distributor has requested for the excess for the vehicle (in the RC.com API this is called the std liability high).
-     * @return $this
-     */
-    public function setRequestedExcessRangeHigh($requestedExcessRangeHigh)
-    {
-
-        if (!is_null($requestedExcessRangeHigh) && ($requestedExcessRangeHigh > 1000000.0)) {
-            throw new \InvalidArgumentException('invalid value for $requestedExcessRangeHigh when calling PricingRequestCarRental., must be smaller than or equal to 1000000.0.');
-        }
-        if (!is_null($requestedExcessRangeHigh) && ($requestedExcessRangeHigh < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $requestedExcessRangeHigh when calling PricingRequestCarRental., must be bigger than or equal to 0.01.');
-        }
-
-        $this->container['requestedExcessRangeHigh'] = $requestedExcessRangeHigh;
 
         return $this;
     }
@@ -618,34 +497,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
     public function setRentalCarBooking($rentalCarBooking)
     {
         $this->container['rentalCarBooking'] = $rentalCarBooking;
-
-        return $this;
-    }
-
-    /**
-     * Gets partnerId
-     * @return string
-     */
-    public function getPartnerId()
-    {
-        return $this->container['partnerId'];
-    }
-
-    /**
-     * Sets partnerId
-     * @param string $partnerId Identifies partner.
-     * @return $this
-     */
-    public function setPartnerId($partnerId)
-    {
-        if ((strlen($partnerId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $partnerId when calling PricingRequestCarRental., must be smaller than or equal to 64.');
-        }
-        if ((strlen($partnerId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerId when calling PricingRequestCarRental., must be bigger than or equal to 2.');
-        }
-
-        $this->container['partnerId'] = $partnerId;
 
         return $this;
     }

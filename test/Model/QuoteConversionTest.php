@@ -96,17 +96,9 @@ class QuoteConversionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "underwriterQuoteId"
+     * Test attribute "partnerQuoteId"
      */
-    public function testPropertyUnderwriterQuoteId()
-    {
-
-    }
-
-    /**
-     * Test attribute "distributorQuoteId"
-     */
-    public function testPropertyDistributorQuoteId()
+    public function testPropertyPartnerQuoteId()
     {
 
     }
@@ -115,6 +107,14 @@ class QuoteConversionTest extends \PHPUnit_Framework_TestCase
      * Test attribute "pricingRequestId"
      */
     public function testPropertyPricingRequestId()
+    {
+
+    }
+
+    /**
+     * Test attribute "pricingRequest"
+     */
+    public function testPropertyPricingRequest()
     {
 
     }

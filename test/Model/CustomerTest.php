@@ -96,6 +96,22 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "customerId"
+     */
+    public function testPropertyCustomerId()
+    {
+
+    }
+
+    /**
+     * Test attribute "insuredPersonId"
+     */
+    public function testPropertyInsuredPersonId()
+    {
+
+    }
+
+    /**
      * Test attribute "countryOfResidence"
      */
     public function testPropertyCountryOfResidence()
@@ -107,6 +123,14 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      * Test attribute "billingPostalCode"
      */
     public function testPropertyBillingPostalCode()
+    {
+
+    }
+
+    /**
+     * Test attribute "firstName"
+     */
+    public function testPropertyFirstName()
     {
 
     }
@@ -128,33 +152,9 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "firstName"
-     */
-    public function testPropertyFirstName()
-    {
-
-    }
-
-    /**
-     * Test attribute "customerId"
-     */
-    public function testPropertyCustomerId()
-    {
-
-    }
-
-    /**
      * Test attribute "name"
      */
     public function testPropertyName()
-    {
-
-    }
-
-    /**
-     * Test attribute "insuredPersonID"
-     */
-    public function testPropertyInsuredPersonID()
     {
 
     }

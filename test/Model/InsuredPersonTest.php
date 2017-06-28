@@ -96,6 +96,14 @@ class InsuredPersonTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "insuredPersonId"
+     */
+    public function testPropertyInsuredPersonId()
+    {
+
+    }
+
+    /**
      * Test attribute "countryOfResidence"
      */
     public function testPropertyCountryOfResidence()
@@ -120,14 +128,6 @@ class InsuredPersonTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "lastName"
-     */
-    public function testPropertyLastName()
-    {
-
-    }
-
-    /**
      * Test attribute "dateOfBirth"
      */
     public function testPropertyDateOfBirth()
@@ -136,25 +136,25 @@ class InsuredPersonTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "secondaryLastName"
-     */
-    public function testPropertySecondaryLastName()
-    {
-
-    }
-
-    /**
-     * Test attribute "insuredPersonId"
-     */
-    public function testPropertyInsuredPersonId()
-    {
-
-    }
-
-    /**
      * Test attribute "firstName"
      */
     public function testPropertyFirstName()
+    {
+
+    }
+
+    /**
+     * Test attribute "lastName"
+     */
+    public function testPropertyLastName()
+    {
+
+    }
+
+    /**
+     * Test attribute "secondaryLastName"
+     */
+    public function testPropertySecondaryLastName()
     {
 
     }

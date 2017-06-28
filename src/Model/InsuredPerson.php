@@ -66,14 +66,14 @@ class InsuredPerson implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'insuredPersonId' => 'string',
         'countryOfResidence' => 'string',
         'age' => 'int',
         'yearOfBirth' => 'int',
-        'lastName' => 'string',
         'dateOfBirth' => '\DateTime',
-        'secondaryLastName' => 'string',
-        'insuredPersonId' => 'string',
         'firstName' => 'string',
+        'lastName' => 'string',
+        'secondaryLastName' => 'string',
         'name' => 'string'
     ];
 
@@ -87,14 +87,14 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'insuredPersonId' => 'insuredPersonId',
         'countryOfResidence' => 'countryOfResidence',
         'age' => 'age',
         'yearOfBirth' => 'yearOfBirth',
-        'lastName' => 'lastName',
         'dateOfBirth' => 'dateOfBirth',
-        'secondaryLastName' => 'secondaryLastName',
-        'insuredPersonId' => 'insuredPersonId',
         'firstName' => 'firstName',
+        'lastName' => 'lastName',
+        'secondaryLastName' => 'secondaryLastName',
         'name' => 'name'
     ];
 
@@ -104,14 +104,14 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'insuredPersonId' => 'setInsuredPersonId',
         'countryOfResidence' => 'setCountryOfResidence',
         'age' => 'setAge',
         'yearOfBirth' => 'setYearOfBirth',
-        'lastName' => 'setLastName',
         'dateOfBirth' => 'setDateOfBirth',
-        'secondaryLastName' => 'setSecondaryLastName',
-        'insuredPersonId' => 'setInsuredPersonId',
         'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'secondaryLastName' => 'setSecondaryLastName',
         'name' => 'setName'
     ];
 
@@ -121,14 +121,14 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'insuredPersonId' => 'getInsuredPersonId',
         'countryOfResidence' => 'getCountryOfResidence',
         'age' => 'getAge',
         'yearOfBirth' => 'getYearOfBirth',
-        'lastName' => 'getLastName',
         'dateOfBirth' => 'getDateOfBirth',
-        'secondaryLastName' => 'getSecondaryLastName',
-        'insuredPersonId' => 'getInsuredPersonId',
         'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'secondaryLastName' => 'getSecondaryLastName',
         'name' => 'getName'
     ];
 
@@ -163,14 +163,14 @@ class InsuredPerson implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['insuredPersonId'] = isset($data['insuredPersonId']) ? $data['insuredPersonId'] : null;
         $this->container['countryOfResidence'] = isset($data['countryOfResidence']) ? $data['countryOfResidence'] : null;
         $this->container['age'] = isset($data['age']) ? $data['age'] : null;
         $this->container['yearOfBirth'] = isset($data['yearOfBirth']) ? $data['yearOfBirth'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
-        $this->container['secondaryLastName'] = isset($data['secondaryLastName']) ? $data['secondaryLastName'] : null;
-        $this->container['insuredPersonId'] = isset($data['insuredPersonId']) ? $data['insuredPersonId'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['secondaryLastName'] = isset($data['secondaryLastName']) ? $data['secondaryLastName'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
@@ -182,6 +182,14 @@ class InsuredPerson implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+        if (!is_null($this->container['insuredPersonId']) && (strlen($this->container['insuredPersonId']) > 64)) {
+            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be smaller than or equal to 64.";
+        }
+
+        if (!is_null($this->container['insuredPersonId']) && (strlen($this->container['insuredPersonId']) < 2)) {
+            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be bigger than or equal to 2.";
+        }
+
         if ($this->container['countryOfResidence'] === null) {
             $invalid_properties[] = "'countryOfResidence' can't be null";
         }
@@ -209,6 +217,14 @@ class InsuredPerson implements ArrayAccess
             $invalid_properties[] = "invalid value for 'yearOfBirth', must be bigger than or equal to 1910.0.";
         }
 
+        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 64)) {
+            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 64.";
+        }
+
+        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) < 2)) {
+            $invalid_properties[] = "invalid value for 'firstName', the character length must be bigger than or equal to 2.";
+        }
+
         if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 64)) {
             $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 64.";
         }
@@ -223,25 +239,6 @@ class InsuredPerson implements ArrayAccess
 
         if (!is_null($this->container['secondaryLastName']) && (strlen($this->container['secondaryLastName']) < 2)) {
             $invalid_properties[] = "invalid value for 'secondaryLastName', the character length must be bigger than or equal to 2.";
-        }
-
-        if ($this->container['insuredPersonId'] === null) {
-            $invalid_properties[] = "'insuredPersonId' can't be null";
-        }
-        if ((strlen($this->container['insuredPersonId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be smaller than or equal to 64.";
-        }
-
-        if ((strlen($this->container['insuredPersonId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be bigger than or equal to 2.";
         }
 
         if (!is_null($this->container['name']) && (strlen($this->container['name']) > 128)) {
@@ -263,6 +260,12 @@ class InsuredPerson implements ArrayAccess
      */
     public function valid()
     {
+        if (strlen($this->container['insuredPersonId']) > 64) {
+            return false;
+        }
+        if (strlen($this->container['insuredPersonId']) < 2) {
+            return false;
+        }
         if ($this->container['countryOfResidence'] === null) {
             return false;
         }
@@ -284,6 +287,12 @@ class InsuredPerson implements ArrayAccess
         if ($this->container['yearOfBirth'] < 1910.0) {
             return false;
         }
+        if (strlen($this->container['firstName']) > 64) {
+            return false;
+        }
+        if (strlen($this->container['firstName']) < 2) {
+            return false;
+        }
         if (strlen($this->container['lastName']) > 64) {
             return false;
         }
@@ -296,21 +305,6 @@ class InsuredPerson implements ArrayAccess
         if (strlen($this->container['secondaryLastName']) < 2) {
             return false;
         }
-        if ($this->container['insuredPersonId'] === null) {
-            return false;
-        }
-        if (strlen($this->container['insuredPersonId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['insuredPersonId']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['firstName']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['firstName']) < 2) {
-            return false;
-        }
         if (strlen($this->container['name']) > 128) {
             return false;
         }
@@ -320,6 +314,34 @@ class InsuredPerson implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets insuredPersonId
+     * @return string
+     */
+    public function getInsuredPersonId()
+    {
+        return $this->container['insuredPersonId'];
+    }
+
+    /**
+     * Sets insuredPersonId
+     * @param string $insuredPersonId Internal ID used by the insurer.
+     * @return $this
+     */
+    public function setInsuredPersonId($insuredPersonId)
+    {
+        if (!is_null($insuredPersonId) && (strlen($insuredPersonId) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling InsuredPerson., must be smaller than or equal to 64.');
+        }
+        if (!is_null($insuredPersonId) && (strlen($insuredPersonId) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling InsuredPerson., must be bigger than or equal to 2.');
+        }
+
+        $this->container['insuredPersonId'] = $insuredPersonId;
+
+        return $this;
+    }
 
     /**
      * Gets countryOfResidence
@@ -408,34 +430,6 @@ class InsuredPerson implements ArrayAccess
     }
 
     /**
-     * Gets lastName
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     * @param string $lastName Family name
-     * @return $this
-     */
-    public function setLastName($lastName)
-    {
-        if (!is_null($lastName) && (strlen($lastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling InsuredPerson., must be smaller than or equal to 64.');
-        }
-        if (!is_null($lastName) && (strlen($lastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling InsuredPerson., must be bigger than or equal to 2.');
-        }
-
-        $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
      * Gets dateOfBirth
      * @return \DateTime
      */
@@ -452,62 +446,6 @@ class InsuredPerson implements ArrayAccess
     public function setDateOfBirth($dateOfBirth)
     {
         $this->container['dateOfBirth'] = $dateOfBirth;
-
-        return $this;
-    }
-
-    /**
-     * Gets secondaryLastName
-     * @return string
-     */
-    public function getSecondaryLastName()
-    {
-        return $this->container['secondaryLastName'];
-    }
-
-    /**
-     * Sets secondaryLastName
-     * @param string $secondaryLastName An additional last name for a person e.g. Spanish names have two last names
-     * @return $this
-     */
-    public function setSecondaryLastName($secondaryLastName)
-    {
-        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling InsuredPerson., must be smaller than or equal to 64.');
-        }
-        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling InsuredPerson., must be bigger than or equal to 2.');
-        }
-
-        $this->container['secondaryLastName'] = $secondaryLastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets insuredPersonId
-     * @return string
-     */
-    public function getInsuredPersonId()
-    {
-        return $this->container['insuredPersonId'];
-    }
-
-    /**
-     * Sets insuredPersonId
-     * @param string $insuredPersonId Internal ID used by the insurer.
-     * @return $this
-     */
-    public function setInsuredPersonId($insuredPersonId)
-    {
-        if ((strlen($insuredPersonId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling InsuredPerson., must be smaller than or equal to 64.');
-        }
-        if ((strlen($insuredPersonId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling InsuredPerson., must be bigger than or equal to 2.');
-        }
-
-        $this->container['insuredPersonId'] = $insuredPersonId;
 
         return $this;
     }
@@ -536,6 +474,62 @@ class InsuredPerson implements ArrayAccess
         }
 
         $this->container['firstName'] = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastName
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['lastName'];
+    }
+
+    /**
+     * Sets lastName
+     * @param string $lastName Family name
+     * @return $this
+     */
+    public function setLastName($lastName)
+    {
+        if (!is_null($lastName) && (strlen($lastName) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $lastName when calling InsuredPerson., must be smaller than or equal to 64.');
+        }
+        if (!is_null($lastName) && (strlen($lastName) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $lastName when calling InsuredPerson., must be bigger than or equal to 2.');
+        }
+
+        $this->container['lastName'] = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets secondaryLastName
+     * @return string
+     */
+    public function getSecondaryLastName()
+    {
+        return $this->container['secondaryLastName'];
+    }
+
+    /**
+     * Sets secondaryLastName
+     * @param string $secondaryLastName An additional last name for a person e.g. Spanish names have two last names
+     * @return $this
+     */
+    public function setSecondaryLastName($secondaryLastName)
+    {
+        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling InsuredPerson., must be smaller than or equal to 64.');
+        }
+        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling InsuredPerson., must be bigger than or equal to 2.');
+        }
+
+        $this->container['secondaryLastName'] = $secondaryLastName;
 
         return $this;
     }

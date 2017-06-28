@@ -66,18 +66,17 @@ class PricingRequestGeneric implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'policyHolderId' => 'string',
+        'partnerQuoteId' => 'string',
         'effectiveDateTime' => '\DateTime',
+        'requestDateTime' => '\DateTime',
+        'expirationDateTime' => '\DateTime',
         'currency' => 'string',
         'insuredPersons' => '\BrightWrite\Model\InsuredPerson[]',
-        'requestTime' => '\DateTime',
         'partnerId' => 'string',
         'pricingRequestOrigin' => 'string',
-        'floorPrice' => 'double',
-        'expirationDateTime' => '\DateTime',
-        'customer' => '\BrightWrite\Model\Customer',
-        'policyHolderId' => 'string',
-        'underwriterQuoteId' => 'string',
-        'distributorQuoteId' => 'string'
+        'partnerPrice' => 'double',
+        'customer' => '\BrightWrite\Model\Customer'
     ];
 
     public static function swaggerTypes()
@@ -90,18 +89,17 @@ class PricingRequestGeneric implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'policyHolderId' => 'policyHolderId',
+        'partnerQuoteId' => 'partnerQuoteId',
         'effectiveDateTime' => 'effectiveDateTime',
+        'requestDateTime' => 'requestDateTime',
+        'expirationDateTime' => 'expirationDateTime',
         'currency' => 'currency',
         'insuredPersons' => 'insuredPersons',
-        'requestTime' => 'requestTime',
         'partnerId' => 'partnerId',
         'pricingRequestOrigin' => 'pricingRequestOrigin',
-        'floorPrice' => 'floorPrice',
-        'expirationDateTime' => 'expirationDateTime',
-        'customer' => 'customer',
-        'policyHolderId' => 'policyHolderId',
-        'underwriterQuoteId' => 'underwriterQuoteId',
-        'distributorQuoteId' => 'distributorQuoteId'
+        'partnerPrice' => 'partnerPrice',
+        'customer' => 'customer'
     ];
 
 
@@ -110,18 +108,17 @@ class PricingRequestGeneric implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'policyHolderId' => 'setPolicyHolderId',
+        'partnerQuoteId' => 'setPartnerQuoteId',
         'effectiveDateTime' => 'setEffectiveDateTime',
+        'requestDateTime' => 'setRequestDateTime',
+        'expirationDateTime' => 'setExpirationDateTime',
         'currency' => 'setCurrency',
         'insuredPersons' => 'setInsuredPersons',
-        'requestTime' => 'setRequestTime',
         'partnerId' => 'setPartnerId',
         'pricingRequestOrigin' => 'setPricingRequestOrigin',
-        'floorPrice' => 'setFloorPrice',
-        'expirationDateTime' => 'setExpirationDateTime',
-        'customer' => 'setCustomer',
-        'policyHolderId' => 'setPolicyHolderId',
-        'underwriterQuoteId' => 'setUnderwriterQuoteId',
-        'distributorQuoteId' => 'setDistributorQuoteId'
+        'partnerPrice' => 'setPartnerPrice',
+        'customer' => 'setCustomer'
     ];
 
 
@@ -130,18 +127,17 @@ class PricingRequestGeneric implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'policyHolderId' => 'getPolicyHolderId',
+        'partnerQuoteId' => 'getPartnerQuoteId',
         'effectiveDateTime' => 'getEffectiveDateTime',
+        'requestDateTime' => 'getRequestDateTime',
+        'expirationDateTime' => 'getExpirationDateTime',
         'currency' => 'getCurrency',
         'insuredPersons' => 'getInsuredPersons',
-        'requestTime' => 'getRequestTime',
         'partnerId' => 'getPartnerId',
         'pricingRequestOrigin' => 'getPricingRequestOrigin',
-        'floorPrice' => 'getFloorPrice',
-        'expirationDateTime' => 'getExpirationDateTime',
-        'customer' => 'getCustomer',
-        'policyHolderId' => 'getPolicyHolderId',
-        'underwriterQuoteId' => 'getUnderwriterQuoteId',
-        'distributorQuoteId' => 'getDistributorQuoteId'
+        'partnerPrice' => 'getPartnerPrice',
+        'customer' => 'getCustomer'
     ];
 
     public static function attributeMap()
@@ -175,18 +171,17 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['policyHolderId'] = isset($data['policyHolderId']) ? $data['policyHolderId'] : null;
+        $this->container['partnerQuoteId'] = isset($data['partnerQuoteId']) ? $data['partnerQuoteId'] : null;
         $this->container['effectiveDateTime'] = isset($data['effectiveDateTime']) ? $data['effectiveDateTime'] : null;
+        $this->container['requestDateTime'] = isset($data['requestDateTime']) ? $data['requestDateTime'] : null;
+        $this->container['expirationDateTime'] = isset($data['expirationDateTime']) ? $data['expirationDateTime'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['insuredPersons'] = isset($data['insuredPersons']) ? $data['insuredPersons'] : null;
-        $this->container['requestTime'] = isset($data['requestTime']) ? $data['requestTime'] : null;
         $this->container['partnerId'] = isset($data['partnerId']) ? $data['partnerId'] : null;
         $this->container['pricingRequestOrigin'] = isset($data['pricingRequestOrigin']) ? $data['pricingRequestOrigin'] : null;
-        $this->container['floorPrice'] = isset($data['floorPrice']) ? $data['floorPrice'] : null;
-        $this->container['expirationDateTime'] = isset($data['expirationDateTime']) ? $data['expirationDateTime'] : null;
+        $this->container['partnerPrice'] = isset($data['partnerPrice']) ? $data['partnerPrice'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
-        $this->container['policyHolderId'] = isset($data['policyHolderId']) ? $data['policyHolderId'] : null;
-        $this->container['underwriterQuoteId'] = isset($data['underwriterQuoteId']) ? $data['underwriterQuoteId'] : null;
-        $this->container['distributorQuoteId'] = isset($data['distributorQuoteId']) ? $data['distributorQuoteId'] : null;
     }
 
     /**
@@ -197,8 +192,30 @@ class PricingRequestGeneric implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+        if (!is_null($this->container['policyHolderId']) && (strlen($this->container['policyHolderId']) > 64)) {
+            $invalid_properties[] = "invalid value for 'policyHolderId', the character length must be smaller than or equal to 64.";
+        }
+
+        if (!is_null($this->container['policyHolderId']) && (strlen($this->container['policyHolderId']) < 2)) {
+            $invalid_properties[] = "invalid value for 'policyHolderId', the character length must be bigger than or equal to 2.";
+        }
+
+        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) > 64)) {
+            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be smaller than or equal to 64.";
+        }
+
+        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) < 2)) {
+            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be bigger than or equal to 2.";
+        }
+
         if ($this->container['effectiveDateTime'] === null) {
             $invalid_properties[] = "'effectiveDateTime' can't be null";
+        }
+        if ($this->container['requestDateTime'] === null) {
+            $invalid_properties[] = "'requestDateTime' can't be null";
+        }
+        if ($this->container['expirationDateTime'] === null) {
+            $invalid_properties[] = "'expirationDateTime' can't be null";
         }
         if ($this->container['currency'] === null) {
             $invalid_properties[] = "'currency' can't be null";
@@ -213,9 +230,6 @@ class PricingRequestGeneric implements ArrayAccess
 
         if ($this->container['insuredPersons'] === null) {
             $invalid_properties[] = "'insuredPersons' can't be null";
-        }
-        if ($this->container['requestTime'] === null) {
-            $invalid_properties[] = "'requestTime' can't be null";
         }
         if ($this->container['partnerId'] === null) {
             $invalid_properties[] = "'partnerId' can't be null";
@@ -236,39 +250,12 @@ class PricingRequestGeneric implements ArrayAccess
             $invalid_properties[] = "invalid value for 'pricingRequestOrigin', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['floorPrice'] === null) {
-            $invalid_properties[] = "'floorPrice' can't be null";
-        }
-        if ($this->container['expirationDateTime'] === null) {
-            $invalid_properties[] = "'expirationDateTime' can't be null";
+        if ($this->container['partnerPrice'] === null) {
+            $invalid_properties[] = "'partnerPrice' can't be null";
         }
         if ($this->container['customer'] === null) {
             $invalid_properties[] = "'customer' can't be null";
         }
-        if (!is_null($this->container['policyHolderId']) && (strlen($this->container['policyHolderId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'policyHolderId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['policyHolderId']) && (strlen($this->container['policyHolderId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'policyHolderId', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['underwriterQuoteId']) && (strlen($this->container['underwriterQuoteId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'underwriterQuoteId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['underwriterQuoteId']) && (strlen($this->container['underwriterQuoteId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'underwriterQuoteId', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['distributorQuoteId']) && (strlen($this->container['distributorQuoteId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'distributorQuoteId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['distributorQuoteId']) && (strlen($this->container['distributorQuoteId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'distributorQuoteId', the character length must be bigger than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -280,7 +267,25 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function valid()
     {
+        if (strlen($this->container['policyHolderId']) > 64) {
+            return false;
+        }
+        if (strlen($this->container['policyHolderId']) < 2) {
+            return false;
+        }
+        if (strlen($this->container['partnerQuoteId']) > 64) {
+            return false;
+        }
+        if (strlen($this->container['partnerQuoteId']) < 2) {
+            return false;
+        }
         if ($this->container['effectiveDateTime'] === null) {
+            return false;
+        }
+        if ($this->container['requestDateTime'] === null) {
+            return false;
+        }
+        if ($this->container['expirationDateTime'] === null) {
             return false;
         }
         if ($this->container['currency'] === null) {
@@ -293,9 +298,6 @@ class PricingRequestGeneric implements ArrayAccess
             return false;
         }
         if ($this->container['insuredPersons'] === null) {
-            return false;
-        }
-        if ($this->container['requestTime'] === null) {
             return false;
         }
         if ($this->container['partnerId'] === null) {
@@ -313,36 +315,71 @@ class PricingRequestGeneric implements ArrayAccess
         if (strlen($this->container['pricingRequestOrigin']) < 1) {
             return false;
         }
-        if ($this->container['floorPrice'] === null) {
-            return false;
-        }
-        if ($this->container['expirationDateTime'] === null) {
+        if ($this->container['partnerPrice'] === null) {
             return false;
         }
         if ($this->container['customer'] === null) {
             return false;
         }
-        if (strlen($this->container['policyHolderId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['policyHolderId']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['underwriterQuoteId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['underwriterQuoteId']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['distributorQuoteId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['distributorQuoteId']) < 2) {
-            return false;
-        }
         return true;
     }
 
+
+    /**
+     * Gets policyHolderId
+     * @return string
+     */
+    public function getPolicyHolderId()
+    {
+        return $this->container['policyHolderId'];
+    }
+
+    /**
+     * Sets policyHolderId
+     * @param string $policyHolderId Insured Person ID of the policy holder.
+     * @return $this
+     */
+    public function setPolicyHolderId($policyHolderId)
+    {
+        if (!is_null($policyHolderId) && (strlen($policyHolderId) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $policyHolderId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
+        }
+        if (!is_null($policyHolderId) && (strlen($policyHolderId) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $policyHolderId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
+        }
+
+        $this->container['policyHolderId'] = $policyHolderId;
+
+        return $this;
+    }
+
+    /**
+     * Gets partnerQuoteId
+     * @return string
+     */
+    public function getPartnerQuoteId()
+    {
+        return $this->container['partnerQuoteId'];
+    }
+
+    /**
+     * Sets partnerQuoteId
+     * @param string $partnerQuoteId Quote identifier in underwriters database.
+     * @return $this
+     */
+    public function setPartnerQuoteId($partnerQuoteId)
+    {
+        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
+        }
+        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
+        }
+
+        $this->container['partnerQuoteId'] = $partnerQuoteId;
+
+        return $this;
+    }
 
     /**
      * Gets effectiveDateTime
@@ -361,6 +398,48 @@ class PricingRequestGeneric implements ArrayAccess
     public function setEffectiveDateTime($effectiveDateTime)
     {
         $this->container['effectiveDateTime'] = $effectiveDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets requestDateTime
+     * @return \DateTime
+     */
+    public function getRequestDateTime()
+    {
+        return $this->container['requestDateTime'];
+    }
+
+    /**
+     * Sets requestDateTime
+     * @param \DateTime $requestDateTime Timestamp of the quote request when it was first received by the distributor (or insurer).
+     * @return $this
+     */
+    public function setRequestDateTime($requestDateTime)
+    {
+        $this->container['requestDateTime'] = $requestDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationDateTime
+     * @return \DateTime
+     */
+    public function getExpirationDateTime()
+    {
+        return $this->container['expirationDateTime'];
+    }
+
+    /**
+     * Sets expirationDateTime
+     * @param \DateTime $expirationDateTime Expiration date and time of the policy (use 23:59:59 if date is inclusive OR 00:00:00 time of next day if date is exclusive.
+     * @return $this
+     */
+    public function setExpirationDateTime($expirationDateTime)
+    {
+        $this->container['expirationDateTime'] = $expirationDateTime;
 
         return $this;
     }
@@ -410,27 +489,6 @@ class PricingRequestGeneric implements ArrayAccess
     public function setInsuredPersons($insuredPersons)
     {
         $this->container['insuredPersons'] = $insuredPersons;
-
-        return $this;
-    }
-
-    /**
-     * Gets requestTime
-     * @return \DateTime
-     */
-    public function getRequestTime()
-    {
-        return $this->container['requestTime'];
-    }
-
-    /**
-     * Sets requestTime
-     * @param \DateTime $requestTime Timestamp of the quote request when it was first received by the distributor (or insurer).
-     * @return $this
-     */
-    public function setRequestTime($requestTime)
-    {
-        $this->container['requestTime'] = $requestTime;
 
         return $this;
     }
@@ -492,43 +550,22 @@ class PricingRequestGeneric implements ArrayAccess
     }
 
     /**
-     * Gets floorPrice
+     * Gets partnerPrice
      * @return double
      */
-    public function getFloorPrice()
+    public function getPartnerPrice()
     {
-        return $this->container['floorPrice'];
+        return $this->container['partnerPrice'];
     }
 
     /**
-     * Sets floorPrice
-     * @param double $floorPrice The price above which the insurance must be sold if the book is to be profitable.
+     * Sets partnerPrice
+     * @param double $partnerPrice The price above which the insurance must be sold if the book is to be profitable.
      * @return $this
      */
-    public function setFloorPrice($floorPrice)
+    public function setPartnerPrice($partnerPrice)
     {
-        $this->container['floorPrice'] = $floorPrice;
-
-        return $this;
-    }
-
-    /**
-     * Gets expirationDateTime
-     * @return \DateTime
-     */
-    public function getExpirationDateTime()
-    {
-        return $this->container['expirationDateTime'];
-    }
-
-    /**
-     * Sets expirationDateTime
-     * @param \DateTime $expirationDateTime Expiration date and time of the policy (use 23:59:59 if date is inclusive OR 00:00:00 time of next day if date is exclusive.
-     * @return $this
-     */
-    public function setExpirationDateTime($expirationDateTime)
-    {
-        $this->container['expirationDateTime'] = $expirationDateTime;
+        $this->container['partnerPrice'] = $partnerPrice;
 
         return $this;
     }
@@ -550,90 +587,6 @@ class PricingRequestGeneric implements ArrayAccess
     public function setCustomer($customer)
     {
         $this->container['customer'] = $customer;
-
-        return $this;
-    }
-
-    /**
-     * Gets policyHolderId
-     * @return string
-     */
-    public function getPolicyHolderId()
-    {
-        return $this->container['policyHolderId'];
-    }
-
-    /**
-     * Sets policyHolderId
-     * @param string $policyHolderId Insured Person ID of the policy holder
-     * @return $this
-     */
-    public function setPolicyHolderId($policyHolderId)
-    {
-        if (!is_null($policyHolderId) && (strlen($policyHolderId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $policyHolderId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
-        }
-        if (!is_null($policyHolderId) && (strlen($policyHolderId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $policyHolderId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
-        }
-
-        $this->container['policyHolderId'] = $policyHolderId;
-
-        return $this;
-    }
-
-    /**
-     * Gets underwriterQuoteId
-     * @return string
-     */
-    public function getUnderwriterQuoteId()
-    {
-        return $this->container['underwriterQuoteId'];
-    }
-
-    /**
-     * Sets underwriterQuoteId
-     * @param string $underwriterQuoteId Quote identifier in underwriters database.
-     * @return $this
-     */
-    public function setUnderwriterQuoteId($underwriterQuoteId)
-    {
-        if (!is_null($underwriterQuoteId) && (strlen($underwriterQuoteId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $underwriterQuoteId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
-        }
-        if (!is_null($underwriterQuoteId) && (strlen($underwriterQuoteId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $underwriterQuoteId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
-        }
-
-        $this->container['underwriterQuoteId'] = $underwriterQuoteId;
-
-        return $this;
-    }
-
-    /**
-     * Gets distributorQuoteId
-     * @return string
-     */
-    public function getDistributorQuoteId()
-    {
-        return $this->container['distributorQuoteId'];
-    }
-
-    /**
-     * Sets distributorQuoteId
-     * @param string $distributorQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript.
-     * @return $this
-     */
-    public function setDistributorQuoteId($distributorQuoteId)
-    {
-        if (!is_null($distributorQuoteId) && (strlen($distributorQuoteId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $distributorQuoteId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
-        }
-        if (!is_null($distributorQuoteId) && (strlen($distributorQuoteId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $distributorQuoteId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
-        }
-
-        $this->container['distributorQuoteId'] = $distributorQuoteId;
 
         return $this;
     }

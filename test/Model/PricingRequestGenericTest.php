@@ -96,9 +96,41 @@ class PricingRequestGenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "policyHolderId"
+     */
+    public function testPropertyPolicyHolderId()
+    {
+
+    }
+
+    /**
+     * Test attribute "partnerQuoteId"
+     */
+    public function testPropertyPartnerQuoteId()
+    {
+
+    }
+
+    /**
      * Test attribute "effectiveDateTime"
      */
     public function testPropertyEffectiveDateTime()
+    {
+
+    }
+
+    /**
+     * Test attribute "requestDateTime"
+     */
+    public function testPropertyRequestDateTime()
+    {
+
+    }
+
+    /**
+     * Test attribute "expirationDateTime"
+     */
+    public function testPropertyExpirationDateTime()
     {
 
     }
@@ -120,14 +152,6 @@ class PricingRequestGenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "requestTime"
-     */
-    public function testPropertyRequestTime()
-    {
-
-    }
-
-    /**
      * Test attribute "partnerId"
      */
     public function testPropertyPartnerId()
@@ -144,17 +168,9 @@ class PricingRequestGenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "floorPrice"
+     * Test attribute "partnerPrice"
      */
-    public function testPropertyFloorPrice()
-    {
-
-    }
-
-    /**
-     * Test attribute "expirationDateTime"
-     */
-    public function testPropertyExpirationDateTime()
+    public function testPropertyPartnerPrice()
     {
 
     }
@@ -163,30 +179,6 @@ class PricingRequestGenericTest extends \PHPUnit_Framework_TestCase
      * Test attribute "customer"
      */
     public function testPropertyCustomer()
-    {
-
-    }
-
-    /**
-     * Test attribute "policyHolderId"
-     */
-    public function testPropertyPolicyHolderId()
-    {
-
-    }
-
-    /**
-     * Test attribute "underwriterQuoteId"
-     */
-    public function testPropertyUnderwriterQuoteId()
-    {
-
-    }
-
-    /**
-     * Test attribute "distributorQuoteId"
-     */
-    public function testPropertyDistributorQuoteId()
     {
 
     }

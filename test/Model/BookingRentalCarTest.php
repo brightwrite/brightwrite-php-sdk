@@ -96,9 +96,9 @@ class BookingRentalCarTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "totalPrice"
+     * Test attribute "rentalCarBookingId"
      */
-    public function testPropertyTotalPrice()
+    public function testPropertyRentalCarBookingId()
     {
 
     }
@@ -112,25 +112,9 @@ class BookingRentalCarTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "priceCurrency"
+     * Test attribute "pickUpLocation"
      */
-    public function testPropertyPriceCurrency()
-    {
-
-    }
-
-    /**
-     * Test attribute "pickupLocation"
-     */
-    public function testPropertyPickupLocation()
-    {
-
-    }
-
-    /**
-     * Test attribute "taxesAndFees"
-     */
-    public function testPropertyTaxesAndFees()
+    public function testPropertyPickUpLocation()
     {
 
     }
@@ -144,17 +128,33 @@ class BookingRentalCarTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "pickupDateTime"
+     * Test attribute "taxesAndFees"
      */
-    public function testPropertyPickupDateTime()
+    public function testPropertyTaxesAndFees()
     {
 
     }
 
     /**
-     * Test attribute "provider"
+     * Test attribute "totalPrice"
      */
-    public function testPropertyProvider()
+    public function testPropertyTotalPrice()
+    {
+
+    }
+
+    /**
+     * Test attribute "priceCurrency"
+     */
+    public function testPropertyPriceCurrency()
+    {
+
+    }
+
+    /**
+     * Test attribute "pickupDateTime"
+     */
+    public function testPropertyPickupDateTime()
     {
 
     }
@@ -168,9 +168,9 @@ class BookingRentalCarTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "toddlerSeatCount"
+     * Test attribute "provider"
      */
-    public function testPropertyToddlerSeatCount()
+    public function testPropertyProvider()
     {
 
     }
@@ -179,6 +179,14 @@ class BookingRentalCarTest extends \PHPUnit_Framework_TestCase
      * Test attribute "driverCount"
      */
     public function testPropertyDriverCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "toddlerSeatCount"
+     */
+    public function testPropertyToddlerSeatCount()
     {
 
     }
@@ -200,9 +208,9 @@ class BookingRentalCarTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "rentalCarBookingID"
+     * Test attribute "vehicleType"
      */
-    public function testPropertyRentalCarBookingID()
+    public function testPropertyVehicleType()
     {
 
     }
