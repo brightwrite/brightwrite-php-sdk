@@ -104,7 +104,7 @@ class PartnerApi
     /**
      * Operation brightwriteControllerPricingRequestCarRentalAction
      *
-     * Pricing request for car rental business
+     * Pricing request for a car rental policy
      *
      * @param \BrightWrite\Model\PricingRequestCarRental $pricingRequest Pricing request should contain information about quoted policy and related booking information (required)
      * @throws \BrightWrite\ApiException on non-2xx response
@@ -119,7 +119,7 @@ class PartnerApi
     /**
      * Operation brightwriteControllerPricingRequestCarRentalActionWithHttpInfo
      *
-     * Pricing request for car rental business
+     * Pricing request for a car rental policy
      *
      * @param \BrightWrite\Model\PricingRequestCarRental $pricingRequest Pricing request should contain information about quoted policy and related booking information (required)
      * @throws \BrightWrite\ApiException on non-2xx response

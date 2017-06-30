@@ -92,7 +92,7 @@ class PartnerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for brightwriteControllerPricingRequestCarRentalAction
      *
-     * Pricing request for car rental business.
+     * Pricing request for a car rental policy.
      *
      */
     public function testBrightwriteControllerPricingRequestCarRentalAction()

@@ -66,7 +66,7 @@ class InsuredPerson implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'insuredPersonId' => 'string',
+        'partnerInsuredPersonID' => 'string',
         'countryOfResidence' => 'string',
         'age' => 'int',
         'yearOfBirth' => 'int',
@@ -87,7 +87,7 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'insuredPersonId' => 'insuredPersonId',
+        'partnerInsuredPersonID' => 'partnerInsuredPersonID',
         'countryOfResidence' => 'countryOfResidence',
         'age' => 'age',
         'yearOfBirth' => 'yearOfBirth',
@@ -104,7 +104,7 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'insuredPersonId' => 'setInsuredPersonId',
+        'partnerInsuredPersonID' => 'setPartnerInsuredPersonID',
         'countryOfResidence' => 'setCountryOfResidence',
         'age' => 'setAge',
         'yearOfBirth' => 'setYearOfBirth',
@@ -121,7 +121,7 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'insuredPersonId' => 'getInsuredPersonId',
+        'partnerInsuredPersonID' => 'getPartnerInsuredPersonID',
         'countryOfResidence' => 'getCountryOfResidence',
         'age' => 'getAge',
         'yearOfBirth' => 'getYearOfBirth',
@@ -163,7 +163,7 @@ class InsuredPerson implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['insuredPersonId'] = isset($data['insuredPersonId']) ? $data['insuredPersonId'] : null;
+        $this->container['partnerInsuredPersonID'] = isset($data['partnerInsuredPersonID']) ? $data['partnerInsuredPersonID'] : null;
         $this->container['countryOfResidence'] = isset($data['countryOfResidence']) ? $data['countryOfResidence'] : null;
         $this->container['age'] = isset($data['age']) ? $data['age'] : null;
         $this->container['yearOfBirth'] = isset($data['yearOfBirth']) ? $data['yearOfBirth'] : null;
@@ -182,12 +182,12 @@ class InsuredPerson implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['insuredPersonId']) && (strlen($this->container['insuredPersonId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['partnerInsuredPersonID']) && (strlen($this->container['partnerInsuredPersonID']) > 64)) {
+            $invalid_properties[] = "invalid value for 'partnerInsuredPersonID', the character length must be smaller than or equal to 64.";
         }
 
-        if (!is_null($this->container['insuredPersonId']) && (strlen($this->container['insuredPersonId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['partnerInsuredPersonID']) && (strlen($this->container['partnerInsuredPersonID']) < 2)) {
+            $invalid_properties[] = "invalid value for 'partnerInsuredPersonID', the character length must be bigger than or equal to 2.";
         }
 
         if ($this->container['countryOfResidence'] === null) {
@@ -209,8 +209,8 @@ class InsuredPerson implements ArrayAccess
             $invalid_properties[] = "invalid value for 'age', must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['yearOfBirth']) && ($this->container['yearOfBirth'] > 2040.0)) {
-            $invalid_properties[] = "invalid value for 'yearOfBirth', must be smaller than or equal to 2040.0.";
+        if (!is_null($this->container['yearOfBirth']) && ($this->container['yearOfBirth'] > 2100.0)) {
+            $invalid_properties[] = "invalid value for 'yearOfBirth', must be smaller than or equal to 2100.0.";
         }
 
         if (!is_null($this->container['yearOfBirth']) && ($this->container['yearOfBirth'] < 1910.0)) {
@@ -260,10 +260,10 @@ class InsuredPerson implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['insuredPersonId']) > 64) {
+        if (strlen($this->container['partnerInsuredPersonID']) > 64) {
             return false;
         }
-        if (strlen($this->container['insuredPersonId']) < 2) {
+        if (strlen($this->container['partnerInsuredPersonID']) < 2) {
             return false;
         }
         if ($this->container['countryOfResidence'] === null) {
@@ -281,7 +281,7 @@ class InsuredPerson implements ArrayAccess
         if ($this->container['age'] < 0) {
             return false;
         }
-        if ($this->container['yearOfBirth'] > 2040.0) {
+        if ($this->container['yearOfBirth'] > 2100.0) {
             return false;
         }
         if ($this->container['yearOfBirth'] < 1910.0) {
@@ -316,29 +316,29 @@ class InsuredPerson implements ArrayAccess
 
 
     /**
-     * Gets insuredPersonId
+     * Gets partnerInsuredPersonID
      * @return string
      */
-    public function getInsuredPersonId()
+    public function getPartnerInsuredPersonID()
     {
-        return $this->container['insuredPersonId'];
+        return $this->container['partnerInsuredPersonID'];
     }
 
     /**
-     * Sets insuredPersonId
-     * @param string $insuredPersonId Internal ID used by the insurer.
+     * Sets partnerInsuredPersonID
+     * @param string $partnerInsuredPersonID Internal ID used by the partner.
      * @return $this
      */
-    public function setInsuredPersonId($insuredPersonId)
+    public function setPartnerInsuredPersonID($partnerInsuredPersonID)
     {
-        if (!is_null($insuredPersonId) && (strlen($insuredPersonId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling InsuredPerson., must be smaller than or equal to 64.');
+        if (!is_null($partnerInsuredPersonID) && (strlen($partnerInsuredPersonID) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonID when calling InsuredPerson., must be smaller than or equal to 64.');
         }
-        if (!is_null($insuredPersonId) && (strlen($insuredPersonId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling InsuredPerson., must be bigger than or equal to 2.');
+        if (!is_null($partnerInsuredPersonID) && (strlen($partnerInsuredPersonID) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonID when calling InsuredPerson., must be bigger than or equal to 2.');
         }
 
-        $this->container['insuredPersonId'] = $insuredPersonId;
+        $this->container['partnerInsuredPersonID'] = $partnerInsuredPersonID;
 
         return $this;
     }
@@ -417,8 +417,8 @@ class InsuredPerson implements ArrayAccess
     public function setYearOfBirth($yearOfBirth)
     {
 
-        if (!is_null($yearOfBirth) && ($yearOfBirth > 2040.0)) {
-            throw new \InvalidArgumentException('invalid value for $yearOfBirth when calling InsuredPerson., must be smaller than or equal to 2040.0.');
+        if (!is_null($yearOfBirth) && ($yearOfBirth > 2100.0)) {
+            throw new \InvalidArgumentException('invalid value for $yearOfBirth when calling InsuredPerson., must be smaller than or equal to 2100.0.');
         }
         if (!is_null($yearOfBirth) && ($yearOfBirth < 1910.0)) {
             throw new \InvalidArgumentException('invalid value for $yearOfBirth when calling InsuredPerson., must be bigger than or equal to 1910.0.');

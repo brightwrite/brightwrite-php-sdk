@@ -4,16 +4,16 @@ All URIs are relative to *https://api.brightwrite.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**brightwriteControllerPricingRequestCarRentalAction**](PartnerApi.md#brightwriteControllerPricingRequestCarRentalAction) | **POST** /pricingRequestCarRental | Pricing request for car rental business
+[**brightwriteControllerPricingRequestCarRentalAction**](PartnerApi.md#brightwriteControllerPricingRequestCarRentalAction) | **POST** /pricingRequestCarRental | Pricing request for a car rental policy
 [**brightwriteControllerQuoteConversionAction**](PartnerApi.md#brightwriteControllerQuoteConversionAction) | **POST** /quoteConversion | Pricing request for car rental business.
 
 
 # **brightwriteControllerPricingRequestCarRentalAction**
 > \BrightWrite\Model\PricingResponse brightwriteControllerPricingRequestCarRentalAction($pricingRequest)
 
-Pricing request for car rental business
+Pricing request for a car rental policy
 
-Accepts information about quoted policy and related booking information and returns price recommendation for given customer
+Accepts information about quoted policy and related booking information and returns price recommendation for a given policy.
 
 ### Example
 ```php

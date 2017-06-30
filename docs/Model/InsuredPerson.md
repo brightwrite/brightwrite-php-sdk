@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**insuredPersonId** | **string** | Internal ID used by the insurer. | [optional] 
+**partnerInsuredPersonID** | **string** | Internal ID used by the partner. | [optional] 
 **countryOfResidence** | **string** | Two characters (ISO 3166 standard) | 
 **age** | **int** | Either age or year of birth should be collected, depending on what is collected from customer. Only do this if permitted by partner agreement to collect this. This should be age at time trip starts. It could also be age at time of booking but partners should advise which one it is. | [optional] 
 **yearOfBirth** | **int** | Either age or year of birth should be collected, depending on what is collected from customer. Only do this if permitted by partner agreement to collect this. | [optional] 
