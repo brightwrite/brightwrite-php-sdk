@@ -320,7 +320,7 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
 
     /**
      * Sets policyDestinationCountryCode
-     * @param string $policyDestinationCountryCode ISO 3166 Two Character standard.
+     * @param string $policyDestinationCountryCode ISO 3166 Two Character standard
      * @return $this
      */
     public function setPolicyDestinationCountryCode($policyDestinationCountryCode)
@@ -376,7 +376,7 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
 
     /**
      * Sets requestedLiability
-     * @param double $requestedLiability This is the max payout for the policy requested by the partner (the Cover Amount in RC.com API).
+     * @param double $requestedLiability This is the max payout for the policy requested by the partner (the Cover Amount in RC.com API)
      * @return $this
      */
     public function setRequestedLiability($requestedLiability)
@@ -405,7 +405,7 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
 
     /**
      * Sets policyExcess
-     * @param double $policyExcess Excess that the underwriter has quoted.
+     * @param double $policyExcess Excess that the underwriter has quoted
      * @return $this
      */
     public function setPolicyExcess($policyExcess)
@@ -434,7 +434,7 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
 
     /**
      * Sets policyLiability
-     * @param double $policyLiability Liability that the underwriter has quoted.
+     * @param double $policyLiability Liability that the underwriter has quoted
      * @return $this
      */
     public function setPolicyLiability($policyLiability)
@@ -463,7 +463,7 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
 
     /**
      * Sets currencyForExcessAndLiability
-     * @param string $currencyForExcessAndLiability Three character ISO 4217.
+     * @param string $currencyForExcessAndLiability Three character ISO 4217
      * @return $this
      */
     public function setCurrencyForExcessAndLiability($currencyForExcessAndLiability)

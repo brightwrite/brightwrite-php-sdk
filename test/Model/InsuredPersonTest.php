@@ -96,9 +96,9 @@ class InsuredPersonTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "partnerInsuredPersonID"
+     * Test attribute "partnerInsuredPersonId"
      */
-    public function testPropertyPartnerInsuredPersonID()
+    public function testPropertyPartnerInsuredPersonId()
     {
 
     }

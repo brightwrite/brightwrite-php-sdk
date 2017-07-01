@@ -66,7 +66,7 @@ class InsuredPerson implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'partnerInsuredPersonID' => 'string',
+        'partnerInsuredPersonId' => 'string',
         'countryOfResidence' => 'string',
         'age' => 'int',
         'yearOfBirth' => 'int',
@@ -87,7 +87,7 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'partnerInsuredPersonID' => 'partnerInsuredPersonID',
+        'partnerInsuredPersonId' => 'partnerInsuredPersonId',
         'countryOfResidence' => 'countryOfResidence',
         'age' => 'age',
         'yearOfBirth' => 'yearOfBirth',
@@ -104,7 +104,7 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'partnerInsuredPersonID' => 'setPartnerInsuredPersonID',
+        'partnerInsuredPersonId' => 'setPartnerInsuredPersonId',
         'countryOfResidence' => 'setCountryOfResidence',
         'age' => 'setAge',
         'yearOfBirth' => 'setYearOfBirth',
@@ -121,7 +121,7 @@ class InsuredPerson implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'partnerInsuredPersonID' => 'getPartnerInsuredPersonID',
+        'partnerInsuredPersonId' => 'getPartnerInsuredPersonId',
         'countryOfResidence' => 'getCountryOfResidence',
         'age' => 'getAge',
         'yearOfBirth' => 'getYearOfBirth',
@@ -163,7 +163,7 @@ class InsuredPerson implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['partnerInsuredPersonID'] = isset($data['partnerInsuredPersonID']) ? $data['partnerInsuredPersonID'] : null;
+        $this->container['partnerInsuredPersonId'] = isset($data['partnerInsuredPersonId']) ? $data['partnerInsuredPersonId'] : null;
         $this->container['countryOfResidence'] = isset($data['countryOfResidence']) ? $data['countryOfResidence'] : null;
         $this->container['age'] = isset($data['age']) ? $data['age'] : null;
         $this->container['yearOfBirth'] = isset($data['yearOfBirth']) ? $data['yearOfBirth'] : null;
@@ -182,12 +182,12 @@ class InsuredPerson implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['partnerInsuredPersonID']) && (strlen($this->container['partnerInsuredPersonID']) > 64)) {
-            $invalid_properties[] = "invalid value for 'partnerInsuredPersonID', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) > 64)) {
+            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be smaller than or equal to 64.";
         }
 
-        if (!is_null($this->container['partnerInsuredPersonID']) && (strlen($this->container['partnerInsuredPersonID']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerInsuredPersonID', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) < 2)) {
+            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be bigger than or equal to 2.";
         }
 
         if ($this->container['countryOfResidence'] === null) {
@@ -260,10 +260,10 @@ class InsuredPerson implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['partnerInsuredPersonID']) > 64) {
+        if (strlen($this->container['partnerInsuredPersonId']) > 64) {
             return false;
         }
-        if (strlen($this->container['partnerInsuredPersonID']) < 2) {
+        if (strlen($this->container['partnerInsuredPersonId']) < 2) {
             return false;
         }
         if ($this->container['countryOfResidence'] === null) {
@@ -316,29 +316,29 @@ class InsuredPerson implements ArrayAccess
 
 
     /**
-     * Gets partnerInsuredPersonID
+     * Gets partnerInsuredPersonId
      * @return string
      */
-    public function getPartnerInsuredPersonID()
+    public function getPartnerInsuredPersonId()
     {
-        return $this->container['partnerInsuredPersonID'];
+        return $this->container['partnerInsuredPersonId'];
     }
 
     /**
-     * Sets partnerInsuredPersonID
-     * @param string $partnerInsuredPersonID Internal ID used by the partner.
+     * Sets partnerInsuredPersonId
+     * @param string $partnerInsuredPersonId Internal ID used by the partner
      * @return $this
      */
-    public function setPartnerInsuredPersonID($partnerInsuredPersonID)
+    public function setPartnerInsuredPersonId($partnerInsuredPersonId)
     {
-        if (!is_null($partnerInsuredPersonID) && (strlen($partnerInsuredPersonID) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonID when calling InsuredPerson., must be smaller than or equal to 64.');
+        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling InsuredPerson., must be smaller than or equal to 64.');
         }
-        if (!is_null($partnerInsuredPersonID) && (strlen($partnerInsuredPersonID) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonID when calling InsuredPerson., must be bigger than or equal to 2.');
+        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling InsuredPerson., must be bigger than or equal to 2.');
         }
 
-        $this->container['partnerInsuredPersonID'] = $partnerInsuredPersonID;
+        $this->container['partnerInsuredPersonId'] = $partnerInsuredPersonId;
 
         return $this;
     }
@@ -382,7 +382,7 @@ class InsuredPerson implements ArrayAccess
 
     /**
      * Sets age
-     * @param int $age Either age or year of birth should be collected, depending on what is collected from customer. Only do this if permitted by partner agreement to collect this. This should be age at time trip starts. It could also be age at time of booking but partners should advise which one it is.
+     * @param int $age Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this. This should be age at time trip starts. It could also be age at time of booking but partners should advise which one it is
      * @return $this
      */
     public function setAge($age)
@@ -411,7 +411,7 @@ class InsuredPerson implements ArrayAccess
 
     /**
      * Sets yearOfBirth
-     * @param int $yearOfBirth Either age or year of birth should be collected, depending on what is collected from customer. Only do this if permitted by partner agreement to collect this.
+     * @param int $yearOfBirth Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this
      * @return $this
      */
     public function setYearOfBirth($yearOfBirth)
@@ -440,7 +440,7 @@ class InsuredPerson implements ArrayAccess
 
     /**
      * Sets dateOfBirth
-     * @param \DateTime $dateOfBirth Date of birth. Provide if permitted by partner.
+     * @param \DateTime $dateOfBirth Date of birth. Provide if permitted by partner
      * @return $this
      */
     public function setDateOfBirth($dateOfBirth)
@@ -461,7 +461,7 @@ class InsuredPerson implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property.
+     * @param string $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property
      * @return $this
      */
     public function setFirstName($firstName)
@@ -545,7 +545,7 @@ class InsuredPerson implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Full name of a person. Can be send instead of combination of first name and last name.
+     * @param string $name Full name of a person. Can be send instead of combination of first name and last name
      * @return $this
      */
     public function setName($name)

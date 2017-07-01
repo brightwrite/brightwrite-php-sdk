@@ -239,7 +239,7 @@ class RentalCarLocation implements ArrayAccess
 
     /**
      * Sets city
-     * @param string $city City of the rental car company branch.
+     * @param string $city City of the rental car company branch
      * @return $this
      */
     public function setCity($city)
@@ -267,7 +267,7 @@ class RentalCarLocation implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state State in which the branch city is located.
+     * @param string $state State in which the branch city is located
      * @return $this
      */
     public function setState($state)
@@ -295,7 +295,7 @@ class RentalCarLocation implements ArrayAccess
 
     /**
      * Sets branchName
-     * @param string $branchName Internal name used to identify rental company branch.
+     * @param string $branchName Internal name used to identify rental company branch
      * @return $this
      */
     public function setBranchName($branchName)
@@ -323,7 +323,7 @@ class RentalCarLocation implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Country of the rental car company branch.
+     * @param string $country Country of the rental car company branch
      * @return $this
      */
     public function setCountry($country)

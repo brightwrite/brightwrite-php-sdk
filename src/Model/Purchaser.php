@@ -1,6 +1,6 @@
 <?php
 /**
- * Customer
+ * Purchaser
  *
  * PHP version 5
  *
@@ -44,7 +44,7 @@ namespace BrightWrite\Model;
 use \ArrayAccess;
 
 /**
- * Customer Class Doc Comment
+ * Purchaser Class Doc Comment
  *
  * @category    Class */
 /**
@@ -53,13 +53,13 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Customer implements ArrayAccess
+class Purchaser implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Customer';
+    protected static $swaggerModelName = 'Purchaser';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -67,7 +67,7 @@ class Customer implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'customerId' => 'string',
-        'insuredPersonId' => 'string',
+        'partnerInsuredPersonId' => 'string',
         'countryOfResidence' => 'string',
         'billingPostalCode' => 'string',
         'firstName' => 'string',
@@ -87,7 +87,7 @@ class Customer implements ArrayAccess
      */
     protected static $attributeMap = [
         'customerId' => 'customerId',
-        'insuredPersonId' => 'insuredPersonId',
+        'partnerInsuredPersonId' => 'partnerInsuredPersonId',
         'countryOfResidence' => 'countryOfResidence',
         'billingPostalCode' => 'billingPostalCode',
         'firstName' => 'firstName',
@@ -103,7 +103,7 @@ class Customer implements ArrayAccess
      */
     protected static $setters = [
         'customerId' => 'setCustomerId',
-        'insuredPersonId' => 'setInsuredPersonId',
+        'partnerInsuredPersonId' => 'setPartnerInsuredPersonId',
         'countryOfResidence' => 'setCountryOfResidence',
         'billingPostalCode' => 'setBillingPostalCode',
         'firstName' => 'setFirstName',
@@ -119,7 +119,7 @@ class Customer implements ArrayAccess
      */
     protected static $getters = [
         'customerId' => 'getCustomerId',
-        'insuredPersonId' => 'getInsuredPersonId',
+        'partnerInsuredPersonId' => 'getPartnerInsuredPersonId',
         'countryOfResidence' => 'getCountryOfResidence',
         'billingPostalCode' => 'getBillingPostalCode',
         'firstName' => 'getFirstName',
@@ -160,7 +160,7 @@ class Customer implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['customerId'] = isset($data['customerId']) ? $data['customerId'] : null;
-        $this->container['insuredPersonId'] = isset($data['insuredPersonId']) ? $data['insuredPersonId'] : null;
+        $this->container['partnerInsuredPersonId'] = isset($data['partnerInsuredPersonId']) ? $data['partnerInsuredPersonId'] : null;
         $this->container['countryOfResidence'] = isset($data['countryOfResidence']) ? $data['countryOfResidence'] : null;
         $this->container['billingPostalCode'] = isset($data['billingPostalCode']) ? $data['billingPostalCode'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
@@ -185,12 +185,12 @@ class Customer implements ArrayAccess
             $invalid_properties[] = "invalid value for 'customerId', the character length must be bigger than or equal to 2.";
         }
 
-        if (!is_null($this->container['insuredPersonId']) && (strlen($this->container['insuredPersonId']) > 128)) {
-            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be smaller than or equal to 128.";
+        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['insuredPersonId']) && (strlen($this->container['insuredPersonId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'insuredPersonId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) < 2)) {
+            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be bigger than or equal to 2.";
         }
 
         if ($this->container['countryOfResidence'] === null) {
@@ -261,10 +261,10 @@ class Customer implements ArrayAccess
         if (strlen($this->container['customerId']) < 2) {
             return false;
         }
-        if (strlen($this->container['insuredPersonId']) > 128) {
+        if (strlen($this->container['partnerInsuredPersonId']) > 128) {
             return false;
         }
-        if (strlen($this->container['insuredPersonId']) < 2) {
+        if (strlen($this->container['partnerInsuredPersonId']) < 2) {
             return false;
         }
         if ($this->container['countryOfResidence'] === null) {
@@ -321,16 +321,16 @@ class Customer implements ArrayAccess
 
     /**
      * Sets customerId
-     * @param string $customerId Identifier as it appears in underwriter/distributor platform.
+     * @param string $customerId Customer identifier as it appears in partner platform
      * @return $this
      */
     public function setCustomerId($customerId)
     {
         if (!is_null($customerId) && (strlen($customerId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $customerId when calling Customer., must be smaller than or equal to 64.');
+            throw new \InvalidArgumentException('invalid length for $customerId when calling Purchaser., must be smaller than or equal to 64.');
         }
         if (!is_null($customerId) && (strlen($customerId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $customerId when calling Customer., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $customerId when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['customerId'] = $customerId;
@@ -339,29 +339,29 @@ class Customer implements ArrayAccess
     }
 
     /**
-     * Gets insuredPersonId
+     * Gets partnerInsuredPersonId
      * @return string
      */
-    public function getInsuredPersonId()
+    public function getPartnerInsuredPersonId()
     {
-        return $this->container['insuredPersonId'];
+        return $this->container['partnerInsuredPersonId'];
     }
 
     /**
-     * Sets insuredPersonId
-     * @param string $insuredPersonId If the customer is also an Insured person, i.e. buying policy for his/herself.
+     * Sets partnerInsuredPersonId
+     * @param string $partnerInsuredPersonId If the purchaser is also an Insured person, i.e. buying policy for his/herself
      * @return $this
      */
-    public function setInsuredPersonId($insuredPersonId)
+    public function setPartnerInsuredPersonId($partnerInsuredPersonId)
     {
-        if (!is_null($insuredPersonId) && (strlen($insuredPersonId) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling Customer., must be smaller than or equal to 128.');
+        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling Purchaser., must be smaller than or equal to 128.');
         }
-        if (!is_null($insuredPersonId) && (strlen($insuredPersonId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $insuredPersonId when calling Customer., must be bigger than or equal to 2.');
+        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling Purchaser., must be bigger than or equal to 2.');
         }
 
-        $this->container['insuredPersonId'] = $insuredPersonId;
+        $this->container['partnerInsuredPersonId'] = $partnerInsuredPersonId;
 
         return $this;
     }
@@ -377,16 +377,16 @@ class Customer implements ArrayAccess
 
     /**
      * Sets countryOfResidence
-     * @param string $countryOfResidence Two character standard (ISO 3166). It's only required if the customer is not an Insured Person.
+     * @param string $countryOfResidence Two character standard (ISO 3166). It's only required if the purchaser is not an Insured Person
      * @return $this
      */
     public function setCountryOfResidence($countryOfResidence)
     {
         if ((strlen($countryOfResidence) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $countryOfResidence when calling Customer., must be smaller than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $countryOfResidence when calling Purchaser., must be smaller than or equal to 2.');
         }
         if ((strlen($countryOfResidence) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $countryOfResidence when calling Customer., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $countryOfResidence when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['countryOfResidence'] = $countryOfResidence;
@@ -405,16 +405,16 @@ class Customer implements ArrayAccess
 
     /**
      * Sets billingPostalCode
-     * @param string $billingPostalCode Collect this regardless of whether the customer is also an insured person.
+     * @param string $billingPostalCode Collect this regardless of whether the purchaser is also an insured person
      * @return $this
      */
     public function setBillingPostalCode($billingPostalCode)
     {
         if (!is_null($billingPostalCode) && (strlen($billingPostalCode) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $billingPostalCode when calling Customer., must be smaller than or equal to 8.');
+            throw new \InvalidArgumentException('invalid length for $billingPostalCode when calling Purchaser., must be smaller than or equal to 8.');
         }
         if (!is_null($billingPostalCode) && (strlen($billingPostalCode) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $billingPostalCode when calling Customer., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $billingPostalCode when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['billingPostalCode'] = $billingPostalCode;
@@ -433,16 +433,16 @@ class Customer implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property. Only required if the customer is not an Insured Person
+     * @param string $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property. Only required if the purchaser is not an Insured Person
      * @return $this
      */
     public function setFirstName($firstName)
     {
         if (!is_null($firstName) && (strlen($firstName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Customer., must be smaller than or equal to 64.');
+            throw new \InvalidArgumentException('invalid length for $firstName when calling Purchaser., must be smaller than or equal to 64.');
         }
         if (!is_null($firstName) && (strlen($firstName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Customer., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $firstName when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['firstName'] = $firstName;
@@ -461,16 +461,16 @@ class Customer implements ArrayAccess
 
     /**
      * Sets primaryLastName
-     * @param string $primaryLastName Family name. Only required if the customer is not an Insured Person.
+     * @param string $primaryLastName Family name. Only required if the purchaser is not an Insured Person
      * @return $this
      */
     public function setPrimaryLastName($primaryLastName)
     {
         if (!is_null($primaryLastName) && (strlen($primaryLastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $primaryLastName when calling Customer., must be smaller than or equal to 64.');
+            throw new \InvalidArgumentException('invalid length for $primaryLastName when calling Purchaser., must be smaller than or equal to 64.');
         }
         if (!is_null($primaryLastName) && (strlen($primaryLastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $primaryLastName when calling Customer., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $primaryLastName when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['primaryLastName'] = $primaryLastName;
@@ -489,16 +489,16 @@ class Customer implements ArrayAccess
 
     /**
      * Sets secondaryLastName
-     * @param string $secondaryLastName An additional last name for a person e.g. Spanish names have two last names. Only required if the customer is not an Insured Person.
+     * @param string $secondaryLastName An additional last name for a person e.g. Spanish names have two last names. Only required if the purchaser is not an Insured Person
      * @return $this
      */
     public function setSecondaryLastName($secondaryLastName)
     {
         if (!is_null($secondaryLastName) && (strlen($secondaryLastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling Customer., must be smaller than or equal to 64.');
+            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling Purchaser., must be smaller than or equal to 64.');
         }
         if (!is_null($secondaryLastName) && (strlen($secondaryLastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling Customer., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['secondaryLastName'] = $secondaryLastName;
@@ -517,16 +517,16 @@ class Customer implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Full name of a person. Can be send instead of combination of firstName, lastName.
+     * @param string $name Full name of a person. Can be send instead of combination of firstName, lastName
      * @return $this
      */
     public function setName($name)
     {
         if (!is_null($name) && (strlen($name) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Customer., must be smaller than or equal to 128.');
+            throw new \InvalidArgumentException('invalid length for $name when calling Purchaser., must be smaller than or equal to 128.');
         }
         if (!is_null($name) && (strlen($name) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Customer., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $name when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['name'] = $name;

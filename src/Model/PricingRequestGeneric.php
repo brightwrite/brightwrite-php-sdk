@@ -66,7 +66,7 @@ class PricingRequestGeneric implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'policyHolderId' => 'string',
+        'partnerPrimaryInsuredId' => 'string',
         'partnerQuoteId' => 'string',
         'effectiveDateTime' => '\DateTime',
         'requestDateTime' => '\DateTime',
@@ -76,7 +76,7 @@ class PricingRequestGeneric implements ArrayAccess
         'partnerId' => 'string',
         'pricingRequestOrigin' => 'string',
         'partnerPrice' => 'double',
-        'customer' => '\BrightWrite\Model\Customer'
+        'purchaser' => '\BrightWrite\Model\Purchaser'
     ];
 
     public static function swaggerTypes()
@@ -89,7 +89,7 @@ class PricingRequestGeneric implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'policyHolderId' => 'policyHolderId',
+        'partnerPrimaryInsuredId' => 'partnerPrimaryInsuredId',
         'partnerQuoteId' => 'partnerQuoteId',
         'effectiveDateTime' => 'effectiveDateTime',
         'requestDateTime' => 'requestDateTime',
@@ -99,7 +99,7 @@ class PricingRequestGeneric implements ArrayAccess
         'partnerId' => 'partnerId',
         'pricingRequestOrigin' => 'pricingRequestOrigin',
         'partnerPrice' => 'partnerPrice',
-        'customer' => 'customer'
+        'purchaser' => 'purchaser'
     ];
 
 
@@ -108,7 +108,7 @@ class PricingRequestGeneric implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'policyHolderId' => 'setPolicyHolderId',
+        'partnerPrimaryInsuredId' => 'setPartnerPrimaryInsuredId',
         'partnerQuoteId' => 'setPartnerQuoteId',
         'effectiveDateTime' => 'setEffectiveDateTime',
         'requestDateTime' => 'setRequestDateTime',
@@ -118,7 +118,7 @@ class PricingRequestGeneric implements ArrayAccess
         'partnerId' => 'setPartnerId',
         'pricingRequestOrigin' => 'setPricingRequestOrigin',
         'partnerPrice' => 'setPartnerPrice',
-        'customer' => 'setCustomer'
+        'purchaser' => 'setPurchaser'
     ];
 
 
@@ -127,7 +127,7 @@ class PricingRequestGeneric implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'policyHolderId' => 'getPolicyHolderId',
+        'partnerPrimaryInsuredId' => 'getPartnerPrimaryInsuredId',
         'partnerQuoteId' => 'getPartnerQuoteId',
         'effectiveDateTime' => 'getEffectiveDateTime',
         'requestDateTime' => 'getRequestDateTime',
@@ -137,7 +137,7 @@ class PricingRequestGeneric implements ArrayAccess
         'partnerId' => 'getPartnerId',
         'pricingRequestOrigin' => 'getPricingRequestOrigin',
         'partnerPrice' => 'getPartnerPrice',
-        'customer' => 'getCustomer'
+        'purchaser' => 'getPurchaser'
     ];
 
     public static function attributeMap()
@@ -171,7 +171,7 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['policyHolderId'] = isset($data['policyHolderId']) ? $data['policyHolderId'] : null;
+        $this->container['partnerPrimaryInsuredId'] = isset($data['partnerPrimaryInsuredId']) ? $data['partnerPrimaryInsuredId'] : null;
         $this->container['partnerQuoteId'] = isset($data['partnerQuoteId']) ? $data['partnerQuoteId'] : null;
         $this->container['effectiveDateTime'] = isset($data['effectiveDateTime']) ? $data['effectiveDateTime'] : null;
         $this->container['requestDateTime'] = isset($data['requestDateTime']) ? $data['requestDateTime'] : null;
@@ -181,7 +181,7 @@ class PricingRequestGeneric implements ArrayAccess
         $this->container['partnerId'] = isset($data['partnerId']) ? $data['partnerId'] : null;
         $this->container['pricingRequestOrigin'] = isset($data['pricingRequestOrigin']) ? $data['pricingRequestOrigin'] : null;
         $this->container['partnerPrice'] = isset($data['partnerPrice']) ? $data['partnerPrice'] : null;
-        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['purchaser'] = isset($data['purchaser']) ? $data['purchaser'] : null;
     }
 
     /**
@@ -192,12 +192,12 @@ class PricingRequestGeneric implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['policyHolderId']) && (strlen($this->container['policyHolderId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'policyHolderId', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['partnerPrimaryInsuredId']) && (strlen($this->container['partnerPrimaryInsuredId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'partnerPrimaryInsuredId', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['policyHolderId']) && (strlen($this->container['policyHolderId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'policyHolderId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['partnerPrimaryInsuredId']) && (strlen($this->container['partnerPrimaryInsuredId']) < 2)) {
+            $invalid_properties[] = "invalid value for 'partnerPrimaryInsuredId', the character length must be bigger than or equal to 2.";
         }
 
         if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) > 64)) {
@@ -253,9 +253,6 @@ class PricingRequestGeneric implements ArrayAccess
         if ($this->container['partnerPrice'] === null) {
             $invalid_properties[] = "'partnerPrice' can't be null";
         }
-        if ($this->container['customer'] === null) {
-            $invalid_properties[] = "'customer' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -267,10 +264,10 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['policyHolderId']) > 64) {
+        if (strlen($this->container['partnerPrimaryInsuredId']) > 128) {
             return false;
         }
-        if (strlen($this->container['policyHolderId']) < 2) {
+        if (strlen($this->container['partnerPrimaryInsuredId']) < 2) {
             return false;
         }
         if (strlen($this->container['partnerQuoteId']) > 64) {
@@ -318,37 +315,34 @@ class PricingRequestGeneric implements ArrayAccess
         if ($this->container['partnerPrice'] === null) {
             return false;
         }
-        if ($this->container['customer'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets policyHolderId
+     * Gets partnerPrimaryInsuredId
      * @return string
      */
-    public function getPolicyHolderId()
+    public function getPartnerPrimaryInsuredId()
     {
-        return $this->container['policyHolderId'];
+        return $this->container['partnerPrimaryInsuredId'];
     }
 
     /**
-     * Sets policyHolderId
-     * @param string $policyHolderId Insured Person ID of the policy holder.
+     * Sets partnerPrimaryInsuredId
+     * @param string $partnerPrimaryInsuredId Insured Person ID of the policy holder
      * @return $this
      */
-    public function setPolicyHolderId($policyHolderId)
+    public function setPartnerPrimaryInsuredId($partnerPrimaryInsuredId)
     {
-        if (!is_null($policyHolderId) && (strlen($policyHolderId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $policyHolderId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
+        if (!is_null($partnerPrimaryInsuredId) && (strlen($partnerPrimaryInsuredId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $partnerPrimaryInsuredId when calling PricingRequestGeneric., must be smaller than or equal to 128.');
         }
-        if (!is_null($policyHolderId) && (strlen($policyHolderId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $policyHolderId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
+        if (!is_null($partnerPrimaryInsuredId) && (strlen($partnerPrimaryInsuredId) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $partnerPrimaryInsuredId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
         }
 
-        $this->container['policyHolderId'] = $policyHolderId;
+        $this->container['partnerPrimaryInsuredId'] = $partnerPrimaryInsuredId;
 
         return $this;
     }
@@ -364,7 +358,7 @@ class PricingRequestGeneric implements ArrayAccess
 
     /**
      * Sets partnerQuoteId
-     * @param string $partnerQuoteId Quote identifier in underwriters database.
+     * @param string $partnerQuoteId Quote identifier in partner's database
      * @return $this
      */
     public function setPartnerQuoteId($partnerQuoteId)
@@ -413,7 +407,7 @@ class PricingRequestGeneric implements ArrayAccess
 
     /**
      * Sets requestDateTime
-     * @param \DateTime $requestDateTime Timestamp of the quote request when it was first received by the distributor (or insurer).
+     * @param \DateTime $requestDateTime Timestamp of the quote request when it was first received by the distributor
      * @return $this
      */
     public function setRequestDateTime($requestDateTime)
@@ -455,7 +449,7 @@ class PricingRequestGeneric implements ArrayAccess
 
     /**
      * Sets currency
-     * @param string $currency Currency used. Three character ISO 4217.
+     * @param string $currency Currency used. Three character ISO 4217
      * @return $this
      */
     public function setCurrency($currency)
@@ -483,7 +477,7 @@ class PricingRequestGeneric implements ArrayAccess
 
     /**
      * Sets insuredPersons
-     * @param \BrightWrite\Model\InsuredPerson[] $insuredPersons List of people who are insured/covered by this policy.
+     * @param \BrightWrite\Model\InsuredPerson[] $insuredPersons List of people who are insured/covered by this policy
      * @return $this
      */
     public function setInsuredPersons($insuredPersons)
@@ -504,7 +498,7 @@ class PricingRequestGeneric implements ArrayAccess
 
     /**
      * Sets partnerId
-     * @param string $partnerId Partner identifier. Human and machine readable so we can use in tagging.
+     * @param string $partnerId Partner identifier. Human and machine readable so we can use in tagging
      * @return $this
      */
     public function setPartnerId($partnerId)
@@ -532,7 +526,7 @@ class PricingRequestGeneric implements ArrayAccess
 
     /**
      * Sets pricingRequestOrigin
-     * @param string $pricingRequestOrigin Identifier, which partner use to specify pricing request origin.
+     * @param string $pricingRequestOrigin Identifier, which partner use to specify pricing request origin
      * @return $this
      */
     public function setPricingRequestOrigin($pricingRequestOrigin)
@@ -560,7 +554,7 @@ class PricingRequestGeneric implements ArrayAccess
 
     /**
      * Sets partnerPrice
-     * @param double $partnerPrice The price above which the insurance must be sold if the book is to be profitable.
+     * @param double $partnerPrice The price above which the insurance must be sold if the book is to be profitable
      * @return $this
      */
     public function setPartnerPrice($partnerPrice)
@@ -571,22 +565,22 @@ class PricingRequestGeneric implements ArrayAccess
     }
 
     /**
-     * Gets customer
-     * @return \BrightWrite\Model\Customer
+     * Gets purchaser
+     * @return \BrightWrite\Model\Purchaser
      */
-    public function getCustomer()
+    public function getPurchaser()
     {
-        return $this->container['customer'];
+        return $this->container['purchaser'];
     }
 
     /**
-     * Sets customer
-     * @param \BrightWrite\Model\Customer $customer
+     * Sets purchaser
+     * @param \BrightWrite\Model\Purchaser $purchaser
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setPurchaser($purchaser)
     {
-        $this->container['customer'] = $customer;
+        $this->container['purchaser'] = $purchaser;
 
         return $this;
     }

@@ -68,7 +68,8 @@ class QuoteConversion implements ArrayAccess
     protected static $swaggerTypes = [
         'partnerQuoteId' => 'string',
         'pricingRequestId' => 'string',
-        'pricingRequest' => '\BrightWrite\Model\PricingRequestCarRental'
+        'purchaser' => '\BrightWrite\Model\Purchaser',
+        'booking' => '\BrightWrite\Model\Booking'
     ];
 
     public static function swaggerTypes()
@@ -83,7 +84,8 @@ class QuoteConversion implements ArrayAccess
     protected static $attributeMap = [
         'partnerQuoteId' => 'partnerQuoteId',
         'pricingRequestId' => 'pricingRequestId',
-        'pricingRequest' => 'pricingRequest'
+        'purchaser' => 'purchaser',
+        'booking' => 'booking'
     ];
 
 
@@ -94,7 +96,8 @@ class QuoteConversion implements ArrayAccess
     protected static $setters = [
         'partnerQuoteId' => 'setPartnerQuoteId',
         'pricingRequestId' => 'setPricingRequestId',
-        'pricingRequest' => 'setPricingRequest'
+        'purchaser' => 'setPurchaser',
+        'booking' => 'setBooking'
     ];
 
 
@@ -105,7 +108,8 @@ class QuoteConversion implements ArrayAccess
     protected static $getters = [
         'partnerQuoteId' => 'getPartnerQuoteId',
         'pricingRequestId' => 'getPricingRequestId',
-        'pricingRequest' => 'getPricingRequest'
+        'purchaser' => 'getPurchaser',
+        'booking' => 'getBooking'
     ];
 
     public static function attributeMap()
@@ -141,7 +145,8 @@ class QuoteConversion implements ArrayAccess
     {
         $this->container['partnerQuoteId'] = isset($data['partnerQuoteId']) ? $data['partnerQuoteId'] : null;
         $this->container['pricingRequestId'] = isset($data['pricingRequestId']) ? $data['pricingRequestId'] : null;
-        $this->container['pricingRequest'] = isset($data['pricingRequest']) ? $data['pricingRequest'] : null;
+        $this->container['purchaser'] = isset($data['purchaser']) ? $data['purchaser'] : null;
+        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
     }
 
     /**
@@ -168,6 +173,9 @@ class QuoteConversion implements ArrayAccess
             $invalid_properties[] = "invalid value for 'pricingRequestId', the character length must be bigger than or equal to 2.";
         }
 
+        if ($this->container['purchaser'] === null) {
+            $invalid_properties[] = "'purchaser' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -191,6 +199,9 @@ class QuoteConversion implements ArrayAccess
         if (strlen($this->container['pricingRequestId']) < 2) {
             return false;
         }
+        if ($this->container['purchaser'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -206,7 +217,7 @@ class QuoteConversion implements ArrayAccess
 
     /**
      * Sets partnerQuoteId
-     * @param string $partnerQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript.
+     * @param string $partnerQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript
      * @return $this
      */
     public function setPartnerQuoteId($partnerQuoteId)
@@ -234,7 +245,7 @@ class QuoteConversion implements ArrayAccess
 
     /**
      * Sets pricingRequestId
-     * @param string $pricingRequestId If it's impossible to use any type of quote IDs, we need to report conversions based on prcing request ID privdied in pricing request endpoint.
+     * @param string $pricingRequestId If it's impossible to use any type of quote IDs, we need to report conversions based on prcing request ID privdied in pricing request endpoint
      * @return $this
      */
     public function setPricingRequestId($pricingRequestId)
@@ -252,22 +263,43 @@ class QuoteConversion implements ArrayAccess
     }
 
     /**
-     * Gets pricingRequest
-     * @return \BrightWrite\Model\PricingRequestCarRental
+     * Gets purchaser
+     * @return \BrightWrite\Model\Purchaser
      */
-    public function getPricingRequest()
+    public function getPurchaser()
     {
-        return $this->container['pricingRequest'];
+        return $this->container['purchaser'];
     }
 
     /**
-     * Sets pricingRequest
-     * @param \BrightWrite\Model\PricingRequestCarRental $pricingRequest Partners can provide more information in pricing request when booking was confirmed.
+     * Sets purchaser
+     * @param \BrightWrite\Model\Purchaser $purchaser Partners can provide more information in pricing request after the booking confirmation
      * @return $this
      */
-    public function setPricingRequest($pricingRequest)
+    public function setPurchaser($purchaser)
     {
-        $this->container['pricingRequest'] = $pricingRequest;
+        $this->container['purchaser'] = $purchaser;
+
+        return $this;
+    }
+
+    /**
+     * Gets booking
+     * @return \BrightWrite\Model\Booking
+     */
+    public function getBooking()
+    {
+        return $this->container['booking'];
+    }
+
+    /**
+     * Sets booking
+     * @param \BrightWrite\Model\Booking $booking Partners can provide more information in pricing request after the booking confirmation
+     * @return $this
+     */
+    public function setBooking($booking)
+    {
+        $this->container['booking'] = $booking;
 
         return $this;
     }

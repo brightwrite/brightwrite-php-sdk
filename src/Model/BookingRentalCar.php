@@ -425,7 +425,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets rentalCarBookingId
-     * @param string $rentalCarBookingId Internal ID used by distributors to identify the booking. This should match the booking ID BrightWrite collects from the tags on the distributor website. For a booking that has flights and rental cars, the booking IDs would match.
+     * @param string $rentalCarBookingId Internal ID used by distributors to identify the booking. This should match the booking ID BrightWrite collects from the tags on the distributor website. For a booking that has flights and rental cars, the booking IDs would match
      * @return $this
      */
     public function setRentalCarBookingId($rentalCarBookingId)
@@ -495,7 +495,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets subtotalPrice
-     * @param double $subtotalPrice Ticket price without taxes and extra fees.
+     * @param double $subtotalPrice Ticket price without taxes and extra fees
      * @return $this
      */
     public function setSubtotalPrice($subtotalPrice)
@@ -524,7 +524,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets taxesAndFees
-     * @param double $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice.
+     * @param double $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice
      * @return $this
      */
     public function setTaxesAndFees($taxesAndFees)
@@ -553,7 +553,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets totalPrice
-     * @param double $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees.
+     * @param double $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees
      * @return $this
      */
     public function setTotalPrice($totalPrice)
@@ -582,7 +582,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets priceCurrency
-     * @param string $priceCurrency Currency in which all pricing info is specified three letters code as described by ISO 4217.
+     * @param string $priceCurrency Currency in which all pricing info is specified three letters code as described by ISO 4217
      * @return $this
      */
     public function setPriceCurrency($priceCurrency)
@@ -610,7 +610,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets pickupDateTime
-     * @param \DateTime $pickupDateTime When the custmer is going to pick up the car.
+     * @param \DateTime $pickupDateTime When the custmer is going to pick up the car
      * @return $this
      */
     public function setPickupDateTime($pickupDateTime)
@@ -631,7 +631,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets dropOffDateTime
-     * @param \DateTime $dropOffDateTime When the custmer is going to return the car.
+     * @param \DateTime $dropOffDateTime When the custmer is going to return the car
      * @return $this
      */
     public function setDropOffDateTime($dropOffDateTime)
@@ -652,7 +652,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets provider
-     * @param string $provider Service provider, i.e. rental car agency.
+     * @param string $provider Service provider, i.e. rental car agency
      * @return $this
      */
     public function setProvider($provider)
@@ -680,7 +680,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets driverCount
-     * @param int $driverCount How many drivers are going to use the car.
+     * @param int $driverCount How many drivers are going to use the car
      * @return $this
      */
     public function setDriverCount($driverCount)
@@ -709,7 +709,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets toddlerSeatCount
-     * @param int $toddlerSeatCount How many toddler car seats are required.
+     * @param int $toddlerSeatCount How many toddler car seats are required
      * @return $this
      */
     public function setToddlerSeatCount($toddlerSeatCount)
@@ -738,7 +738,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets infantChildSeatCount
-     * @param int $infantChildSeatCount How many infant car seats are required.
+     * @param int $infantChildSeatCount How many infant car seats are required
      * @return $this
      */
     public function setInfantChildSeatCount($infantChildSeatCount)
@@ -767,7 +767,7 @@ class BookingRentalCar implements ArrayAccess
 
     /**
      * Sets sIPPCode
-     * @param string $sIPPCode SIPP codes are used to summarise the key features of a vehicle.
+     * @param string $sIPPCode SIPP codes are used to summarise the key features of a vehicle
      * @return $this
      */
     public function setSIPPCode($sIPPCode)

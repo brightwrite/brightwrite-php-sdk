@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerTest
+ * PurchaserTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace BrightWrite;
 
 /**
- * CustomerTest Class Doc Comment
+ * PurchaserTest Class Doc Comment
  *
  * @category    Class */
-// * @description Customer
+// * @description Purchaser
 /**
  * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CustomerTest extends \PHPUnit_Framework_TestCase
+class PurchaserTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,9 +88,9 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Customer"
+     * Test "Purchaser"
      */
-    public function testCustomer()
+    public function testPurchaser()
     {
 
     }
@@ -104,9 +104,9 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "insuredPersonId"
+     * Test attribute "partnerInsuredPersonId"
      */
-    public function testPropertyInsuredPersonId()
+    public function testPropertyPartnerInsuredPersonId()
     {
 
     }

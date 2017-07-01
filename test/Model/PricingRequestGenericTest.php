@@ -96,9 +96,9 @@ class PricingRequestGenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "policyHolderId"
+     * Test attribute "partnerPrimaryInsuredId"
      */
-    public function testPropertyPolicyHolderId()
+    public function testPropertyPartnerPrimaryInsuredId()
     {
 
     }
@@ -176,9 +176,9 @@ class PricingRequestGenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "customer"
+     * Test attribute "purchaser"
      */
-    public function testPropertyCustomer()
+    public function testPropertyPurchaser()
     {
 
     }

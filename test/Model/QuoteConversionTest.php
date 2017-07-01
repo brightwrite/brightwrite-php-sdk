@@ -112,9 +112,17 @@ class QuoteConversionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "pricingRequest"
+     * Test attribute "purchaser"
      */
-    public function testPropertyPricingRequest()
+    public function testPropertyPurchaser()
+    {
+
+    }
+
+    /**
+     * Test attribute "booking"
+     */
+    public function testPropertyBooking()
     {
 
     }

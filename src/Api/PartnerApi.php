@@ -191,7 +191,7 @@ class PartnerApi
     /**
      * Operation brightwriteControllerQuoteConversionAction
      *
-     * Pricing request for car rental business.
+     * Pricing request for car rental business
      *
      * @param \BrightWrite\Model\QuoteConversion $conversion QuoteConversion (required)
      * @throws \BrightWrite\ApiException on non-2xx response
@@ -206,7 +206,7 @@ class PartnerApi
     /**
      * Operation brightwriteControllerQuoteConversionActionWithHttpInfo
      *
-     * Pricing request for car rental business.
+     * Pricing request for car rental business
      *
      * @param \BrightWrite\Model\QuoteConversion $conversion QuoteConversion (required)
      * @throws \BrightWrite\ApiException on non-2xx response
