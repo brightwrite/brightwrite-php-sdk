@@ -120,9 +120,9 @@ class QuoteConversionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "booking"
+     * Test attribute "rentalCarBooking"
      */
-    public function testPropertyBooking()
+    public function testPropertyRentalCarBooking()
     {
 
     }

@@ -69,7 +69,7 @@ class QuoteConversion implements ArrayAccess
         'partnerQuoteId' => 'string',
         'pricingRequestId' => 'string',
         'purchaser' => '\BrightWrite\Model\Purchaser',
-        'booking' => '\BrightWrite\Model\Booking'
+        'rentalCarBooking' => '\BrightWrite\Model\BookingRentalCar'
     ];
 
     public static function swaggerTypes()
@@ -85,7 +85,7 @@ class QuoteConversion implements ArrayAccess
         'partnerQuoteId' => 'partnerQuoteId',
         'pricingRequestId' => 'pricingRequestId',
         'purchaser' => 'purchaser',
-        'booking' => 'booking'
+        'rentalCarBooking' => 'rentalCarBooking'
     ];
 
 
@@ -97,7 +97,7 @@ class QuoteConversion implements ArrayAccess
         'partnerQuoteId' => 'setPartnerQuoteId',
         'pricingRequestId' => 'setPricingRequestId',
         'purchaser' => 'setPurchaser',
-        'booking' => 'setBooking'
+        'rentalCarBooking' => 'setRentalCarBooking'
     ];
 
 
@@ -109,7 +109,7 @@ class QuoteConversion implements ArrayAccess
         'partnerQuoteId' => 'getPartnerQuoteId',
         'pricingRequestId' => 'getPricingRequestId',
         'purchaser' => 'getPurchaser',
-        'booking' => 'getBooking'
+        'rentalCarBooking' => 'getRentalCarBooking'
     ];
 
     public static function attributeMap()
@@ -146,7 +146,7 @@ class QuoteConversion implements ArrayAccess
         $this->container['partnerQuoteId'] = isset($data['partnerQuoteId']) ? $data['partnerQuoteId'] : null;
         $this->container['pricingRequestId'] = isset($data['pricingRequestId']) ? $data['pricingRequestId'] : null;
         $this->container['purchaser'] = isset($data['purchaser']) ? $data['purchaser'] : null;
-        $this->container['booking'] = isset($data['booking']) ? $data['booking'] : null;
+        $this->container['rentalCarBooking'] = isset($data['rentalCarBooking']) ? $data['rentalCarBooking'] : null;
     }
 
     /**
@@ -284,22 +284,22 @@ class QuoteConversion implements ArrayAccess
     }
 
     /**
-     * Gets booking
-     * @return \BrightWrite\Model\Booking
+     * Gets rentalCarBooking
+     * @return \BrightWrite\Model\BookingRentalCar
      */
-    public function getBooking()
+    public function getRentalCarBooking()
     {
-        return $this->container['booking'];
+        return $this->container['rentalCarBooking'];
     }
 
     /**
-     * Sets booking
-     * @param \BrightWrite\Model\Booking $booking Partners can provide more information in pricing request after the booking confirmation
+     * Sets rentalCarBooking
+     * @param \BrightWrite\Model\BookingRentalCar $rentalCarBooking Partners can provide more information in pricing request after the booking confirmation
      * @return $this
      */
-    public function setBooking($booking)
+    public function setRentalCarBooking($rentalCarBooking)
     {
-        $this->container['booking'] = $booking;
+        $this->container['rentalCarBooking'] = $rentalCarBooking;
 
         return $this;
     }
