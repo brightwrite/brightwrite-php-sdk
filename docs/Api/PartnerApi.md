@@ -5,7 +5,7 @@ All URIs are relative to *https://api.brightwrite.com/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**brightwriteControllerPricingRequestCarRentalAction**](PartnerApi.md#brightwriteControllerPricingRequestCarRentalAction) | **POST** /pricingRequestCarRental | Pricing request for a car rental policy
-[**brightwriteControllerQuoteConversionAction**](PartnerApi.md#brightwriteControllerQuoteConversionAction) | **POST** /quoteConversion | Pricing request for car rental business
+[**brightwriteControllerQuoteConversionAction**](PartnerApi.md#brightwriteControllerQuoteConversionAction) | **PUT** /quoteConversion | Pricing request for car rental business
 
 
 # **brightwriteControllerPricingRequestCarRentalAction**
