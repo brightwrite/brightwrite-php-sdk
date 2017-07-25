@@ -1,6 +1,6 @@
 {
     "name": "brightwrite/brightwrite-php-sdk",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "minimum-stability": "stable",
     "description": "PHP client for BrightWrite API",
     "keywords": [
