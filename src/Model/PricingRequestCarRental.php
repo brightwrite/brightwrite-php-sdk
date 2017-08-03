@@ -188,44 +188,16 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         if ($this->container['policyType'] === null) {
             $invalid_properties[] = "'policyType' can't be null";
         }
-        if ((strlen($this->container['policyType']) > 64)) {
-            $invalid_properties[] = "invalid value for 'policyType', the character length must be smaller than or equal to 64.";
-        }
-
-        if ((strlen($this->container['policyType']) < 2)) {
-            $invalid_properties[] = "invalid value for 'policyType', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['requestedLiability']) && ($this->container['requestedLiability'] > 1000000.0)) {
-            $invalid_properties[] = "invalid value for 'requestedLiability', must be smaller than or equal to 1000000.0.";
-        }
-
-        if (!is_null($this->container['requestedLiability']) && ($this->container['requestedLiability'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'requestedLiability', must be bigger than or equal to 0.01.";
+        if ((strlen($this->container['policyType']) > 128)) {
+            $invalid_properties[] = "invalid value for 'policyType', the character length must be smaller than or equal to 128.";
         }
 
         if ($this->container['policyExcess'] === null) {
             $invalid_properties[] = "'policyExcess' can't be null";
         }
-        if (($this->container['policyExcess'] > 1000000.0)) {
-            $invalid_properties[] = "invalid value for 'policyExcess', must be smaller than or equal to 1000000.0.";
-        }
-
-        if (($this->container['policyExcess'] < 0)) {
-            $invalid_properties[] = "invalid value for 'policyExcess', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['policyLiability'] === null) {
             $invalid_properties[] = "'policyLiability' can't be null";
         }
-        if (($this->container['policyLiability'] > 1000000.0)) {
-            $invalid_properties[] = "invalid value for 'policyLiability', must be smaller than or equal to 1000000.0.";
-        }
-
-        if (($this->container['policyLiability'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'policyLiability', must be bigger than or equal to 0.01.";
-        }
-
         if ($this->container['currencyForExcessAndLiability'] === null) {
             $invalid_properties[] = "'currencyForExcessAndLiability' can't be null";
         }
@@ -263,34 +235,13 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
         if ($this->container['policyType'] === null) {
             return false;
         }
-        if (strlen($this->container['policyType']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['policyType']) < 2) {
-            return false;
-        }
-        if ($this->container['requestedLiability'] > 1000000.0) {
-            return false;
-        }
-        if ($this->container['requestedLiability'] < 0.01) {
+        if (strlen($this->container['policyType']) > 128) {
             return false;
         }
         if ($this->container['policyExcess'] === null) {
             return false;
         }
-        if ($this->container['policyExcess'] > 1000000.0) {
-            return false;
-        }
-        if ($this->container['policyExcess'] < 0) {
-            return false;
-        }
         if ($this->container['policyLiability'] === null) {
-            return false;
-        }
-        if ($this->container['policyLiability'] > 1000000.0) {
-            return false;
-        }
-        if ($this->container['policyLiability'] < 0.01) {
             return false;
         }
         if ($this->container['currencyForExcessAndLiability'] === null) {
@@ -353,11 +304,8 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
      */
     public function setPolicyType($policyType)
     {
-        if ((strlen($policyType) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $policyType when calling PricingRequestCarRental., must be smaller than or equal to 64.');
-        }
-        if ((strlen($policyType) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $policyType when calling PricingRequestCarRental., must be bigger than or equal to 2.');
+        if ((strlen($policyType) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $policyType when calling PricingRequestCarRental., must be smaller than or equal to 128.');
         }
 
         $this->container['policyType'] = $policyType;
@@ -381,14 +329,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
      */
     public function setRequestedLiability($requestedLiability)
     {
-
-        if (!is_null($requestedLiability) && ($requestedLiability > 1000000.0)) {
-            throw new \InvalidArgumentException('invalid value for $requestedLiability when calling PricingRequestCarRental., must be smaller than or equal to 1000000.0.');
-        }
-        if (!is_null($requestedLiability) && ($requestedLiability < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $requestedLiability when calling PricingRequestCarRental., must be bigger than or equal to 0.01.');
-        }
-
         $this->container['requestedLiability'] = $requestedLiability;
 
         return $this;
@@ -410,14 +350,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
      */
     public function setPolicyExcess($policyExcess)
     {
-
-        if (($policyExcess > 1000000.0)) {
-            throw new \InvalidArgumentException('invalid value for $policyExcess when calling PricingRequestCarRental., must be smaller than or equal to 1000000.0.');
-        }
-        if (($policyExcess < 0)) {
-            throw new \InvalidArgumentException('invalid value for $policyExcess when calling PricingRequestCarRental., must be bigger than or equal to 0.');
-        }
-
         $this->container['policyExcess'] = $policyExcess;
 
         return $this;
@@ -439,14 +371,6 @@ class PricingRequestCarRental extends PricingRequestGeneric implements ArrayAcce
      */
     public function setPolicyLiability($policyLiability)
     {
-
-        if (($policyLiability > 1000000.0)) {
-            throw new \InvalidArgumentException('invalid value for $policyLiability when calling PricingRequestCarRental., must be smaller than or equal to 1000000.0.');
-        }
-        if (($policyLiability < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $policyLiability when calling PricingRequestCarRental., must be bigger than or equal to 0.01.');
-        }
-
         $this->container['policyLiability'] = $policyLiability;
 
         return $this;

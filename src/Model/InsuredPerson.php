@@ -182,12 +182,8 @@ class InsuredPerson implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be smaller than or equal to 128.";
         }
 
         if ($this->container['countryOfResidence'] === null) {
@@ -217,36 +213,20 @@ class InsuredPerson implements ArrayAccess
             $invalid_properties[] = "invalid value for 'yearOfBirth', must be bigger than or equal to 1910.0.";
         }
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 128)) {
+            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 128)) {
+            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['secondaryLastName']) && (strlen($this->container['secondaryLastName']) > 128)) {
+            $invalid_properties[] = "invalid value for 'secondaryLastName', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['secondaryLastName']) && (strlen($this->container['secondaryLastName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'secondaryLastName', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['secondaryLastName']) && (strlen($this->container['secondaryLastName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'secondaryLastName', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 128)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 128.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) < 2)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 512)) {
+            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 512.";
         }
 
         return $invalid_properties;
@@ -260,10 +240,7 @@ class InsuredPerson implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['partnerInsuredPersonId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['partnerInsuredPersonId']) < 2) {
+        if (strlen($this->container['partnerInsuredPersonId']) > 128) {
             return false;
         }
         if ($this->container['countryOfResidence'] === null) {
@@ -287,28 +264,16 @@ class InsuredPerson implements ArrayAccess
         if ($this->container['yearOfBirth'] < 1910.0) {
             return false;
         }
-        if (strlen($this->container['firstName']) > 64) {
+        if (strlen($this->container['firstName']) > 128) {
             return false;
         }
-        if (strlen($this->container['firstName']) < 2) {
+        if (strlen($this->container['lastName']) > 128) {
             return false;
         }
-        if (strlen($this->container['lastName']) > 64) {
+        if (strlen($this->container['secondaryLastName']) > 128) {
             return false;
         }
-        if (strlen($this->container['lastName']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['secondaryLastName']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['secondaryLastName']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['name']) > 128) {
-            return false;
-        }
-        if (strlen($this->container['name']) < 2) {
+        if (strlen($this->container['name']) > 512) {
             return false;
         }
         return true;
@@ -331,11 +296,8 @@ class InsuredPerson implements ArrayAccess
      */
     public function setPartnerInsuredPersonId($partnerInsuredPersonId)
     {
-        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling InsuredPerson., must be smaller than or equal to 64.');
-        }
-        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling InsuredPerson., must be bigger than or equal to 2.');
+        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling InsuredPerson., must be smaller than or equal to 128.');
         }
 
         $this->container['partnerInsuredPersonId'] = $partnerInsuredPersonId;
@@ -466,11 +428,8 @@ class InsuredPerson implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-        if (!is_null($firstName) && (strlen($firstName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling InsuredPerson., must be smaller than or equal to 64.');
-        }
-        if (!is_null($firstName) && (strlen($firstName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling InsuredPerson., must be bigger than or equal to 2.');
+        if (!is_null($firstName) && (strlen($firstName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $firstName when calling InsuredPerson., must be smaller than or equal to 128.');
         }
 
         $this->container['firstName'] = $firstName;
@@ -494,11 +453,8 @@ class InsuredPerson implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-        if (!is_null($lastName) && (strlen($lastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling InsuredPerson., must be smaller than or equal to 64.');
-        }
-        if (!is_null($lastName) && (strlen($lastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling InsuredPerson., must be bigger than or equal to 2.');
+        if (!is_null($lastName) && (strlen($lastName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $lastName when calling InsuredPerson., must be smaller than or equal to 128.');
         }
 
         $this->container['lastName'] = $lastName;
@@ -522,11 +478,8 @@ class InsuredPerson implements ArrayAccess
      */
     public function setSecondaryLastName($secondaryLastName)
     {
-        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling InsuredPerson., must be smaller than or equal to 64.');
-        }
-        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling InsuredPerson., must be bigger than or equal to 2.');
+        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling InsuredPerson., must be smaller than or equal to 128.');
         }
 
         $this->container['secondaryLastName'] = $secondaryLastName;
@@ -550,11 +503,8 @@ class InsuredPerson implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling InsuredPerson., must be smaller than or equal to 128.');
-        }
-        if (!is_null($name) && (strlen($name) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling InsuredPerson., must be bigger than or equal to 2.');
+        if (!is_null($name) && (strlen($name) > 512)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling InsuredPerson., must be smaller than or equal to 512.');
         }
 
         $this->container['name'] = $name;

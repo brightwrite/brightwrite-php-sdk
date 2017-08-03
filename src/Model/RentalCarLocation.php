@@ -157,36 +157,20 @@ class RentalCarLocation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['city']) && (strlen($this->container['city']) > 64)) {
-            $invalid_properties[] = "invalid value for 'city', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['city']) && (strlen($this->container['city']) > 128)) {
+            $invalid_properties[] = "invalid value for 'city', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['city']) && (strlen($this->container['city']) < 2)) {
-            $invalid_properties[] = "invalid value for 'city', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['state']) && (strlen($this->container['state']) > 128)) {
+            $invalid_properties[] = "invalid value for 'state', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['state']) && (strlen($this->container['state']) > 64)) {
-            $invalid_properties[] = "invalid value for 'state', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['branchName']) && (strlen($this->container['branchName']) > 128)) {
+            $invalid_properties[] = "invalid value for 'branchName', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['state']) && (strlen($this->container['state']) < 2)) {
-            $invalid_properties[] = "invalid value for 'state', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['branchName']) && (strlen($this->container['branchName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'branchName', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['branchName']) && (strlen($this->container['branchName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'branchName', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 64)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) < 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 128)) {
+            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 128.";
         }
 
         return $invalid_properties;
@@ -200,28 +184,16 @@ class RentalCarLocation implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['city']) > 64) {
+        if (strlen($this->container['city']) > 128) {
             return false;
         }
-        if (strlen($this->container['city']) < 2) {
+        if (strlen($this->container['state']) > 128) {
             return false;
         }
-        if (strlen($this->container['state']) > 64) {
+        if (strlen($this->container['branchName']) > 128) {
             return false;
         }
-        if (strlen($this->container['state']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['branchName']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['branchName']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['country']) < 2) {
+        if (strlen($this->container['country']) > 128) {
             return false;
         }
         return true;
@@ -244,11 +216,8 @@ class RentalCarLocation implements ArrayAccess
      */
     public function setCity($city)
     {
-        if (!is_null($city) && (strlen($city) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling RentalCarLocation., must be smaller than or equal to 64.');
-        }
-        if (!is_null($city) && (strlen($city) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling RentalCarLocation., must be bigger than or equal to 2.');
+        if (!is_null($city) && (strlen($city) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling RentalCarLocation., must be smaller than or equal to 128.');
         }
 
         $this->container['city'] = $city;
@@ -272,11 +241,8 @@ class RentalCarLocation implements ArrayAccess
      */
     public function setState($state)
     {
-        if (!is_null($state) && (strlen($state) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $state when calling RentalCarLocation., must be smaller than or equal to 64.');
-        }
-        if (!is_null($state) && (strlen($state) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $state when calling RentalCarLocation., must be bigger than or equal to 2.');
+        if (!is_null($state) && (strlen($state) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $state when calling RentalCarLocation., must be smaller than or equal to 128.');
         }
 
         $this->container['state'] = $state;
@@ -300,11 +266,8 @@ class RentalCarLocation implements ArrayAccess
      */
     public function setBranchName($branchName)
     {
-        if (!is_null($branchName) && (strlen($branchName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $branchName when calling RentalCarLocation., must be smaller than or equal to 64.');
-        }
-        if (!is_null($branchName) && (strlen($branchName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $branchName when calling RentalCarLocation., must be bigger than or equal to 2.');
+        if (!is_null($branchName) && (strlen($branchName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $branchName when calling RentalCarLocation., must be smaller than or equal to 128.');
         }
 
         $this->container['branchName'] = $branchName;
@@ -328,11 +291,8 @@ class RentalCarLocation implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling RentalCarLocation., must be smaller than or equal to 64.');
-        }
-        if (!is_null($country) && (strlen($country) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling RentalCarLocation., must be bigger than or equal to 2.');
+        if (!is_null($country) && (strlen($country) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $country when calling RentalCarLocation., must be smaller than or equal to 128.');
         }
 
         $this->container['country'] = $country;

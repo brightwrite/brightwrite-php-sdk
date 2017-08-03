@@ -177,20 +177,12 @@ class Purchaser implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['customerId']) && (strlen($this->container['customerId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'customerId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['customerId']) && (strlen($this->container['customerId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'customerId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['customerId']) && (strlen($this->container['customerId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'customerId', the character length must be smaller than or equal to 128.";
         }
 
         if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) > 128)) {
             $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be smaller than or equal to 128.";
-        }
-
-        if (!is_null($this->container['partnerInsuredPersonId']) && (strlen($this->container['partnerInsuredPersonId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerInsuredPersonId', the character length must be bigger than or equal to 2.";
         }
 
         if ($this->container['countryOfResidence'] === null) {
@@ -208,40 +200,20 @@ class Purchaser implements ArrayAccess
             $invalid_properties[] = "invalid value for 'billingPostalCode', the character length must be smaller than or equal to 8.";
         }
 
-        if (!is_null($this->container['billingPostalCode']) && (strlen($this->container['billingPostalCode']) < 2)) {
-            $invalid_properties[] = "invalid value for 'billingPostalCode', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 128)) {
+            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['primaryLastName']) && (strlen($this->container['primaryLastName']) > 128)) {
+            $invalid_properties[] = "invalid value for 'primaryLastName', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['secondaryLastName']) && (strlen($this->container['secondaryLastName']) > 128)) {
+            $invalid_properties[] = "invalid value for 'secondaryLastName', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['primaryLastName']) && (strlen($this->container['primaryLastName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'primaryLastName', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['primaryLastName']) && (strlen($this->container['primaryLastName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'primaryLastName', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['secondaryLastName']) && (strlen($this->container['secondaryLastName']) > 64)) {
-            $invalid_properties[] = "invalid value for 'secondaryLastName', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['secondaryLastName']) && (strlen($this->container['secondaryLastName']) < 2)) {
-            $invalid_properties[] = "invalid value for 'secondaryLastName', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 128)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 128.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) < 2)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 512)) {
+            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 512.";
         }
 
         return $invalid_properties;
@@ -255,16 +227,10 @@ class Purchaser implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['customerId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['customerId']) < 2) {
+        if (strlen($this->container['customerId']) > 128) {
             return false;
         }
         if (strlen($this->container['partnerInsuredPersonId']) > 128) {
-            return false;
-        }
-        if (strlen($this->container['partnerInsuredPersonId']) < 2) {
             return false;
         }
         if ($this->container['countryOfResidence'] === null) {
@@ -279,31 +245,16 @@ class Purchaser implements ArrayAccess
         if (strlen($this->container['billingPostalCode']) > 8) {
             return false;
         }
-        if (strlen($this->container['billingPostalCode']) < 2) {
+        if (strlen($this->container['firstName']) > 128) {
             return false;
         }
-        if (strlen($this->container['firstName']) > 64) {
+        if (strlen($this->container['primaryLastName']) > 128) {
             return false;
         }
-        if (strlen($this->container['firstName']) < 2) {
+        if (strlen($this->container['secondaryLastName']) > 128) {
             return false;
         }
-        if (strlen($this->container['primaryLastName']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['primaryLastName']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['secondaryLastName']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['secondaryLastName']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['name']) > 128) {
-            return false;
-        }
-        if (strlen($this->container['name']) < 2) {
+        if (strlen($this->container['name']) > 512) {
             return false;
         }
         return true;
@@ -326,11 +277,8 @@ class Purchaser implements ArrayAccess
      */
     public function setCustomerId($customerId)
     {
-        if (!is_null($customerId) && (strlen($customerId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $customerId when calling Purchaser., must be smaller than or equal to 64.');
-        }
-        if (!is_null($customerId) && (strlen($customerId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $customerId when calling Purchaser., must be bigger than or equal to 2.');
+        if (!is_null($customerId) && (strlen($customerId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $customerId when calling Purchaser., must be smaller than or equal to 128.');
         }
 
         $this->container['customerId'] = $customerId;
@@ -356,9 +304,6 @@ class Purchaser implements ArrayAccess
     {
         if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) > 128)) {
             throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling Purchaser., must be smaller than or equal to 128.');
-        }
-        if (!is_null($partnerInsuredPersonId) && (strlen($partnerInsuredPersonId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerInsuredPersonId when calling Purchaser., must be bigger than or equal to 2.');
         }
 
         $this->container['partnerInsuredPersonId'] = $partnerInsuredPersonId;
@@ -413,9 +358,6 @@ class Purchaser implements ArrayAccess
         if (!is_null($billingPostalCode) && (strlen($billingPostalCode) > 8)) {
             throw new \InvalidArgumentException('invalid length for $billingPostalCode when calling Purchaser., must be smaller than or equal to 8.');
         }
-        if (!is_null($billingPostalCode) && (strlen($billingPostalCode) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $billingPostalCode when calling Purchaser., must be bigger than or equal to 2.');
-        }
 
         $this->container['billingPostalCode'] = $billingPostalCode;
 
@@ -438,11 +380,8 @@ class Purchaser implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-        if (!is_null($firstName) && (strlen($firstName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Purchaser., must be smaller than or equal to 64.');
-        }
-        if (!is_null($firstName) && (strlen($firstName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Purchaser., must be bigger than or equal to 2.');
+        if (!is_null($firstName) && (strlen($firstName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $firstName when calling Purchaser., must be smaller than or equal to 128.');
         }
 
         $this->container['firstName'] = $firstName;
@@ -466,11 +405,8 @@ class Purchaser implements ArrayAccess
      */
     public function setPrimaryLastName($primaryLastName)
     {
-        if (!is_null($primaryLastName) && (strlen($primaryLastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $primaryLastName when calling Purchaser., must be smaller than or equal to 64.');
-        }
-        if (!is_null($primaryLastName) && (strlen($primaryLastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $primaryLastName when calling Purchaser., must be bigger than or equal to 2.');
+        if (!is_null($primaryLastName) && (strlen($primaryLastName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $primaryLastName when calling Purchaser., must be smaller than or equal to 128.');
         }
 
         $this->container['primaryLastName'] = $primaryLastName;
@@ -494,11 +430,8 @@ class Purchaser implements ArrayAccess
      */
     public function setSecondaryLastName($secondaryLastName)
     {
-        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling Purchaser., must be smaller than or equal to 64.');
-        }
-        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling Purchaser., must be bigger than or equal to 2.');
+        if (!is_null($secondaryLastName) && (strlen($secondaryLastName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $secondaryLastName when calling Purchaser., must be smaller than or equal to 128.');
         }
 
         $this->container['secondaryLastName'] = $secondaryLastName;
@@ -522,11 +455,8 @@ class Purchaser implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Purchaser., must be smaller than or equal to 128.');
-        }
-        if (!is_null($name) && (strlen($name) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Purchaser., must be bigger than or equal to 2.');
+        if (!is_null($name) && (strlen($name) > 512)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling Purchaser., must be smaller than or equal to 512.');
         }
 
         $this->container['name'] = $name;

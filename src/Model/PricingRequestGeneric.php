@@ -206,16 +206,8 @@ class PricingRequestGeneric implements ArrayAccess
             $invalid_properties[] = "invalid value for 'partnerPrimaryInsuredId', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['partnerPrimaryInsuredId']) && (strlen($this->container['partnerPrimaryInsuredId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerPrimaryInsuredId', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be smaller than or equal to 128.";
         }
 
         if ($this->container['effectiveDateTime'] === null) {
@@ -244,31 +236,23 @@ class PricingRequestGeneric implements ArrayAccess
         if ($this->container['partnerId'] === null) {
             $invalid_properties[] = "'partnerId' can't be null";
         }
-        if ((strlen($this->container['partnerId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'partnerId', the character length must be smaller than or equal to 64.";
+        if ((strlen($this->container['partnerId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'partnerId', the character length must be smaller than or equal to 128.";
         }
 
-        if ((strlen($this->container['partnerId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerId', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['pricingRequestOrigin']) && (strlen($this->container['pricingRequestOrigin']) > 64)) {
-            $invalid_properties[] = "invalid value for 'pricingRequestOrigin', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['pricingRequestOrigin']) && (strlen($this->container['pricingRequestOrigin']) < 1)) {
-            $invalid_properties[] = "invalid value for 'pricingRequestOrigin', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['pricingRequestOrigin']) && (strlen($this->container['pricingRequestOrigin']) > 512)) {
+            $invalid_properties[] = "invalid value for 'pricingRequestOrigin', the character length must be smaller than or equal to 512.";
         }
 
         if ($this->container['partnerPrice'] === null) {
             $invalid_properties[] = "'partnerPrice' can't be null";
         }
-        if (!is_null($this->container['appId']) && (strlen($this->container['appId']) > 16)) {
-            $invalid_properties[] = "invalid value for 'appId', the character length must be smaller than or equal to 16.";
+        if (!is_null($this->container['appId']) && (strlen($this->container['appId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'appId', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['appEnv']) && (strlen($this->container['appEnv']) > 16)) {
-            $invalid_properties[] = "invalid value for 'appEnv', the character length must be smaller than or equal to 16.";
+        if (!is_null($this->container['appEnv']) && (strlen($this->container['appEnv']) > 128)) {
+            $invalid_properties[] = "invalid value for 'appEnv', the character length must be smaller than or equal to 128.";
         }
 
         return $invalid_properties;
@@ -285,13 +269,7 @@ class PricingRequestGeneric implements ArrayAccess
         if (strlen($this->container['partnerPrimaryInsuredId']) > 128) {
             return false;
         }
-        if (strlen($this->container['partnerPrimaryInsuredId']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['partnerQuoteId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['partnerQuoteId']) < 2) {
+        if (strlen($this->container['partnerQuoteId']) > 128) {
             return false;
         }
         if ($this->container['effectiveDateTime'] === null) {
@@ -318,25 +296,19 @@ class PricingRequestGeneric implements ArrayAccess
         if ($this->container['partnerId'] === null) {
             return false;
         }
-        if (strlen($this->container['partnerId']) > 64) {
+        if (strlen($this->container['partnerId']) > 128) {
             return false;
         }
-        if (strlen($this->container['partnerId']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['pricingRequestOrigin']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['pricingRequestOrigin']) < 1) {
+        if (strlen($this->container['pricingRequestOrigin']) > 512) {
             return false;
         }
         if ($this->container['partnerPrice'] === null) {
             return false;
         }
-        if (strlen($this->container['appId']) > 16) {
+        if (strlen($this->container['appId']) > 128) {
             return false;
         }
-        if (strlen($this->container['appEnv']) > 16) {
+        if (strlen($this->container['appEnv']) > 128) {
             return false;
         }
         return true;
@@ -362,9 +334,6 @@ class PricingRequestGeneric implements ArrayAccess
         if (!is_null($partnerPrimaryInsuredId) && (strlen($partnerPrimaryInsuredId) > 128)) {
             throw new \InvalidArgumentException('invalid length for $partnerPrimaryInsuredId when calling PricingRequestGeneric., must be smaller than or equal to 128.');
         }
-        if (!is_null($partnerPrimaryInsuredId) && (strlen($partnerPrimaryInsuredId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerPrimaryInsuredId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
-        }
 
         $this->container['partnerPrimaryInsuredId'] = $partnerPrimaryInsuredId;
 
@@ -387,11 +356,8 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function setPartnerQuoteId($partnerQuoteId)
     {
-        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
-        }
-        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
+        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling PricingRequestGeneric., must be smaller than or equal to 128.');
         }
 
         $this->container['partnerQuoteId'] = $partnerQuoteId;
@@ -527,11 +493,8 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function setPartnerId($partnerId)
     {
-        if ((strlen($partnerId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $partnerId when calling PricingRequestGeneric., must be smaller than or equal to 64.');
-        }
-        if ((strlen($partnerId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerId when calling PricingRequestGeneric., must be bigger than or equal to 2.');
+        if ((strlen($partnerId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $partnerId when calling PricingRequestGeneric., must be smaller than or equal to 128.');
         }
 
         $this->container['partnerId'] = $partnerId;
@@ -555,11 +518,8 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function setPricingRequestOrigin($pricingRequestOrigin)
     {
-        if (!is_null($pricingRequestOrigin) && (strlen($pricingRequestOrigin) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $pricingRequestOrigin when calling PricingRequestGeneric., must be smaller than or equal to 64.');
-        }
-        if (!is_null($pricingRequestOrigin) && (strlen($pricingRequestOrigin) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $pricingRequestOrigin when calling PricingRequestGeneric., must be bigger than or equal to 1.');
+        if (!is_null($pricingRequestOrigin) && (strlen($pricingRequestOrigin) > 512)) {
+            throw new \InvalidArgumentException('invalid length for $pricingRequestOrigin when calling PricingRequestGeneric., must be smaller than or equal to 512.');
         }
 
         $this->container['pricingRequestOrigin'] = $pricingRequestOrigin;
@@ -604,8 +564,8 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function setAppId($appId)
     {
-        if (!is_null($appId) && (strlen($appId) > 16)) {
-            throw new \InvalidArgumentException('invalid length for $appId when calling PricingRequestGeneric., must be smaller than or equal to 16.');
+        if (!is_null($appId) && (strlen($appId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $appId when calling PricingRequestGeneric., must be smaller than or equal to 128.');
         }
 
         $this->container['appId'] = $appId;
@@ -629,8 +589,8 @@ class PricingRequestGeneric implements ArrayAccess
      */
     public function setAppEnv($appEnv)
     {
-        if (!is_null($appEnv) && (strlen($appEnv) > 16)) {
-            throw new \InvalidArgumentException('invalid length for $appEnv when calling PricingRequestGeneric., must be smaller than or equal to 16.');
+        if (!is_null($appEnv) && (strlen($appEnv) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $appEnv when calling PricingRequestGeneric., must be smaller than or equal to 128.');
         }
 
         $this->container['appEnv'] = $appEnv;

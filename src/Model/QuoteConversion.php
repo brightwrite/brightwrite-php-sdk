@@ -157,20 +157,12 @@ class QuoteConversion implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be smaller than or equal to 64.";
+        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be smaller than or equal to 128.";
         }
 
-        if (!is_null($this->container['partnerQuoteId']) && (strlen($this->container['partnerQuoteId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'partnerQuoteId', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['pricingRequestId']) && (strlen($this->container['pricingRequestId']) > 100)) {
-            $invalid_properties[] = "invalid value for 'pricingRequestId', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['pricingRequestId']) && (strlen($this->container['pricingRequestId']) < 2)) {
-            $invalid_properties[] = "invalid value for 'pricingRequestId', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['pricingRequestId']) && (strlen($this->container['pricingRequestId']) > 256)) {
+            $invalid_properties[] = "invalid value for 'pricingRequestId', the character length must be smaller than or equal to 256.";
         }
 
         if ($this->container['purchaser'] === null) {
@@ -187,16 +179,10 @@ class QuoteConversion implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['partnerQuoteId']) > 64) {
+        if (strlen($this->container['partnerQuoteId']) > 128) {
             return false;
         }
-        if (strlen($this->container['partnerQuoteId']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['pricingRequestId']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['pricingRequestId']) < 2) {
+        if (strlen($this->container['pricingRequestId']) > 256) {
             return false;
         }
         if ($this->container['purchaser'] === null) {
@@ -222,11 +208,8 @@ class QuoteConversion implements ArrayAccess
      */
     public function setPartnerQuoteId($partnerQuoteId)
     {
-        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling QuoteConversion., must be smaller than or equal to 64.');
-        }
-        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling QuoteConversion., must be bigger than or equal to 2.');
+        if (!is_null($partnerQuoteId) && (strlen($partnerQuoteId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $partnerQuoteId when calling QuoteConversion., must be smaller than or equal to 128.');
         }
 
         $this->container['partnerQuoteId'] = $partnerQuoteId;
@@ -250,11 +233,8 @@ class QuoteConversion implements ArrayAccess
      */
     public function setPricingRequestId($pricingRequestId)
     {
-        if (!is_null($pricingRequestId) && (strlen($pricingRequestId) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $pricingRequestId when calling QuoteConversion., must be smaller than or equal to 100.');
-        }
-        if (!is_null($pricingRequestId) && (strlen($pricingRequestId) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $pricingRequestId when calling QuoteConversion., must be bigger than or equal to 2.');
+        if (!is_null($pricingRequestId) && (strlen($pricingRequestId) > 256)) {
+            throw new \InvalidArgumentException('invalid length for $pricingRequestId when calling QuoteConversion., must be smaller than or equal to 256.');
         }
 
         $this->container['pricingRequestId'] = $pricingRequestId;

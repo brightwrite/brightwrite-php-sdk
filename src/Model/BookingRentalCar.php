@@ -238,12 +238,8 @@ class BookingRentalCar implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['rentalCarBookingId']) && (strlen($this->container['rentalCarBookingId']) > 64)) {
-            $invalid_properties[] = "invalid value for 'rentalCarBookingId', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['rentalCarBookingId']) && (strlen($this->container['rentalCarBookingId']) < 1)) {
-            $invalid_properties[] = "invalid value for 'rentalCarBookingId', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['rentalCarBookingId']) && (strlen($this->container['rentalCarBookingId']) > 128)) {
+            $invalid_properties[] = "invalid value for 'rentalCarBookingId', the character length must be smaller than or equal to 128.";
         }
 
         if ($this->container['dropOffLocation'] === null) {
@@ -252,30 +248,6 @@ class BookingRentalCar implements ArrayAccess
         if ($this->container['pickUpLocation'] === null) {
             $invalid_properties[] = "'pickUpLocation' can't be null";
         }
-        if (!is_null($this->container['subtotalPrice']) && ($this->container['subtotalPrice'] > 100000.0)) {
-            $invalid_properties[] = "invalid value for 'subtotalPrice', must be smaller than or equal to 100000.0.";
-        }
-
-        if (!is_null($this->container['subtotalPrice']) && ($this->container['subtotalPrice'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'subtotalPrice', must be bigger than or equal to 0.01.";
-        }
-
-        if (!is_null($this->container['taxesAndFees']) && ($this->container['taxesAndFees'] > 100000.0)) {
-            $invalid_properties[] = "invalid value for 'taxesAndFees', must be smaller than or equal to 100000.0.";
-        }
-
-        if (!is_null($this->container['taxesAndFees']) && ($this->container['taxesAndFees'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'taxesAndFees', must be bigger than or equal to 0.01.";
-        }
-
-        if (!is_null($this->container['totalPrice']) && ($this->container['totalPrice'] > 100000.0)) {
-            $invalid_properties[] = "invalid value for 'totalPrice', must be smaller than or equal to 100000.0.";
-        }
-
-        if (!is_null($this->container['totalPrice']) && ($this->container['totalPrice'] < 0.01)) {
-            $invalid_properties[] = "invalid value for 'totalPrice', must be bigger than or equal to 0.01.";
-        }
-
         if (!is_null($this->container['priceCurrency']) && (strlen($this->container['priceCurrency']) > 3)) {
             $invalid_properties[] = "invalid value for 'priceCurrency', the character length must be smaller than or equal to 3.";
         }
@@ -284,12 +256,8 @@ class BookingRentalCar implements ArrayAccess
             $invalid_properties[] = "invalid value for 'priceCurrency', the character length must be bigger than or equal to 3.";
         }
 
-        if (!is_null($this->container['provider']) && (strlen($this->container['provider']) > 64)) {
-            $invalid_properties[] = "invalid value for 'provider', the character length must be smaller than or equal to 64.";
-        }
-
-        if (!is_null($this->container['provider']) && (strlen($this->container['provider']) < 2)) {
-            $invalid_properties[] = "invalid value for 'provider', the character length must be bigger than or equal to 2.";
+        if (!is_null($this->container['provider']) && (strlen($this->container['provider']) > 128)) {
+            $invalid_properties[] = "invalid value for 'provider', the character length must be smaller than or equal to 128.";
         }
 
         if (!is_null($this->container['driverCount']) && ($this->container['driverCount'] > 4)) {
@@ -316,12 +284,8 @@ class BookingRentalCar implements ArrayAccess
             $invalid_properties[] = "invalid value for 'infantChildSeatCount', must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['sIPPCode']) && (strlen($this->container['sIPPCode']) > 4)) {
-            $invalid_properties[] = "invalid value for 'sIPPCode', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['sIPPCode']) && (strlen($this->container['sIPPCode']) < 4)) {
-            $invalid_properties[] = "invalid value for 'sIPPCode', the character length must be bigger than or equal to 4.";
+        if (!is_null($this->container['sIPPCode']) && (strlen($this->container['sIPPCode']) > 8)) {
+            $invalid_properties[] = "invalid value for 'sIPPCode', the character length must be smaller than or equal to 8.";
         }
 
         $allowed_values = ["car", "motorhome", "campervan", "4x4", "minibus", "lighttruck", "bus", "not_classified"];
@@ -340,10 +304,7 @@ class BookingRentalCar implements ArrayAccess
      */
     public function valid()
     {
-        if (strlen($this->container['rentalCarBookingId']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['rentalCarBookingId']) < 1) {
+        if (strlen($this->container['rentalCarBookingId']) > 128) {
             return false;
         }
         if ($this->container['dropOffLocation'] === null) {
@@ -352,34 +313,13 @@ class BookingRentalCar implements ArrayAccess
         if ($this->container['pickUpLocation'] === null) {
             return false;
         }
-        if ($this->container['subtotalPrice'] > 100000.0) {
-            return false;
-        }
-        if ($this->container['subtotalPrice'] < 0.01) {
-            return false;
-        }
-        if ($this->container['taxesAndFees'] > 100000.0) {
-            return false;
-        }
-        if ($this->container['taxesAndFees'] < 0.01) {
-            return false;
-        }
-        if ($this->container['totalPrice'] > 100000.0) {
-            return false;
-        }
-        if ($this->container['totalPrice'] < 0.01) {
-            return false;
-        }
         if (strlen($this->container['priceCurrency']) > 3) {
             return false;
         }
         if (strlen($this->container['priceCurrency']) < 3) {
             return false;
         }
-        if (strlen($this->container['provider']) > 64) {
-            return false;
-        }
-        if (strlen($this->container['provider']) < 2) {
+        if (strlen($this->container['provider']) > 128) {
             return false;
         }
         if ($this->container['driverCount'] > 4) {
@@ -400,10 +340,7 @@ class BookingRentalCar implements ArrayAccess
         if ($this->container['infantChildSeatCount'] < 0) {
             return false;
         }
-        if (strlen($this->container['sIPPCode']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['sIPPCode']) < 4) {
+        if (strlen($this->container['sIPPCode']) > 8) {
             return false;
         }
         $allowed_values = ["car", "motorhome", "campervan", "4x4", "minibus", "lighttruck", "bus", "not_classified"];
@@ -430,11 +367,8 @@ class BookingRentalCar implements ArrayAccess
      */
     public function setRentalCarBookingId($rentalCarBookingId)
     {
-        if (!is_null($rentalCarBookingId) && (strlen($rentalCarBookingId) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $rentalCarBookingId when calling BookingRentalCar., must be smaller than or equal to 64.');
-        }
-        if (!is_null($rentalCarBookingId) && (strlen($rentalCarBookingId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $rentalCarBookingId when calling BookingRentalCar., must be bigger than or equal to 1.');
+        if (!is_null($rentalCarBookingId) && (strlen($rentalCarBookingId) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $rentalCarBookingId when calling BookingRentalCar., must be smaller than or equal to 128.');
         }
 
         $this->container['rentalCarBookingId'] = $rentalCarBookingId;
@@ -500,14 +434,6 @@ class BookingRentalCar implements ArrayAccess
      */
     public function setSubtotalPrice($subtotalPrice)
     {
-
-        if (!is_null($subtotalPrice) && ($subtotalPrice > 100000.0)) {
-            throw new \InvalidArgumentException('invalid value for $subtotalPrice when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
-        }
-        if (!is_null($subtotalPrice) && ($subtotalPrice < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $subtotalPrice when calling BookingRentalCar., must be bigger than or equal to 0.01.');
-        }
-
         $this->container['subtotalPrice'] = $subtotalPrice;
 
         return $this;
@@ -529,14 +455,6 @@ class BookingRentalCar implements ArrayAccess
      */
     public function setTaxesAndFees($taxesAndFees)
     {
-
-        if (!is_null($taxesAndFees) && ($taxesAndFees > 100000.0)) {
-            throw new \InvalidArgumentException('invalid value for $taxesAndFees when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
-        }
-        if (!is_null($taxesAndFees) && ($taxesAndFees < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $taxesAndFees when calling BookingRentalCar., must be bigger than or equal to 0.01.');
-        }
-
         $this->container['taxesAndFees'] = $taxesAndFees;
 
         return $this;
@@ -558,14 +476,6 @@ class BookingRentalCar implements ArrayAccess
      */
     public function setTotalPrice($totalPrice)
     {
-
-        if (!is_null($totalPrice) && ($totalPrice > 100000.0)) {
-            throw new \InvalidArgumentException('invalid value for $totalPrice when calling BookingRentalCar., must be smaller than or equal to 100000.0.');
-        }
-        if (!is_null($totalPrice) && ($totalPrice < 0.01)) {
-            throw new \InvalidArgumentException('invalid value for $totalPrice when calling BookingRentalCar., must be bigger than or equal to 0.01.');
-        }
-
         $this->container['totalPrice'] = $totalPrice;
 
         return $this;
@@ -657,11 +567,8 @@ class BookingRentalCar implements ArrayAccess
      */
     public function setProvider($provider)
     {
-        if (!is_null($provider) && (strlen($provider) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $provider when calling BookingRentalCar., must be smaller than or equal to 64.');
-        }
-        if (!is_null($provider) && (strlen($provider) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $provider when calling BookingRentalCar., must be bigger than or equal to 2.');
+        if (!is_null($provider) && (strlen($provider) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $provider when calling BookingRentalCar., must be smaller than or equal to 128.');
         }
 
         $this->container['provider'] = $provider;
@@ -772,11 +679,8 @@ class BookingRentalCar implements ArrayAccess
      */
     public function setSIPPCode($sIPPCode)
     {
-        if (!is_null($sIPPCode) && (strlen($sIPPCode) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $sIPPCode when calling BookingRentalCar., must be smaller than or equal to 4.');
-        }
-        if (!is_null($sIPPCode) && (strlen($sIPPCode) < 4)) {
-            throw new \InvalidArgumentException('invalid length for $sIPPCode when calling BookingRentalCar., must be bigger than or equal to 4.');
+        if (!is_null($sIPPCode) && (strlen($sIPPCode) > 8)) {
+            throw new \InvalidArgumentException('invalid length for $sIPPCode when calling BookingRentalCar., must be smaller than or equal to 8.');
         }
 
         $this->container['sIPPCode'] = $sIPPCode;
