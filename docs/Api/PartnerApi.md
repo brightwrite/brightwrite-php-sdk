@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pricingRequest** | [**\BrightWrite\Model\PricingRequestCarRental**](../Model/\BrightWrite\Model\PricingRequestCarRental.md)| Pricing request should contain information about quoted policy and related booking information |
+ **pricingRequest** | [**\BrightWrite\Model\PricingRequestCarRental**](../Model/PricingRequestCarRental.md)| Pricing request should contain information about quoted policy and related booking information |
 
 ### Return type
 
@@ -84,7 +84,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **conversion** | [**\BrightWrite\Model\QuoteConversion**](../Model/\BrightWrite\Model\QuoteConversion.md)| QuoteConversion |
+ **conversion** | [**\BrightWrite\Model\QuoteConversion**](../Model/QuoteConversion.md)| QuoteConversion |
 
 ### Return type
 

@@ -1,18 +1,14 @@
 <?php
 
-return Symfony\CS\Config::create()
-    ->level(Symfony\CS\FixerInterface::PSR2_LEVEL)
-    ->setUsingCache(true)
-    ->fixers(
-        [
-            'ordered_use',
-            'phpdoc_order',
-            'short_array_syntax',
-            'strict',
-            'strict_param'
-        ]
-    )
-    ->finder(
-        Symfony\CS\Finder\DefaultFinder::create()
-            ->in(__DIR__)
-    );
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/src');
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR2' => true,
+        'strict_param' => false,
+        'array_syntax' => [
+            'syntax' => 'short'
+        ],
+    ])
+    ->setFinder($finder);

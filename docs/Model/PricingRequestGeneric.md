@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **appId** | **string** | Optinal field to identify source of traffic. For example website name or mobile app identifier. | [optional] 
 **appEnv** | **string** | Optinal field which can be used to distinguish production and staging or any other test environments which partners can use as part of their processes. | [optional] 
 **purchaser** | [**\BrightWrite\Model\Purchaser**](Purchaser.md) |  | [optional] 
+**brightwriteCookieId** | **string** | BrightWrite cookie identifier | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,18 +1,15 @@
 {
     "name": "brightwrite/brightwrite-php-sdk",
-    "version": "1.0.8",
-    "minimum-stability": "stable",
-    "description": "PHP client for BrightWrite API",
+    "version": "1.0.9",
+    "description": "",
     "keywords": [
         "swagger",
         "php",
         "sdk",
-        "api",
-        "brightwrite",
-        "insurance"
+        "api"
     ],
     "homepage": "http://swagger.io",
-    "license": "Apache-2.0",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Swagger and contributors",
