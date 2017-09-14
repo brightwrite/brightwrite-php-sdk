@@ -1,6 +1,6 @@
 {
     "name": "brightwrite/brightwrite-php-sdk",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "",
     "keywords": [
         "swagger",
@@ -9,7 +9,7 @@
         "api"
     ],
     "homepage": "http://swagger.io",
-    "license": "proprietary",
+    "license": "Apache v2",
     "authors": [
         {
             "name": "Swagger and contributors",
@@ -17,21 +17,17 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.3.3",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8",
-        "satooshi/php-coveralls": "~1.0",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~1.12"
+        "phpunit/phpunit": "~4.0",
+        "satooshi/php-coveralls": "~0.6.1",
+        "squizlabs/php_codesniffer": "~2.0"
     },
     "autoload": {
         "psr-4": { "BrightWrite\\" : "src/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "BrightWrite\\" : "test/" }
     }
 }

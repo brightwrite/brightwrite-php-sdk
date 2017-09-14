@@ -5,7 +5,7 @@ $finder = PhpCsFixer\Finder::create()
 
 return PhpCsFixer\Config::create()
     ->setRules([
-        '@PSR2' => true,
+        '@Symfony' => true,
         'strict_param' => false,
         'ordered_imports' => [
             'sortAlgorithm' => 'alpha',
