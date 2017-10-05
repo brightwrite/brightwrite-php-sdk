@@ -168,12 +168,9 @@ class PartnerApi
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\BrightWrite\Model\PricingResponse'
+                $resourcePath, 'POST',
+                $queryParams, $httpBody,
+                $headerParams, '\BrightWrite\Model\PricingResponse'
             );
 
             if (!$response) {
@@ -264,10 +261,8 @@ class PartnerApi
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
+                $resourcePath, 'PUT',
+                $queryParams, $httpBody,
                 $headerParams
             );
 

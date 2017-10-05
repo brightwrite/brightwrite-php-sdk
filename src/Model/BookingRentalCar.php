@@ -260,7 +260,7 @@ class BookingRentalCar implements ArrayAccess
     protected $sIPPCode;
 
     /**
-     * $vehicleType.
+     * $vehicleType JSON encoded list of vehicle types.
      *
      * @var string
      */
@@ -641,16 +641,12 @@ class BookingRentalCar implements ArrayAccess
     /**
      * Sets vehicleType.
      *
-     * @param string $vehicleType
+     * @param string $vehicleType JSON encoded list of vehicle types
      *
      * @return $this
      */
     public function setVehicleType($vehicleType)
     {
-        $allowed_values = ['car', 'motorhome', 'campervan', '4x4', 'minibus', 'lighttruck', 'bus', 'not_classified'];
-        if (!in_array($vehicleType, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'vehicleType', must be one of 'car', 'motorhome', 'campervan', '4x4', 'minibus', 'lighttruck', 'bus', 'not_classified'");
-        }
         $this->vehicleType = $vehicleType;
 
         return $this;

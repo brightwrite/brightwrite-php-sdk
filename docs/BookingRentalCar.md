@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **toddlerSeatCount** | **int** | How many toddler car seats are required | [optional] 
 **infantChildSeatCount** | **int** | How many infant car seats are required | [optional] 
 **sIPPCode** | **string** | SIPP codes are used to summarise the key features of a vehicle | [optional] 
-**vehicleType** | **string** |  | [optional] 
+**vehicleType** | **string** | JSON encoded list of vehicle types | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
