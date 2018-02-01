@@ -1,6 +1,5 @@
 {
     "name": "brightwrite/brightwrite-php-sdk",
-    "version": "1.0.12",
     "description": "",
     "keywords": [
         "swagger",
@@ -8,8 +7,8 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
-    "license": "Apache v2",
+    "homepage": "https://api-doc.brightwrite.com",
+    "license": "MIT",
     "authors": [
         {
             "name": "Swagger and contributors",
