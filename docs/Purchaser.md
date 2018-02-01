@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **primaryLastName** | **string** | Family name. Only required if the purchaser is not an Insured Person | [optional] 
 **secondaryLastName** | **string** | An additional last name for a person e.g. Spanish names have two last names. Only required if the purchaser is not an Insured Person | [optional] 
 **name** | **string** | Full name of a person. Can be send instead of combination of firstName, lastName | [optional] 
+**ipAddress** | **string** | Client IP Address | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

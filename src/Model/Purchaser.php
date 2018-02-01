@@ -63,6 +63,7 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'string',
         'secondaryLastName' => 'string',
         'name' => 'string',
+        'ipAddress' => 'string',
     ];
 
     public static function swaggerTypes()
@@ -84,6 +85,7 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'primaryLastName',
         'secondaryLastName' => 'secondaryLastName',
         'name' => 'name',
+        'ipAddress' => 'ipAddress',
     ];
 
     public static function attributeMap()
@@ -105,6 +107,7 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'setPrimaryLastName',
         'secondaryLastName' => 'setSecondaryLastName',
         'name' => 'setName',
+        'ipAddress' => 'setIpAddress',
     ];
 
     public static function setters()
@@ -126,6 +129,7 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'getPrimaryLastName',
         'secondaryLastName' => 'getSecondaryLastName',
         'name' => 'getName',
+        'ipAddress' => 'getIpAddress',
     ];
 
     public static function getters()
@@ -190,6 +194,13 @@ class Purchaser implements ArrayAccess
     protected $name;
 
     /**
+     * $ipAddress Client IP Address.
+     *
+     * @var string
+     */
+    protected $ipAddress;
+
+    /**
      * Constructor.
      *
      * @param mixed[] $data Associated array of property value initalizing the model
@@ -205,6 +216,7 @@ class Purchaser implements ArrayAccess
             $this->primaryLastName = $data['primaryLastName'];
             $this->secondaryLastName = $data['secondaryLastName'];
             $this->name = $data['name'];
+            $this->ipAddress = $data['ipAddress'];
         }
     }
 
@@ -396,6 +408,30 @@ class Purchaser implements ArrayAccess
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets ipAddress.
+     *
+     * @return string
+     */
+    public function getIpAddress()
+    {
+        return $this->ipAddress;
+    }
+
+    /**
+     * Sets ipAddress.
+     *
+     * @param string $ipAddress Client IP Address
+     *
+     * @return $this
+     */
+    public function setIpAddress($ipAddress)
+    {
+        $this->ipAddress = $ipAddress;
 
         return $this;
     }
