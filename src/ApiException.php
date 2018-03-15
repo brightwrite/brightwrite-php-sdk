@@ -1,17 +1,16 @@
 <?php
 /**
  * ApiException
- * PHP version 5.
+ * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -33,50 +32,46 @@
 
 namespace BrightWrite;
 
-use Exception;
+use \Exception;
 
 /**
- * ApiException Class Doc Comment.
+ * ApiException Class Doc Comment
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ApiException extends Exception
 {
+
     /**
      * The HTTP body of the server response either as Json or string.
-     *
      * @var mixed
      */
     protected $responseBody;
 
     /**
      * The HTTP header of the server response.
-     *
      * @var string[]
      */
     protected $responseHeaders;
 
     /**
-     * The deserialized response object.
-     *
-     * @var;
+     * The deserialized response object
+     * @var $responseObject;
      */
     protected $responseObject;
 
     /**
-     * Constructor.
-     *
+     * Constructor
      * @param string $message         Error message
      * @param int    $code            HTTP status code
      * @param string $responseHeaders HTTP response header
      * @param mixed  $responseBody    HTTP body of the server response either as Json or string
      */
-    public function __construct($message = '', $code = 0, $responseHeaders = null, $responseBody = null)
+    public function __construct($message="", $code=0, $responseHeaders=null, $responseBody=null)
     {
         parent::__construct($message, $code);
         $this->responseHeaders = $responseHeaders;
@@ -84,7 +79,7 @@ class ApiException extends Exception
     }
 
     /**
-     * Gets the HTTP response header.
+     * Gets the HTTP response header
      *
      * @return string HTTP response header
      */
@@ -94,7 +89,7 @@ class ApiException extends Exception
     }
 
     /**
-     * Gets the HTTP body of the server response either as Json or string.
+     * Gets the HTTP body of the server response either as Json or string
      *
      * @return mixed HTTP body of the server response either as Json or string
      */
@@ -104,9 +99,9 @@ class ApiException extends Exception
     }
 
     /**
-     * Sets the deseralized response object (during deserialization).
-     *
+     * Sets the deseralized response object (during deserialization)
      * @param mixed $obj Deserialized response object
+     * @return void
      */
     public function setResponseObject($obj)
     {
@@ -114,7 +109,7 @@ class ApiException extends Exception
     }
 
     /**
-     * Gets the deseralized response object (during deserialization).
+     * Gets the deseralized response object (during deserialization)
      *
      * @return mixed the deserialized response object
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * PartnerApiTest
+ * DefaultApiTest
  * PHP version 5
  *
  * @category Class
@@ -39,7 +39,7 @@ use \BrightWrite\ApiException;
 use \BrightWrite\ObjectSerializer;
 
 /**
- * PartnerApiTest Class Doc Comment
+ * DefaultApiTest Class Doc Comment
  *
  * @category Class
  * @package  BrightWrite
@@ -47,7 +47,7 @@ use \BrightWrite\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PartnerApiTest extends \PHPUnit_Framework_TestCase
+class DefaultApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -66,22 +66,12 @@ class PartnerApiTest extends \PHPUnit_Framework_TestCase
 
     
     /**
-     * Test case for brightwriteControllerPricingRequestCarRentalAction
+     * Test case for brightwriteControllerStatus
      *
-     * Pricing request for a car rental policy
-     *
-     */
-    public function test_brightwriteControllerPricingRequestCarRentalAction() {
-
-    }
-    
-    /**
-     * Test case for brightwriteControllerQuoteConversionAction
-     *
-     * Pricing request for car rental business
+     * Health check endpoint
      *
      */
-    public function test_brightwriteControllerQuoteConversionAction() {
+    public function test_brightwriteControllerStatus() {
 
     }
     

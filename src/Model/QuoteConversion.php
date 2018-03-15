@@ -1,18 +1,17 @@
 <?php
 /**
- * QuoteConversion.
+ * QuoteConversion
  *
  * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -34,276 +33,247 @@
 
 namespace BrightWrite\Model;
 
-use ArrayAccess;
-
+use \ArrayAccess;
 /**
- * QuoteConversion Class Doc Comment.
+ * QuoteConversion Class Doc Comment
  *
  * @category    Class
- * @description
- *
+ * @description 
+ * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see        https://github.com/swagger-api/swagger-codegen
+ * @link        https://github.com/swagger-api/swagger-codegen
  */
 class QuoteConversion implements ArrayAccess
 {
     /**
-     * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @var string[]
-     */
-    public static $swaggerTypes = [
+      * Array of property to type mappings. Used for (de)serialization 
+      * @var string[]
+      */
+    static $swaggerTypes = array(
         'partnerQuoteId' => 'string',
         'pricingRequestId' => 'string',
         'purchaser' => '\BrightWrite\Model\Purchaser',
-        'rentalCarBooking' => '\BrightWrite\Model\BookingRentalCar',
-    ];
-
-    public static function swaggerTypes()
-    {
+        'rentalCarBooking' => '\BrightWrite\Model\BookingRentalCar'
+    );
+  
+    static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
-    /**
-     * Array of attributes where the key is the local name, and the value is the original name.
-     *
-     * @var string[]
-     */
-    public static $attributeMap = [
+    /** 
+      * Array of attributes where the key is the local name, and the value is the original name
+      * @var string[] 
+      */
+    static $attributeMap = array(
         'partnerQuoteId' => 'partnerQuoteId',
         'pricingRequestId' => 'pricingRequestId',
         'purchaser' => 'purchaser',
-        'rentalCarBooking' => 'rentalCarBooking',
-    ];
-
-    public static function attributeMap()
-    {
+        'rentalCarBooking' => 'rentalCarBooking'
+    );
+  
+    static function attributeMap() {
         return self::$attributeMap;
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @var string[]
-     */
-    public static $setters = [
+      * Array of attributes to setter functions (for deserialization of responses)
+      * @var string[]
+      */
+    static $setters = array(
         'partnerQuoteId' => 'setPartnerQuoteId',
         'pricingRequestId' => 'setPricingRequestId',
         'purchaser' => 'setPurchaser',
-        'rentalCarBooking' => 'setRentalCarBooking',
-    ];
-
-    public static function setters()
-    {
+        'rentalCarBooking' => 'setRentalCarBooking'
+    );
+  
+    static function setters() {
         return self::$setters;
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @var string[]
-     */
-    public static $getters = [
+      * Array of attributes to getter functions (for serialization of requests)
+      * @var string[]
+      */
+    static $getters = array(
         'partnerQuoteId' => 'getPartnerQuoteId',
         'pricingRequestId' => 'getPricingRequestId',
         'purchaser' => 'getPurchaser',
-        'rentalCarBooking' => 'getRentalCarBooking',
-    ];
-
-    public static function getters()
-    {
+        'rentalCarBooking' => 'getRentalCarBooking'
+    );
+  
+    static function getters() {
         return self::$getters;
     }
 
+    
     /**
-     * $partnerQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript.
-     *
-     * @var string
-     */
+      * $partnerQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript
+      * @var string
+      */
     protected $partnerQuoteId;
-
+    
     /**
-     * $pricingRequestId If it's impossible to use any type of quote IDs, we need to report conversions based on prcing request ID privdied in pricing request endpoint.
-     *
-     * @var string
-     */
+      * $pricingRequestId If it's impossible to use any type of quote IDs, we need to report conversions based on prcing request ID privdied in pricing request endpoint
+      * @var string
+      */
     protected $pricingRequestId;
-
+    
     /**
-     * $purchaser Partners can provide more information in pricing request after the booking confirmation.
-     *
-     * @var \BrightWrite\Model\Purchaser
-     */
+      * $purchaser Partners can provide more information in pricing request after the booking confirmation
+      * @var \BrightWrite\Model\Purchaser
+      */
     protected $purchaser;
-
+    
     /**
-     * $rentalCarBooking Partners can provide more information in pricing request after the booking confirmation.
-     *
-     * @var \BrightWrite\Model\BookingRentalCar
-     */
+      * $rentalCarBooking Partners can provide more information in pricing request after the booking confirmation
+      * @var \BrightWrite\Model\BookingRentalCar
+      */
     protected $rentalCarBooking;
+    
 
     /**
-     * Constructor.
-     *
+     * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
     public function __construct(array $data = null)
     {
+        
         if ($data != null) {
-            $this->partnerQuoteId = $data['partnerQuoteId'];
-            $this->pricingRequestId = $data['pricingRequestId'];
-            $this->purchaser = $data['purchaser'];
-            $this->rentalCarBooking = $data['rentalCarBooking'];
+            $this->partnerQuoteId = $data["partnerQuoteId"];
+            $this->pricingRequestId = $data["pricingRequestId"];
+            $this->purchaser = $data["purchaser"];
+            $this->rentalCarBooking = $data["rentalCarBooking"];
         }
     }
-
+    
     /**
-     * Gets partnerQuoteId.
-     *
+     * Gets partnerQuoteId
      * @return string
      */
     public function getPartnerQuoteId()
     {
         return $this->partnerQuoteId;
     }
-
+  
     /**
-     * Sets partnerQuoteId.
-     *
+     * Sets partnerQuoteId
      * @param string $partnerQuoteId Quote ID used by the distributor. Required if we are also collecting quote info with java script from the distributor's website. Optional if we are not getting info from javasript
-     *
      * @return $this
      */
     public function setPartnerQuoteId($partnerQuoteId)
     {
+        
         $this->partnerQuoteId = $partnerQuoteId;
-
         return $this;
     }
-
+    
     /**
-     * Gets pricingRequestId.
-     *
+     * Gets pricingRequestId
      * @return string
      */
     public function getPricingRequestId()
     {
         return $this->pricingRequestId;
     }
-
+  
     /**
-     * Sets pricingRequestId.
-     *
+     * Sets pricingRequestId
      * @param string $pricingRequestId If it's impossible to use any type of quote IDs, we need to report conversions based on prcing request ID privdied in pricing request endpoint
-     *
      * @return $this
      */
     public function setPricingRequestId($pricingRequestId)
     {
+        
         $this->pricingRequestId = $pricingRequestId;
-
         return $this;
     }
-
+    
     /**
-     * Gets purchaser.
-     *
+     * Gets purchaser
      * @return \BrightWrite\Model\Purchaser
      */
     public function getPurchaser()
     {
         return $this->purchaser;
     }
-
+  
     /**
-     * Sets purchaser.
-     *
+     * Sets purchaser
      * @param \BrightWrite\Model\Purchaser $purchaser Partners can provide more information in pricing request after the booking confirmation
-     *
      * @return $this
      */
     public function setPurchaser($purchaser)
     {
+        
         $this->purchaser = $purchaser;
-
         return $this;
     }
-
+    
     /**
-     * Gets rentalCarBooking.
-     *
+     * Gets rentalCarBooking
      * @return \BrightWrite\Model\BookingRentalCar
      */
     public function getRentalCarBooking()
     {
         return $this->rentalCarBooking;
     }
-
+  
     /**
-     * Sets rentalCarBooking.
-     *
+     * Sets rentalCarBooking
      * @param \BrightWrite\Model\BookingRentalCar $rentalCarBooking Partners can provide more information in pricing request after the booking confirmation
-     *
      * @return $this
      */
     public function setRentalCarBooking($rentalCarBooking)
     {
+        
         $this->rentalCarBooking = $rentalCarBooking;
-
         return $this;
     }
-
+    
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @param int $offset Offset
-     *
-     * @return bool
+     * @param  integer $offset Offset 
+     * @return boolean
      */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
-
+  
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
-     *
-     * @return mixed
+     * @param  integer $offset Offset 
+     * @return mixed 
      */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
-
+  
     /**
      * Sets value based on offset.
-     *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param  integer $offset Offset 
+     * @param  mixed   $value  Value to be set
+     * @return void
      */
     public function offsetSet($offset, $value)
     {
         $this->$offset = $value;
     }
-
+  
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
+     * @param  integer $offset Offset 
+     * @return void
      */
     public function offsetUnset($offset)
     {
         unset($this->$offset);
     }
-
+  
     /**
-     * Gets the string presentation of the object.
-     *
+     * Gets the string presentation of the object
      * @return string
      */
     public function __toString()

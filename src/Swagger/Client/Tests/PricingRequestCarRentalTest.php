@@ -1,18 +1,17 @@
 <?php
 /**
- * PricingRequestCarRentalTest.
+ * PricingRequestCarRentalTest
  *
  * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -35,36 +34,37 @@
 namespace BrightWrite\Model;
 
 /**
- * PricingRequestCarRentalTest Class Doc Comment.
+ * PricingRequestCarRentalTest Class Doc Comment
  *
  * @category    Class
- * @description
- *
+ * @description 
+ * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see        https://github.com/swagger-api/swagger-codegen
+ * @link        https://github.com/swagger-api/swagger-codegen
  */
 class PricingRequestCarRentalTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
-     * Setup before running each test case.
+     * Setup before running each test case
      */
-    public static function setUpBeforeClass()
-    {
+    public static function setUpBeforeClass() {
+
     }
 
     /**
-     * Clean up after running each test case.
+     * Clean up after running each test case
      */
-    public static function tearDownAfterClass()
-    {
+    public static function tearDownAfterClass() {
+
     }
 
     /**
-     * Test PricingRequestCarRental.
+     * Test PricingRequestCarRental
      */
-    public function testPricingRequestCarRental()
-    {
+    public function testPricingRequestCarRental() {
+
     }
+
 }

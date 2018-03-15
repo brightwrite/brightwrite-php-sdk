@@ -1,18 +1,17 @@
 <?php
 /**
  * Configuration
- * PHP version 5.
+ * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -37,98 +36,98 @@ namespace BrightWrite;
 
 /**
  * Configuration Class Doc Comment
- * PHP version 5.
+ * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 class Configuration
 {
+
     private static $_defaultConfiguration = null;
 
     /**
-     * Associate array to store API key(s).
+     * Associate array to store API key(s)
      *
      * @var string[]
      */
-    protected $apiKeys = [];
+    protected $apiKeys = array();
 
     /**
-     * Associate array to store API prefix (e.g. Bearer).
+     * Associate array to store API prefix (e.g. Bearer)
      *
      * @var string[]
      */
-    protected $apiKeyPrefixes = [];
+    protected $apiKeyPrefixes = array();
 
     /**
-     * Access token for OAuth.
+     * Access token for OAuth
      *
      * @var string
      */
     protected $accessToken = '';
 
     /**
-     * Username for HTTP basic authentication.
+     * Username for HTTP basic authentication
      *
      * @var string
      */
     protected $username = '';
 
     /**
-     * Password for HTTP basic authentication.
+     * Password for HTTP basic authentication
      *
      * @var string
      */
     protected $password = '';
 
     /**
-     * The default instance of ApiClient.
+     * The default instance of ApiClient
      *
      * @var \BrightWrite\ApiClient
      */
-    protected $defaultHeaders = [];
+    protected $defaultHeaders = array();
 
     /**
-     * The host.
+     * The host
      *
      * @var string
      */
     protected $host = 'https://api.brightwrite.com/api/v1';
 
     /**
-     * Timeout (second) of the HTTP request, by default set to 0, no timeout.
+     * Timeout (second) of the HTTP request, by default set to 0, no timeout
      *
      * @var string
      */
     protected $curlTimeout = 0;
 
     /**
-     * User agent of the HTTP request, set to "PHP-Swagger" by default.
+     * User agent of the HTTP request, set to "PHP-Swagger" by default
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/1.0.12/php';
+    protected $userAgent = "Swagger-Codegen/1.0.12/php";
 
     /**
-     * Debug switch (default set to false).
+     * Debug switch (default set to false)
      *
      * @var bool
      */
     protected $debug = false;
 
     /**
-     * Debug file location (log to STDOUT by default).
+     * Debug file location (log to STDOUT by default)
      *
      * @var string
      */
     protected $debugFile = 'php://output';
 
     /**
-     * Debug file location (log to STDOUT by default).
+     * Debug file location (log to STDOUT by default)
      *
      * @var string
      */
@@ -139,12 +138,12 @@ class Configuration
      *
      * This is useful if the host uses a self-signed SSL certificate.
      *
-     * @var bool true if the certificate should be validated, false otherwise
+     * @var boolean True if the certificate should be validated, false otherwise.
      */
     protected $sslVerification = true;
 
     /**
-     * Constructor.
+     * Constructor
      */
     public function __construct()
     {
@@ -152,7 +151,7 @@ class Configuration
     }
 
     /**
-     * Sets API key.
+     * Sets API key
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
      * @param string $key              API key or token
@@ -162,12 +161,11 @@ class Configuration
     public function setApiKey($apiKeyIdentifier, $key)
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
-
         return $this;
     }
 
     /**
-     * Gets API key.
+     * Gets API key
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
      *
@@ -179,7 +177,7 @@ class Configuration
     }
 
     /**
-     * Sets the prefix for API key (e.g. Bearer).
+     * Sets the prefix for API key (e.g. Bearer)
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
      * @param string $prefix           API key prefix, e.g. Bearer
@@ -189,12 +187,11 @@ class Configuration
     public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
     {
         $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
-
         return $this;
     }
 
     /**
-     * Gets API key prefix.
+     * Gets API key prefix
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
      *
@@ -206,7 +203,7 @@ class Configuration
     }
 
     /**
-     * Sets the access token for OAuth.
+     * Sets the access token for OAuth
      *
      * @param string $accessToken Token for OAuth
      *
@@ -215,12 +212,11 @@ class Configuration
     public function setAccessToken($accessToken)
     {
         $this->accessToken = $accessToken;
-
         return $this;
     }
 
     /**
-     * Gets the access token for OAuth.
+     * Gets the access token for OAuth
      *
      * @return string Access token for OAuth
      */
@@ -230,7 +226,7 @@ class Configuration
     }
 
     /**
-     * Sets the username for HTTP basic authentication.
+     * Sets the username for HTTP basic authentication
      *
      * @param string $username Username for HTTP basic authentication
      *
@@ -239,12 +235,11 @@ class Configuration
     public function setUsername($username)
     {
         $this->username = $username;
-
         return $this;
     }
 
     /**
-     * Gets the username for HTTP basic authentication.
+     * Gets the username for HTTP basic authentication
      *
      * @return string Username for HTTP basic authentication
      */
@@ -254,7 +249,7 @@ class Configuration
     }
 
     /**
-     * Sets the password for HTTP basic authentication.
+     * Sets the password for HTTP basic authentication
      *
      * @param string $password Password for HTTP basic authentication
      *
@@ -263,12 +258,11 @@ class Configuration
     public function setPassword($password)
     {
         $this->password = $password;
-
         return $this;
     }
 
     /**
-     * Gets the password for HTTP basic authentication.
+     * Gets the password for HTTP basic authentication
      *
      * @return string Password for HTTP basic authentication
      */
@@ -278,7 +272,7 @@ class Configuration
     }
 
     /**
-     * Adds a default header.
+     * Adds a default header
      *
      * @param string $headerName  header name (e.g. Token)
      * @param string $headerValue header value (e.g. 1z8wp3)
@@ -291,13 +285,12 @@ class Configuration
             throw new \InvalidArgumentException('Header name must be a string.');
         }
 
-        $this->defaultHeaders[$headerName] = $headerValue;
-
+        $this->defaultHeaders[$headerName] =  $headerValue;
         return $this;
     }
 
     /**
-     * Gets the default header.
+     * Gets the default header
      *
      * @return array An array of default header(s)
      */
@@ -307,7 +300,7 @@ class Configuration
     }
 
     /**
-     * Deletes a default header.
+     * Deletes a default header
      *
      * @param string $headerName the header to delete
      *
@@ -319,7 +312,7 @@ class Configuration
     }
 
     /**
-     * Sets the host.
+     * Sets the host
      *
      * @param string $host Host
      *
@@ -328,12 +321,11 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
-
         return $this;
     }
 
     /**
-     * Gets the host.
+     * Gets the host
      *
      * @return string Host
      */
@@ -343,7 +335,7 @@ class Configuration
     }
 
     /**
-     * Sets the user agent of the api client.
+     * Sets the user agent of the api client
      *
      * @param string $userAgent the user agent of the api client
      *
@@ -356,12 +348,11 @@ class Configuration
         }
 
         $this->userAgent = $userAgent;
-
         return $this;
     }
 
     /**
-     * Gets the user agent of the api client.
+     * Gets the user agent of the api client
      *
      * @return string user agent
      */
@@ -371,9 +362,9 @@ class Configuration
     }
 
     /**
-     * Sets the HTTP timeout value.
+     * Sets the HTTP timeout value
      *
-     * @param int $seconds Number of seconds before timing out [set to 0 for no timeout]
+     * @param integer $seconds Number of seconds before timing out [set to 0 for no timeout]
      *
      * @return ApiClient
      */
@@ -384,12 +375,11 @@ class Configuration
         }
 
         $this->curlTimeout = $seconds;
-
         return $this;
     }
 
     /**
-     * Gets the HTTP timeout value.
+     * Gets the HTTP timeout value
      *
      * @return string HTTP timeout value
      */
@@ -399,7 +389,7 @@ class Configuration
     }
 
     /**
-     * Sets debug flag.
+     * Sets debug flag
      *
      * @param bool $debug Debug flag
      *
@@ -408,12 +398,11 @@ class Configuration
     public function setDebug($debug)
     {
         $this->debug = $debug;
-
         return $this;
     }
 
     /**
-     * Gets the debug flag.
+     * Gets the debug flag
      *
      * @return bool
      */
@@ -423,7 +412,7 @@ class Configuration
     }
 
     /**
-     * Sets the debug file.
+     * Sets the debug file
      *
      * @param string $debugFile Debug file
      *
@@ -432,12 +421,11 @@ class Configuration
     public function setDebugFile($debugFile)
     {
         $this->debugFile = $debugFile;
-
         return $this;
     }
 
     /**
-     * Gets the debug file.
+     * Gets the debug file
      *
      * @return string
      */
@@ -447,7 +435,7 @@ class Configuration
     }
 
     /**
-     * Sets the temp folder path.
+     * Sets the temp folder path
      *
      * @param string $tempFolderPath Temp folder path
      *
@@ -456,12 +444,11 @@ class Configuration
     public function setTempFolderPath($tempFolderPath)
     {
         $this->tempFolderPath = $tempFolderPath;
-
         return $this;
     }
 
     /**
-     * Gets the temp folder path.
+     * Gets the temp folder path
      *
      * @return string Temp folder path
      */
@@ -471,23 +458,22 @@ class Configuration
     }
 
     /**
-     * Sets if SSL verification should be enabled or disabled.
+     * Sets if SSL verification should be enabled or disabled
      *
-     * @param bool $sslVerification True if the certificate should be validated, false otherwise
+     * @param boolean $sslVerification True if the certificate should be validated, false otherwise
      *
      * @return Configuration
      */
     public function setSSLVerification($sslVerification)
     {
         $this->sslVerification = $sslVerification;
-
         return $this;
     }
 
     /**
-     * Gets if SSL verification should be enabled or disabled.
+     * Gets if SSL verification should be enabled or disabled
      *
-     * @return bool True if the certificate should be validated, false otherwise
+     * @return boolean True if the certificate should be validated, false otherwise
      */
     public function getSSLVerification()
     {
@@ -495,23 +481,25 @@ class Configuration
     }
 
     /**
-     * Gets the default configuration instance.
+     * Gets the default configuration instance
      *
      * @return Configuration
      */
     public static function getDefaultConfiguration()
     {
         if (self::$_defaultConfiguration == null) {
-            self::$_defaultConfiguration = new self();
+            self::$_defaultConfiguration = new Configuration();
         }
 
         return self::$_defaultConfiguration;
     }
 
     /**
-     * Sets the detault configuration instance.
+     * Sets the detault configuration instance
      *
      * @param Configuration $config An instance of the Configuration Object
+     *
+     * @return void
      */
     public static function setDefaultConfiguration(Configuration $config)
     {
@@ -519,19 +507,20 @@ class Configuration
     }
 
     /**
-     * Gets the essential information for debugging.
+     * Gets the essential information for debugging
      *
      * @return string The report for debugging
      */
     public static function toDebugReport()
     {
-        $report = "PHP SDK (BrightWrite) Debug Report:\n";
-        $report .= '    OS: '.php_uname()."\n";
-        $report .= '    PHP Version: '.phpversion()."\n";
+        $report  = "PHP SDK (BrightWrite) Debug Report:\n";
+        $report .= "    OS: ".php_uname()."\n";
+        $report .= "    PHP Version: ".phpversion()."\n";
         $report .= "    OpenAPI Spec Version: 0.1.7\n";
         $report .= "    SDK Package Version: 1.0.12\n";
-        $report .= '    Temp Folder Path: '.self::getDefaultConfiguration()->getTempFolderPath()."\n";
+        $report .= "    Temp Folder Path: ".self::getDefaultConfiguration()->getTempFolderPath()."\n";
 
         return $report;
     }
+
 }

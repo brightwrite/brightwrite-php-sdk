@@ -1,18 +1,17 @@
 <?php
 /**
- * BookingRentalCar.
+ * BookingRentalCar
  *
  * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -34,27 +33,24 @@
 
 namespace BrightWrite\Model;
 
-use ArrayAccess;
-
+use \ArrayAccess;
 /**
- * BookingRentalCar Class Doc Comment.
+ * BookingRentalCar Class Doc Comment
  *
  * @category    Class
- * @description
- *
+ * @description 
+ * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see        https://github.com/swagger-api/swagger-codegen
+ * @link        https://github.com/swagger-api/swagger-codegen
  */
 class BookingRentalCar implements ArrayAccess
 {
     /**
-     * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @var string[]
-     */
-    public static $swaggerTypes = [
+      * Array of property to type mappings. Used for (de)serialization 
+      * @var string[]
+      */
+    static $swaggerTypes = array(
         'rentalCarBookingId' => 'string',
         'dropOffLocation' => '\BrightWrite\Model\RentalCarLocation',
         'pickUpLocation' => '\BrightWrite\Model\RentalCarLocation',
@@ -69,20 +65,18 @@ class BookingRentalCar implements ArrayAccess
         'toddlerSeatCount' => 'int',
         'infantChildSeatCount' => 'int',
         'sIPPCode' => 'string',
-        'vehicleType' => 'string',
-    ];
-
-    public static function swaggerTypes()
-    {
+        'vehicleType' => 'string'
+    );
+  
+    static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
-    /**
-     * Array of attributes where the key is the local name, and the value is the original name.
-     *
-     * @var string[]
-     */
-    public static $attributeMap = [
+    /** 
+      * Array of attributes where the key is the local name, and the value is the original name
+      * @var string[] 
+      */
+    static $attributeMap = array(
         'rentalCarBookingId' => 'rentalCarBookingId',
         'dropOffLocation' => 'dropOffLocation',
         'pickUpLocation' => 'pickUpLocation',
@@ -97,20 +91,18 @@ class BookingRentalCar implements ArrayAccess
         'toddlerSeatCount' => 'toddlerSeatCount',
         'infantChildSeatCount' => 'infantChildSeatCount',
         'sIPPCode' => 'SIPPCode',
-        'vehicleType' => 'vehicleType',
-    ];
-
-    public static function attributeMap()
-    {
+        'vehicleType' => 'vehicleType'
+    );
+  
+    static function attributeMap() {
         return self::$attributeMap;
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @var string[]
-     */
-    public static $setters = [
+      * Array of attributes to setter functions (for deserialization of responses)
+      * @var string[]
+      */
+    static $setters = array(
         'rentalCarBookingId' => 'setRentalCarBookingId',
         'dropOffLocation' => 'setDropOffLocation',
         'pickUpLocation' => 'setPickUpLocation',
@@ -125,20 +117,18 @@ class BookingRentalCar implements ArrayAccess
         'toddlerSeatCount' => 'setToddlerSeatCount',
         'infantChildSeatCount' => 'setInfantChildSeatCount',
         'sIPPCode' => 'setSIPPCode',
-        'vehicleType' => 'setVehicleType',
-    ];
-
-    public static function setters()
-    {
+        'vehicleType' => 'setVehicleType'
+    );
+  
+    static function setters() {
         return self::$setters;
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @var string[]
-     */
-    public static $getters = [
+      * Array of attributes to getter functions (for serialization of requests)
+      * @var string[]
+      */
+    static $getters = array(
         'rentalCarBookingId' => 'getRentalCarBookingId',
         'dropOffLocation' => 'getDropOffLocation',
         'pickUpLocation' => 'getPickUpLocation',
@@ -153,553 +143,489 @@ class BookingRentalCar implements ArrayAccess
         'toddlerSeatCount' => 'getToddlerSeatCount',
         'infantChildSeatCount' => 'getInfantChildSeatCount',
         'sIPPCode' => 'getSIPPCode',
-        'vehicleType' => 'getVehicleType',
-    ];
-
-    public static function getters()
-    {
+        'vehicleType' => 'getVehicleType'
+    );
+  
+    static function getters() {
         return self::$getters;
     }
 
+    
     /**
-     * $rentalCarBookingId Internal ID used by distributors to identify the booking. This should match the booking ID BrightWrite collects from the tags on the distributor website. For a booking that has flights and rental cars, the booking IDs would match.
-     *
-     * @var string
-     */
+      * $rentalCarBookingId Internal ID used by distributors to identify the booking. This should match the booking ID BrightWrite collects from the tags on the distributor website. For a booking that has flights and rental cars, the booking IDs would match
+      * @var string
+      */
     protected $rentalCarBookingId;
-
+    
     /**
-     * $dropOffLocation.
-     *
-     * @var \BrightWrite\Model\RentalCarLocation
-     */
+      * $dropOffLocation 
+      * @var \BrightWrite\Model\RentalCarLocation
+      */
     protected $dropOffLocation;
-
+    
     /**
-     * $pickUpLocation.
-     *
-     * @var \BrightWrite\Model\RentalCarLocation
-     */
+      * $pickUpLocation 
+      * @var \BrightWrite\Model\RentalCarLocation
+      */
     protected $pickUpLocation;
-
+    
     /**
-     * $subtotalPrice Ticket price without taxes and extra fees.
-     *
-     * @var float
-     */
+      * $subtotalPrice Ticket price without taxes and extra fees
+      * @var double
+      */
     protected $subtotalPrice;
-
+    
     /**
-     * $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice.
-     *
-     * @var float
-     */
+      * $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice
+      * @var double
+      */
     protected $taxesAndFees;
-
+    
     /**
-     * $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees.
-     *
-     * @var float
-     */
+      * $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees
+      * @var double
+      */
     protected $totalPrice;
-
+    
     /**
-     * $priceCurrency Currency in which all pricing info is specified three letters code as described by ISO 4217.
-     *
-     * @var string
-     */
+      * $priceCurrency Currency in which all pricing info is specified three letters code as described by ISO 4217
+      * @var string
+      */
     protected $priceCurrency;
-
+    
     /**
-     * $pickupDateTime When the custmer is going to pick up the car.
-     *
-     * @var \DateTime
-     */
+      * $pickupDateTime When the custmer is going to pick up the car
+      * @var \DateTime
+      */
     protected $pickupDateTime;
-
+    
     /**
-     * $dropOffDateTime When the custmer is going to return the car.
-     *
-     * @var \DateTime
-     */
+      * $dropOffDateTime When the custmer is going to return the car
+      * @var \DateTime
+      */
     protected $dropOffDateTime;
-
+    
     /**
-     * $provider Service provider, i.e. rental car agency.
-     *
-     * @var string
-     */
+      * $provider Service provider, i.e. rental car agency
+      * @var string
+      */
     protected $provider;
-
+    
     /**
-     * $driverCount How many drivers are going to use the car.
-     *
-     * @var int
-     */
+      * $driverCount How many drivers are going to use the car
+      * @var int
+      */
     protected $driverCount;
-
+    
     /**
-     * $toddlerSeatCount How many toddler car seats are required.
-     *
-     * @var int
-     */
+      * $toddlerSeatCount How many toddler car seats are required
+      * @var int
+      */
     protected $toddlerSeatCount;
-
+    
     /**
-     * $infantChildSeatCount How many infant car seats are required.
-     *
-     * @var int
-     */
+      * $infantChildSeatCount How many infant car seats are required
+      * @var int
+      */
     protected $infantChildSeatCount;
-
+    
     /**
-     * $sIPPCode SIPP codes are used to summarise the key features of a vehicle.
-     *
-     * @var string
-     */
+      * $sIPPCode SIPP codes are used to summarise the key features of a vehicle
+      * @var string
+      */
     protected $sIPPCode;
-
+    
     /**
-     * $vehicleType JSON encoded list of vehicle types.
-     *
-     * @var string
-     */
+      * $vehicleType JSON encoded list of vehicle types
+      * @var string
+      */
     protected $vehicleType;
+    
 
     /**
-     * Constructor.
-     *
+     * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
     public function __construct(array $data = null)
     {
+        
         if ($data != null) {
-            $this->rentalCarBookingId = $data['rentalCarBookingId'];
-            $this->dropOffLocation = $data['dropOffLocation'];
-            $this->pickUpLocation = $data['pickUpLocation'];
-            $this->subtotalPrice = $data['subtotalPrice'];
-            $this->taxesAndFees = $data['taxesAndFees'];
-            $this->totalPrice = $data['totalPrice'];
-            $this->priceCurrency = $data['priceCurrency'];
-            $this->pickupDateTime = $data['pickupDateTime'];
-            $this->dropOffDateTime = $data['dropOffDateTime'];
-            $this->provider = $data['provider'];
-            $this->driverCount = $data['driverCount'];
-            $this->toddlerSeatCount = $data['toddlerSeatCount'];
-            $this->infantChildSeatCount = $data['infantChildSeatCount'];
-            $this->sIPPCode = $data['sIPPCode'];
-            $this->vehicleType = $data['vehicleType'];
+            $this->rentalCarBookingId = $data["rentalCarBookingId"];
+            $this->dropOffLocation = $data["dropOffLocation"];
+            $this->pickUpLocation = $data["pickUpLocation"];
+            $this->subtotalPrice = $data["subtotalPrice"];
+            $this->taxesAndFees = $data["taxesAndFees"];
+            $this->totalPrice = $data["totalPrice"];
+            $this->priceCurrency = $data["priceCurrency"];
+            $this->pickupDateTime = $data["pickupDateTime"];
+            $this->dropOffDateTime = $data["dropOffDateTime"];
+            $this->provider = $data["provider"];
+            $this->driverCount = $data["driverCount"];
+            $this->toddlerSeatCount = $data["toddlerSeatCount"];
+            $this->infantChildSeatCount = $data["infantChildSeatCount"];
+            $this->sIPPCode = $data["sIPPCode"];
+            $this->vehicleType = $data["vehicleType"];
         }
     }
-
+    
     /**
-     * Gets rentalCarBookingId.
-     *
+     * Gets rentalCarBookingId
      * @return string
      */
     public function getRentalCarBookingId()
     {
         return $this->rentalCarBookingId;
     }
-
+  
     /**
-     * Sets rentalCarBookingId.
-     *
+     * Sets rentalCarBookingId
      * @param string $rentalCarBookingId Internal ID used by distributors to identify the booking. This should match the booking ID BrightWrite collects from the tags on the distributor website. For a booking that has flights and rental cars, the booking IDs would match
-     *
      * @return $this
      */
     public function setRentalCarBookingId($rentalCarBookingId)
     {
+        
         $this->rentalCarBookingId = $rentalCarBookingId;
-
         return $this;
     }
-
+    
     /**
-     * Gets dropOffLocation.
-     *
+     * Gets dropOffLocation
      * @return \BrightWrite\Model\RentalCarLocation
      */
     public function getDropOffLocation()
     {
         return $this->dropOffLocation;
     }
-
+  
     /**
-     * Sets dropOffLocation.
-     *
-     * @param \BrightWrite\Model\RentalCarLocation $dropOffLocation
-     *
+     * Sets dropOffLocation
+     * @param \BrightWrite\Model\RentalCarLocation $dropOffLocation 
      * @return $this
      */
     public function setDropOffLocation($dropOffLocation)
     {
+        
         $this->dropOffLocation = $dropOffLocation;
-
         return $this;
     }
-
+    
     /**
-     * Gets pickUpLocation.
-     *
+     * Gets pickUpLocation
      * @return \BrightWrite\Model\RentalCarLocation
      */
     public function getPickUpLocation()
     {
         return $this->pickUpLocation;
     }
-
+  
     /**
-     * Sets pickUpLocation.
-     *
-     * @param \BrightWrite\Model\RentalCarLocation $pickUpLocation
-     *
+     * Sets pickUpLocation
+     * @param \BrightWrite\Model\RentalCarLocation $pickUpLocation 
      * @return $this
      */
     public function setPickUpLocation($pickUpLocation)
     {
+        
         $this->pickUpLocation = $pickUpLocation;
-
         return $this;
     }
-
+    
     /**
-     * Gets subtotalPrice.
-     *
-     * @return float
+     * Gets subtotalPrice
+     * @return double
      */
     public function getSubtotalPrice()
     {
         return $this->subtotalPrice;
     }
-
+  
     /**
-     * Sets subtotalPrice.
-     *
-     * @param float $subtotalPrice Ticket price without taxes and extra fees
-     *
+     * Sets subtotalPrice
+     * @param double $subtotalPrice Ticket price without taxes and extra fees
      * @return $this
      */
     public function setSubtotalPrice($subtotalPrice)
     {
+        
         $this->subtotalPrice = $subtotalPrice;
-
         return $this;
     }
-
+    
     /**
-     * Gets taxesAndFees.
-     *
-     * @return float
+     * Gets taxesAndFees
+     * @return double
      */
     public function getTaxesAndFees()
     {
         return $this->taxesAndFees;
     }
-
+  
     /**
-     * Sets taxesAndFees.
-     *
-     * @param float $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice
-     *
+     * Sets taxesAndFees
+     * @param double $taxesAndFees Total of taxes, fees and other deductions required on top of the subtotalPrice
      * @return $this
      */
     public function setTaxesAndFees($taxesAndFees)
     {
+        
         $this->taxesAndFees = $taxesAndFees;
-
         return $this;
     }
-
+    
     /**
-     * Gets totalPrice.
-     *
-     * @return float
+     * Gets totalPrice
+     * @return double
      */
     public function getTotalPrice()
     {
         return $this->totalPrice;
     }
-
+  
     /**
-     * Sets totalPrice.
-     *
-     * @param float $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees
-     *
+     * Sets totalPrice
+     * @param double $totalPrice Ticket price including taxes and extra fees. Should be equal to subtotalPrice + taxesAndFees
      * @return $this
      */
     public function setTotalPrice($totalPrice)
     {
+        
         $this->totalPrice = $totalPrice;
-
         return $this;
     }
-
+    
     /**
-     * Gets priceCurrency.
-     *
+     * Gets priceCurrency
      * @return string
      */
     public function getPriceCurrency()
     {
         return $this->priceCurrency;
     }
-
+  
     /**
-     * Sets priceCurrency.
-     *
+     * Sets priceCurrency
      * @param string $priceCurrency Currency in which all pricing info is specified three letters code as described by ISO 4217
-     *
      * @return $this
      */
     public function setPriceCurrency($priceCurrency)
     {
+        
         $this->priceCurrency = $priceCurrency;
-
         return $this;
     }
-
+    
     /**
-     * Gets pickupDateTime.
-     *
+     * Gets pickupDateTime
      * @return \DateTime
      */
     public function getPickupDateTime()
     {
         return $this->pickupDateTime;
     }
-
+  
     /**
-     * Sets pickupDateTime.
-     *
+     * Sets pickupDateTime
      * @param \DateTime $pickupDateTime When the custmer is going to pick up the car
-     *
      * @return $this
      */
     public function setPickupDateTime($pickupDateTime)
     {
+        
         $this->pickupDateTime = $pickupDateTime;
-
         return $this;
     }
-
+    
     /**
-     * Gets dropOffDateTime.
-     *
+     * Gets dropOffDateTime
      * @return \DateTime
      */
     public function getDropOffDateTime()
     {
         return $this->dropOffDateTime;
     }
-
+  
     /**
-     * Sets dropOffDateTime.
-     *
+     * Sets dropOffDateTime
      * @param \DateTime $dropOffDateTime When the custmer is going to return the car
-     *
      * @return $this
      */
     public function setDropOffDateTime($dropOffDateTime)
     {
+        
         $this->dropOffDateTime = $dropOffDateTime;
-
         return $this;
     }
-
+    
     /**
-     * Gets provider.
-     *
+     * Gets provider
      * @return string
      */
     public function getProvider()
     {
         return $this->provider;
     }
-
+  
     /**
-     * Sets provider.
-     *
+     * Sets provider
      * @param string $provider Service provider, i.e. rental car agency
-     *
      * @return $this
      */
     public function setProvider($provider)
     {
+        
         $this->provider = $provider;
-
         return $this;
     }
-
+    
     /**
-     * Gets driverCount.
-     *
+     * Gets driverCount
      * @return int
      */
     public function getDriverCount()
     {
         return $this->driverCount;
     }
-
+  
     /**
-     * Sets driverCount.
-     *
+     * Sets driverCount
      * @param int $driverCount How many drivers are going to use the car
-     *
      * @return $this
      */
     public function setDriverCount($driverCount)
     {
+        
         $this->driverCount = $driverCount;
-
         return $this;
     }
-
+    
     /**
-     * Gets toddlerSeatCount.
-     *
+     * Gets toddlerSeatCount
      * @return int
      */
     public function getToddlerSeatCount()
     {
         return $this->toddlerSeatCount;
     }
-
+  
     /**
-     * Sets toddlerSeatCount.
-     *
+     * Sets toddlerSeatCount
      * @param int $toddlerSeatCount How many toddler car seats are required
-     *
      * @return $this
      */
     public function setToddlerSeatCount($toddlerSeatCount)
     {
+        
         $this->toddlerSeatCount = $toddlerSeatCount;
-
         return $this;
     }
-
+    
     /**
-     * Gets infantChildSeatCount.
-     *
+     * Gets infantChildSeatCount
      * @return int
      */
     public function getInfantChildSeatCount()
     {
         return $this->infantChildSeatCount;
     }
-
+  
     /**
-     * Sets infantChildSeatCount.
-     *
+     * Sets infantChildSeatCount
      * @param int $infantChildSeatCount How many infant car seats are required
-     *
      * @return $this
      */
     public function setInfantChildSeatCount($infantChildSeatCount)
     {
+        
         $this->infantChildSeatCount = $infantChildSeatCount;
-
         return $this;
     }
-
+    
     /**
-     * Gets sIPPCode.
-     *
+     * Gets sIPPCode
      * @return string
      */
     public function getSIPPCode()
     {
         return $this->sIPPCode;
     }
-
+  
     /**
-     * Sets sIPPCode.
-     *
+     * Sets sIPPCode
      * @param string $sIPPCode SIPP codes are used to summarise the key features of a vehicle
-     *
      * @return $this
      */
     public function setSIPPCode($sIPPCode)
     {
+        
         $this->sIPPCode = $sIPPCode;
-
         return $this;
     }
-
+    
     /**
-     * Gets vehicleType.
-     *
+     * Gets vehicleType
      * @return string
      */
     public function getVehicleType()
     {
         return $this->vehicleType;
     }
-
+  
     /**
-     * Sets vehicleType.
-     *
+     * Sets vehicleType
      * @param string $vehicleType JSON encoded list of vehicle types
-     *
      * @return $this
      */
     public function setVehicleType($vehicleType)
     {
+        
         $this->vehicleType = $vehicleType;
-
         return $this;
     }
-
+    
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @param int $offset Offset
-     *
-     * @return bool
+     * @param  integer $offset Offset 
+     * @return boolean
      */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
-
+  
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
-     *
-     * @return mixed
+     * @param  integer $offset Offset 
+     * @return mixed 
      */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
-
+  
     /**
      * Sets value based on offset.
-     *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param  integer $offset Offset 
+     * @param  mixed   $value  Value to be set
+     * @return void
      */
     public function offsetSet($offset, $value)
     {
         $this->$offset = $value;
     }
-
+  
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
+     * @param  integer $offset Offset 
+     * @return void
      */
     public function offsetUnset($offset)
     {
         unset($this->$offset);
     }
-
+  
     /**
-     * Gets the string presentation of the object.
-     *
+     * Gets the string presentation of the object
      * @return string
      */
     public function __toString()

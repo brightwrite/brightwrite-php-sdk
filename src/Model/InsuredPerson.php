@@ -1,18 +1,17 @@
 <?php
 /**
- * InsuredPerson.
+ * InsuredPerson
  *
  * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -34,27 +33,24 @@
 
 namespace BrightWrite\Model;
 
-use ArrayAccess;
-
+use \ArrayAccess;
 /**
- * InsuredPerson Class Doc Comment.
+ * InsuredPerson Class Doc Comment
  *
  * @category    Class
- * @description
- *
+ * @description 
+ * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see        https://github.com/swagger-api/swagger-codegen
+ * @link        https://github.com/swagger-api/swagger-codegen
  */
 class InsuredPerson implements ArrayAccess
 {
     /**
-     * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @var string[]
-     */
-    public static $swaggerTypes = [
+      * Array of property to type mappings. Used for (de)serialization 
+      * @var string[]
+      */
+    static $swaggerTypes = array(
         'partnerInsuredPersonId' => 'string',
         'countryOfResidence' => 'string',
         'age' => 'int',
@@ -63,20 +59,18 @@ class InsuredPerson implements ArrayAccess
         'firstName' => 'string',
         'lastName' => 'string',
         'secondaryLastName' => 'string',
-        'name' => 'string',
-    ];
-
-    public static function swaggerTypes()
-    {
+        'name' => 'string'
+    );
+  
+    static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
-    /**
-     * Array of attributes where the key is the local name, and the value is the original name.
-     *
-     * @var string[]
-     */
-    public static $attributeMap = [
+    /** 
+      * Array of attributes where the key is the local name, and the value is the original name
+      * @var string[] 
+      */
+    static $attributeMap = array(
         'partnerInsuredPersonId' => 'partnerInsuredPersonId',
         'countryOfResidence' => 'countryOfResidence',
         'age' => 'age',
@@ -85,20 +79,18 @@ class InsuredPerson implements ArrayAccess
         'firstName' => 'firstName',
         'lastName' => 'lastName',
         'secondaryLastName' => 'secondaryLastName',
-        'name' => 'name',
-    ];
-
-    public static function attributeMap()
-    {
+        'name' => 'name'
+    );
+  
+    static function attributeMap() {
         return self::$attributeMap;
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @var string[]
-     */
-    public static $setters = [
+      * Array of attributes to setter functions (for deserialization of responses)
+      * @var string[]
+      */
+    static $setters = array(
         'partnerInsuredPersonId' => 'setPartnerInsuredPersonId',
         'countryOfResidence' => 'setCountryOfResidence',
         'age' => 'setAge',
@@ -107,20 +99,18 @@ class InsuredPerson implements ArrayAccess
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'secondaryLastName' => 'setSecondaryLastName',
-        'name' => 'setName',
-    ];
-
-    public static function setters()
-    {
+        'name' => 'setName'
+    );
+  
+    static function setters() {
         return self::$setters;
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @var string[]
-     */
-    public static $getters = [
+      * Array of attributes to getter functions (for serialization of requests)
+      * @var string[]
+      */
+    static $getters = array(
         'partnerInsuredPersonId' => 'getPartnerInsuredPersonId',
         'countryOfResidence' => 'getCountryOfResidence',
         'age' => 'getAge',
@@ -129,361 +119,321 @@ class InsuredPerson implements ArrayAccess
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'secondaryLastName' => 'getSecondaryLastName',
-        'name' => 'getName',
-    ];
-
-    public static function getters()
-    {
+        'name' => 'getName'
+    );
+  
+    static function getters() {
         return self::$getters;
     }
 
+    
     /**
-     * $partnerInsuredPersonId Internal ID used by the partner.
-     *
-     * @var string
-     */
+      * $partnerInsuredPersonId Internal ID used by the partner
+      * @var string
+      */
     protected $partnerInsuredPersonId;
-
+    
     /**
-     * $countryOfResidence Two characters (ISO 3166 standard).
-     *
-     * @var string
-     */
+      * $countryOfResidence Two characters (ISO 3166 standard)
+      * @var string
+      */
     protected $countryOfResidence;
-
+    
     /**
-     * $age Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this. This should be age at time trip starts. It could also be age at time of booking but partners should advise which one it is.
-     *
-     * @var int
-     */
+      * $age Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this. This should be age at time trip starts. It could also be age at time of booking but partners should advise which one it is
+      * @var int
+      */
     protected $age;
-
+    
     /**
-     * $yearOfBirth Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this.
-     *
-     * @var int
-     */
+      * $yearOfBirth Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this
+      * @var int
+      */
     protected $yearOfBirth;
-
+    
     /**
-     * $dateOfBirth Date of birth. Provide if permitted by partner.
-     *
-     * @var \DateTime
-     */
+      * $dateOfBirth Date of birth. Provide if permitted by partner
+      * @var \DateTime
+      */
     protected $dateOfBirth;
-
+    
     /**
-     * $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property.
-     *
-     * @var string
-     */
+      * $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property
+      * @var string
+      */
     protected $firstName;
-
+    
     /**
-     * $lastName Family name.
-     *
-     * @var string
-     */
+      * $lastName Family name
+      * @var string
+      */
     protected $lastName;
-
+    
     /**
-     * $secondaryLastName An additional last name for a person e.g. Spanish names have two last names.
-     *
-     * @var string
-     */
+      * $secondaryLastName An additional last name for a person e.g. Spanish names have two last names
+      * @var string
+      */
     protected $secondaryLastName;
-
+    
     /**
-     * $name Full name of a person. Can be send instead of combination of first name and last name.
-     *
-     * @var string
-     */
+      * $name Full name of a person. Can be send instead of combination of first name and last name
+      * @var string
+      */
     protected $name;
+    
 
     /**
-     * Constructor.
-     *
+     * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
     public function __construct(array $data = null)
     {
+        
         if ($data != null) {
-            $this->partnerInsuredPersonId = $data['partnerInsuredPersonId'];
-            $this->countryOfResidence = $data['countryOfResidence'];
-            $this->age = $data['age'];
-            $this->yearOfBirth = $data['yearOfBirth'];
-            $this->dateOfBirth = $data['dateOfBirth'];
-            $this->firstName = $data['firstName'];
-            $this->lastName = $data['lastName'];
-            $this->secondaryLastName = $data['secondaryLastName'];
-            $this->name = $data['name'];
+            $this->partnerInsuredPersonId = $data["partnerInsuredPersonId"];
+            $this->countryOfResidence = $data["countryOfResidence"];
+            $this->age = $data["age"];
+            $this->yearOfBirth = $data["yearOfBirth"];
+            $this->dateOfBirth = $data["dateOfBirth"];
+            $this->firstName = $data["firstName"];
+            $this->lastName = $data["lastName"];
+            $this->secondaryLastName = $data["secondaryLastName"];
+            $this->name = $data["name"];
         }
     }
-
+    
     /**
-     * Gets partnerInsuredPersonId.
-     *
+     * Gets partnerInsuredPersonId
      * @return string
      */
     public function getPartnerInsuredPersonId()
     {
         return $this->partnerInsuredPersonId;
     }
-
+  
     /**
-     * Sets partnerInsuredPersonId.
-     *
+     * Sets partnerInsuredPersonId
      * @param string $partnerInsuredPersonId Internal ID used by the partner
-     *
      * @return $this
      */
     public function setPartnerInsuredPersonId($partnerInsuredPersonId)
     {
+        
         $this->partnerInsuredPersonId = $partnerInsuredPersonId;
-
         return $this;
     }
-
+    
     /**
-     * Gets countryOfResidence.
-     *
+     * Gets countryOfResidence
      * @return string
      */
     public function getCountryOfResidence()
     {
         return $this->countryOfResidence;
     }
-
+  
     /**
-     * Sets countryOfResidence.
-     *
+     * Sets countryOfResidence
      * @param string $countryOfResidence Two characters (ISO 3166 standard)
-     *
      * @return $this
      */
     public function setCountryOfResidence($countryOfResidence)
     {
+        
         $this->countryOfResidence = $countryOfResidence;
-
         return $this;
     }
-
+    
     /**
-     * Gets age.
-     *
+     * Gets age
      * @return int
      */
     public function getAge()
     {
         return $this->age;
     }
-
+  
     /**
-     * Sets age.
-     *
+     * Sets age
      * @param int $age Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this. This should be age at time trip starts. It could also be age at time of booking but partners should advise which one it is
-     *
      * @return $this
      */
     public function setAge($age)
     {
+        
         $this->age = $age;
-
         return $this;
     }
-
+    
     /**
-     * Gets yearOfBirth.
-     *
+     * Gets yearOfBirth
      * @return int
      */
     public function getYearOfBirth()
     {
         return $this->yearOfBirth;
     }
-
+  
     /**
-     * Sets yearOfBirth.
-     *
+     * Sets yearOfBirth
      * @param int $yearOfBirth Either age or year of birth should be collected, depending on what is collected from purchaser. Only do this if permitted by partner agreement to collect this
-     *
      * @return $this
      */
     public function setYearOfBirth($yearOfBirth)
     {
+        
         $this->yearOfBirth = $yearOfBirth;
-
         return $this;
     }
-
+    
     /**
-     * Gets dateOfBirth.
-     *
+     * Gets dateOfBirth
      * @return \DateTime
      */
     public function getDateOfBirth()
     {
         return $this->dateOfBirth;
     }
-
+  
     /**
-     * Sets dateOfBirth.
-     *
+     * Sets dateOfBirth
      * @param \DateTime $dateOfBirth Date of birth. Provide if permitted by partner
-     *
      * @return $this
      */
     public function setDateOfBirth($dateOfBirth)
     {
+        
         $this->dateOfBirth = $dateOfBirth;
-
         return $this;
     }
-
+    
     /**
-     * Gets firstName.
-     *
+     * Gets firstName
      * @return string
      */
     public function getFirstName()
     {
         return $this->firstName;
     }
-
+  
     /**
-     * Sets firstName.
-     *
+     * Sets firstName
      * @param string $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property
-     *
      * @return $this
      */
     public function setFirstName($firstName)
     {
+        
         $this->firstName = $firstName;
-
         return $this;
     }
-
+    
     /**
-     * Gets lastName.
-     *
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
         return $this->lastName;
     }
-
+  
     /**
-     * Sets lastName.
-     *
+     * Sets lastName
      * @param string $lastName Family name
-     *
      * @return $this
      */
     public function setLastName($lastName)
     {
+        
         $this->lastName = $lastName;
-
         return $this;
     }
-
+    
     /**
-     * Gets secondaryLastName.
-     *
+     * Gets secondaryLastName
      * @return string
      */
     public function getSecondaryLastName()
     {
         return $this->secondaryLastName;
     }
-
+  
     /**
-     * Sets secondaryLastName.
-     *
+     * Sets secondaryLastName
      * @param string $secondaryLastName An additional last name for a person e.g. Spanish names have two last names
-     *
      * @return $this
      */
     public function setSecondaryLastName($secondaryLastName)
     {
+        
         $this->secondaryLastName = $secondaryLastName;
-
         return $this;
     }
-
+    
     /**
-     * Gets name.
-     *
+     * Gets name
      * @return string
      */
     public function getName()
     {
         return $this->name;
     }
-
+  
     /**
-     * Sets name.
-     *
+     * Sets name
      * @param string $name Full name of a person. Can be send instead of combination of first name and last name
-     *
      * @return $this
      */
     public function setName($name)
     {
+        
         $this->name = $name;
-
         return $this;
     }
-
+    
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @param int $offset Offset
-     *
-     * @return bool
+     * @param  integer $offset Offset 
+     * @return boolean
      */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
-
+  
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
-     *
-     * @return mixed
+     * @param  integer $offset Offset 
+     * @return mixed 
      */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
-
+  
     /**
      * Sets value based on offset.
-     *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param  integer $offset Offset 
+     * @param  mixed   $value  Value to be set
+     * @return void
      */
     public function offsetSet($offset, $value)
     {
         $this->$offset = $value;
     }
-
+  
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
+     * @param  integer $offset Offset 
+     * @return void
      */
     public function offsetUnset($offset)
     {
         unset($this->$offset);
     }
-
+  
     /**
-     * Gets the string presentation of the object.
-     *
+     * Gets the string presentation of the object
      * @return string
      */
     public function __toString()

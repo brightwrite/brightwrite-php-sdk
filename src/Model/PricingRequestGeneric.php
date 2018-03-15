@@ -1,18 +1,17 @@
 <?php
 /**
- * PricingRequestGeneric.
+ * PricingRequestGeneric
  *
  * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -34,27 +33,24 @@
 
 namespace BrightWrite\Model;
 
-use ArrayAccess;
-
+use \ArrayAccess;
 /**
- * PricingRequestGeneric Class Doc Comment.
+ * PricingRequestGeneric Class Doc Comment
  *
  * @category    Class
- * @description
- *
+ * @description 
+ * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see        https://github.com/swagger-api/swagger-codegen
+ * @link        https://github.com/swagger-api/swagger-codegen
  */
 class PricingRequestGeneric implements ArrayAccess
 {
     /**
-     * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @var string[]
-     */
-    public static $swaggerTypes = [
+      * Array of property to type mappings. Used for (de)serialization 
+      * @var string[]
+      */
+    static $swaggerTypes = array(
         'partnerPrimaryInsuredId' => 'string',
         'partnerQuoteId' => 'string',
         'effectiveDateTime' => '\DateTime',
@@ -68,20 +64,18 @@ class PricingRequestGeneric implements ArrayAccess
         'appId' => 'string',
         'appEnv' => 'string',
         'purchaser' => '\BrightWrite\Model\Purchaser',
-        'brightwriteCookieId' => 'string',
-    ];
-
-    public static function swaggerTypes()
-    {
+        'brightwriteCookieId' => 'string'
+    );
+  
+    static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
-    /**
-     * Array of attributes where the key is the local name, and the value is the original name.
-     *
-     * @var string[]
-     */
-    public static $attributeMap = [
+    /** 
+      * Array of attributes where the key is the local name, and the value is the original name
+      * @var string[] 
+      */
+    static $attributeMap = array(
         'partnerPrimaryInsuredId' => 'partnerPrimaryInsuredId',
         'partnerQuoteId' => 'partnerQuoteId',
         'effectiveDateTime' => 'effectiveDateTime',
@@ -95,20 +89,18 @@ class PricingRequestGeneric implements ArrayAccess
         'appId' => 'appId',
         'appEnv' => 'appEnv',
         'purchaser' => 'purchaser',
-        'brightwriteCookieId' => 'brightwriteCookieId',
-    ];
-
-    public static function attributeMap()
-    {
+        'brightwriteCookieId' => 'brightwriteCookieId'
+    );
+  
+    static function attributeMap() {
         return self::$attributeMap;
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @var string[]
-     */
-    public static $setters = [
+      * Array of attributes to setter functions (for deserialization of responses)
+      * @var string[]
+      */
+    static $setters = array(
         'partnerPrimaryInsuredId' => 'setPartnerPrimaryInsuredId',
         'partnerQuoteId' => 'setPartnerQuoteId',
         'effectiveDateTime' => 'setEffectiveDateTime',
@@ -122,20 +114,18 @@ class PricingRequestGeneric implements ArrayAccess
         'appId' => 'setAppId',
         'appEnv' => 'setAppEnv',
         'purchaser' => 'setPurchaser',
-        'brightwriteCookieId' => 'setBrightwriteCookieId',
-    ];
-
-    public static function setters()
-    {
+        'brightwriteCookieId' => 'setBrightwriteCookieId'
+    );
+  
+    static function setters() {
         return self::$setters;
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @var string[]
-     */
-    public static $getters = [
+      * Array of attributes to getter functions (for serialization of requests)
+      * @var string[]
+      */
+    static $getters = array(
         'partnerPrimaryInsuredId' => 'getPartnerPrimaryInsuredId',
         'partnerQuoteId' => 'getPartnerQuoteId',
         'effectiveDateTime' => 'getEffectiveDateTime',
@@ -149,521 +139,461 @@ class PricingRequestGeneric implements ArrayAccess
         'appId' => 'getAppId',
         'appEnv' => 'getAppEnv',
         'purchaser' => 'getPurchaser',
-        'brightwriteCookieId' => 'getBrightwriteCookieId',
-    ];
-
-    public static function getters()
-    {
+        'brightwriteCookieId' => 'getBrightwriteCookieId'
+    );
+  
+    static function getters() {
         return self::$getters;
     }
 
+    
     /**
-     * $partnerPrimaryInsuredId Insured Person ID of the policy holder.
-     *
-     * @var string
-     */
+      * $partnerPrimaryInsuredId Insured Person ID of the policy holder
+      * @var string
+      */
     protected $partnerPrimaryInsuredId;
-
+    
     /**
-     * $partnerQuoteId Quote identifier in partner's database.
-     *
-     * @var string
-     */
+      * $partnerQuoteId Quote identifier in partner's database
+      * @var string
+      */
     protected $partnerQuoteId;
-
+    
     /**
-     * $effectiveDateTime Effective date and time for the policy (use 00:00:00 time if coverage starts beginning of day).
-     *
-     * @var \DateTime
-     */
+      * $effectiveDateTime Effective date and time for the policy (use 00:00:00 time if coverage starts beginning of day)
+      * @var \DateTime
+      */
     protected $effectiveDateTime;
-
+    
     /**
-     * $requestDateTime Timestamp of the quote request when it was first received by the distributor.
-     *
-     * @var \DateTime
-     */
+      * $requestDateTime Timestamp of the quote request when it was first received by the distributor
+      * @var \DateTime
+      */
     protected $requestDateTime;
-
+    
     /**
-     * $expirationDateTime Expiration date and time of the policy (use 23:59:59 if date is inclusive OR 00:00:00 time of next day if date is exclusive.
-     *
-     * @var \DateTime
-     */
+      * $expirationDateTime Expiration date and time of the policy (use 23:59:59 if date is inclusive OR 00:00:00 time of next day if date is exclusive.
+      * @var \DateTime
+      */
     protected $expirationDateTime;
-
+    
     /**
-     * $currency Currency used. Three character ISO 4217.
-     *
-     * @var string
-     */
+      * $currency Currency used. Three character ISO 4217
+      * @var string
+      */
     protected $currency;
-
+    
     /**
-     * $insuredPersons List of people who are insured/covered by this policy.
-     *
-     * @var \BrightWrite\Model\InsuredPerson[]
-     */
+      * $insuredPersons List of people who are insured/covered by this policy
+      * @var \BrightWrite\Model\InsuredPerson[]
+      */
     protected $insuredPersons;
-
+    
     /**
-     * $partnerId Partner identifier. Human and machine readable so we can use in tagging.
-     *
-     * @var string
-     */
+      * $partnerId Partner identifier. Human and machine readable so we can use in tagging
+      * @var string
+      */
     protected $partnerId;
-
+    
     /**
-     * $pricingRequestOrigin Identifier, which partner use to specify pricing request origin.
-     *
-     * @var string
-     */
+      * $pricingRequestOrigin Identifier, which partner use to specify pricing request origin
+      * @var string
+      */
     protected $pricingRequestOrigin;
-
+    
     /**
-     * $partnerPrice The price above which the insurance must be sold if the book is to be profitable.
-     *
-     * @var float
-     */
+      * $partnerPrice The price above which the insurance must be sold if the book is to be profitable
+      * @var double
+      */
     protected $partnerPrice;
-
+    
     /**
-     * $appId Optinal field to identify source of traffic. For example website name or mobile app identifier.
-     *
-     * @var string
-     */
+      * $appId Optinal field to identify source of traffic. For example website name or mobile app identifier.
+      * @var string
+      */
     protected $appId;
-
+    
     /**
-     * $appEnv Optinal field which can be used to distinguish production and staging or any other test environments which partners can use as part of their processes.
-     *
-     * @var string
-     */
+      * $appEnv Optinal field which can be used to distinguish production and staging or any other test environments which partners can use as part of their processes.
+      * @var string
+      */
     protected $appEnv;
-
+    
     /**
-     * $purchaser.
-     *
-     * @var \BrightWrite\Model\Purchaser
-     */
+      * $purchaser 
+      * @var \BrightWrite\Model\Purchaser
+      */
     protected $purchaser;
-
+    
     /**
-     * $brightwriteCookieId BrightWrite cookie identifier.
-     *
-     * @var string
-     */
+      * $brightwriteCookieId BrightWrite cookie identifier
+      * @var string
+      */
     protected $brightwriteCookieId;
+    
 
     /**
-     * Constructor.
-     *
+     * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
     public function __construct(array $data = null)
     {
+        
         if ($data != null) {
-            $this->partnerPrimaryInsuredId = $data['partnerPrimaryInsuredId'];
-            $this->partnerQuoteId = $data['partnerQuoteId'];
-            $this->effectiveDateTime = $data['effectiveDateTime'];
-            $this->requestDateTime = $data['requestDateTime'];
-            $this->expirationDateTime = $data['expirationDateTime'];
-            $this->currency = $data['currency'];
-            $this->insuredPersons = $data['insuredPersons'];
-            $this->partnerId = $data['partnerId'];
-            $this->pricingRequestOrigin = $data['pricingRequestOrigin'];
-            $this->partnerPrice = $data['partnerPrice'];
-            $this->appId = $data['appId'];
-            $this->appEnv = $data['appEnv'];
-            $this->purchaser = $data['purchaser'];
-            $this->brightwriteCookieId = $data['brightwriteCookieId'];
+            $this->partnerPrimaryInsuredId = $data["partnerPrimaryInsuredId"];
+            $this->partnerQuoteId = $data["partnerQuoteId"];
+            $this->effectiveDateTime = $data["effectiveDateTime"];
+            $this->requestDateTime = $data["requestDateTime"];
+            $this->expirationDateTime = $data["expirationDateTime"];
+            $this->currency = $data["currency"];
+            $this->insuredPersons = $data["insuredPersons"];
+            $this->partnerId = $data["partnerId"];
+            $this->pricingRequestOrigin = $data["pricingRequestOrigin"];
+            $this->partnerPrice = $data["partnerPrice"];
+            $this->appId = $data["appId"];
+            $this->appEnv = $data["appEnv"];
+            $this->purchaser = $data["purchaser"];
+            $this->brightwriteCookieId = $data["brightwriteCookieId"];
         }
     }
-
+    
     /**
-     * Gets partnerPrimaryInsuredId.
-     *
+     * Gets partnerPrimaryInsuredId
      * @return string
      */
     public function getPartnerPrimaryInsuredId()
     {
         return $this->partnerPrimaryInsuredId;
     }
-
+  
     /**
-     * Sets partnerPrimaryInsuredId.
-     *
+     * Sets partnerPrimaryInsuredId
      * @param string $partnerPrimaryInsuredId Insured Person ID of the policy holder
-     *
      * @return $this
      */
     public function setPartnerPrimaryInsuredId($partnerPrimaryInsuredId)
     {
+        
         $this->partnerPrimaryInsuredId = $partnerPrimaryInsuredId;
-
         return $this;
     }
-
+    
     /**
-     * Gets partnerQuoteId.
-     *
+     * Gets partnerQuoteId
      * @return string
      */
     public function getPartnerQuoteId()
     {
         return $this->partnerQuoteId;
     }
-
+  
     /**
-     * Sets partnerQuoteId.
-     *
+     * Sets partnerQuoteId
      * @param string $partnerQuoteId Quote identifier in partner's database
-     *
      * @return $this
      */
     public function setPartnerQuoteId($partnerQuoteId)
     {
+        
         $this->partnerQuoteId = $partnerQuoteId;
-
         return $this;
     }
-
+    
     /**
-     * Gets effectiveDateTime.
-     *
+     * Gets effectiveDateTime
      * @return \DateTime
      */
     public function getEffectiveDateTime()
     {
         return $this->effectiveDateTime;
     }
-
+  
     /**
-     * Sets effectiveDateTime.
-     *
+     * Sets effectiveDateTime
      * @param \DateTime $effectiveDateTime Effective date and time for the policy (use 00:00:00 time if coverage starts beginning of day)
-     *
      * @return $this
      */
     public function setEffectiveDateTime($effectiveDateTime)
     {
+        
         $this->effectiveDateTime = $effectiveDateTime;
-
         return $this;
     }
-
+    
     /**
-     * Gets requestDateTime.
-     *
+     * Gets requestDateTime
      * @return \DateTime
      */
     public function getRequestDateTime()
     {
         return $this->requestDateTime;
     }
-
+  
     /**
-     * Sets requestDateTime.
-     *
+     * Sets requestDateTime
      * @param \DateTime $requestDateTime Timestamp of the quote request when it was first received by the distributor
-     *
      * @return $this
      */
     public function setRequestDateTime($requestDateTime)
     {
+        
         $this->requestDateTime = $requestDateTime;
-
         return $this;
     }
-
+    
     /**
-     * Gets expirationDateTime.
-     *
+     * Gets expirationDateTime
      * @return \DateTime
      */
     public function getExpirationDateTime()
     {
         return $this->expirationDateTime;
     }
-
+  
     /**
-     * Sets expirationDateTime.
-     *
-     * @param \DateTime $expirationDateTime expiration date and time of the policy (use 23:59:59 if date is inclusive OR 00:00:00 time of next day if date is exclusive
-     *
+     * Sets expirationDateTime
+     * @param \DateTime $expirationDateTime Expiration date and time of the policy (use 23:59:59 if date is inclusive OR 00:00:00 time of next day if date is exclusive.
      * @return $this
      */
     public function setExpirationDateTime($expirationDateTime)
     {
+        
         $this->expirationDateTime = $expirationDateTime;
-
         return $this;
     }
-
+    
     /**
-     * Gets currency.
-     *
+     * Gets currency
      * @return string
      */
     public function getCurrency()
     {
         return $this->currency;
     }
-
+  
     /**
-     * Sets currency.
-     *
+     * Sets currency
      * @param string $currency Currency used. Three character ISO 4217
-     *
      * @return $this
      */
     public function setCurrency($currency)
     {
+        
         $this->currency = $currency;
-
         return $this;
     }
-
+    
     /**
-     * Gets insuredPersons.
-     *
+     * Gets insuredPersons
      * @return \BrightWrite\Model\InsuredPerson[]
      */
     public function getInsuredPersons()
     {
         return $this->insuredPersons;
     }
-
+  
     /**
-     * Sets insuredPersons.
-     *
+     * Sets insuredPersons
      * @param \BrightWrite\Model\InsuredPerson[] $insuredPersons List of people who are insured/covered by this policy
-     *
      * @return $this
      */
     public function setInsuredPersons($insuredPersons)
     {
+        
         $this->insuredPersons = $insuredPersons;
-
         return $this;
     }
-
+    
     /**
-     * Gets partnerId.
-     *
+     * Gets partnerId
      * @return string
      */
     public function getPartnerId()
     {
         return $this->partnerId;
     }
-
+  
     /**
-     * Sets partnerId.
-     *
+     * Sets partnerId
      * @param string $partnerId Partner identifier. Human and machine readable so we can use in tagging
-     *
      * @return $this
      */
     public function setPartnerId($partnerId)
     {
+        
         $this->partnerId = $partnerId;
-
         return $this;
     }
-
+    
     /**
-     * Gets pricingRequestOrigin.
-     *
+     * Gets pricingRequestOrigin
      * @return string
      */
     public function getPricingRequestOrigin()
     {
         return $this->pricingRequestOrigin;
     }
-
+  
     /**
-     * Sets pricingRequestOrigin.
-     *
+     * Sets pricingRequestOrigin
      * @param string $pricingRequestOrigin Identifier, which partner use to specify pricing request origin
-     *
      * @return $this
      */
     public function setPricingRequestOrigin($pricingRequestOrigin)
     {
+        
         $this->pricingRequestOrigin = $pricingRequestOrigin;
-
         return $this;
     }
-
+    
     /**
-     * Gets partnerPrice.
-     *
-     * @return float
+     * Gets partnerPrice
+     * @return double
      */
     public function getPartnerPrice()
     {
         return $this->partnerPrice;
     }
-
+  
     /**
-     * Sets partnerPrice.
-     *
-     * @param float $partnerPrice The price above which the insurance must be sold if the book is to be profitable
-     *
+     * Sets partnerPrice
+     * @param double $partnerPrice The price above which the insurance must be sold if the book is to be profitable
      * @return $this
      */
     public function setPartnerPrice($partnerPrice)
     {
+        
         $this->partnerPrice = $partnerPrice;
-
         return $this;
     }
-
+    
     /**
-     * Gets appId.
-     *
+     * Gets appId
      * @return string
      */
     public function getAppId()
     {
         return $this->appId;
     }
-
+  
     /**
-     * Sets appId.
-     *
+     * Sets appId
      * @param string $appId Optinal field to identify source of traffic. For example website name or mobile app identifier.
-     *
      * @return $this
      */
     public function setAppId($appId)
     {
+        
         $this->appId = $appId;
-
         return $this;
     }
-
+    
     /**
-     * Gets appEnv.
-     *
+     * Gets appEnv
      * @return string
      */
     public function getAppEnv()
     {
         return $this->appEnv;
     }
-
+  
     /**
-     * Sets appEnv.
-     *
-     * @param string $appEnv optinal field which can be used to distinguish production and staging or any other test environments which partners can use as part of their processes
-     *
+     * Sets appEnv
+     * @param string $appEnv Optinal field which can be used to distinguish production and staging or any other test environments which partners can use as part of their processes.
      * @return $this
      */
     public function setAppEnv($appEnv)
     {
+        
         $this->appEnv = $appEnv;
-
         return $this;
     }
-
+    
     /**
-     * Gets purchaser.
-     *
+     * Gets purchaser
      * @return \BrightWrite\Model\Purchaser
      */
     public function getPurchaser()
     {
         return $this->purchaser;
     }
-
+  
     /**
-     * Sets purchaser.
-     *
-     * @param \BrightWrite\Model\Purchaser $purchaser
-     *
+     * Sets purchaser
+     * @param \BrightWrite\Model\Purchaser $purchaser 
      * @return $this
      */
     public function setPurchaser($purchaser)
     {
+        
         $this->purchaser = $purchaser;
-
         return $this;
     }
-
+    
     /**
-     * Gets brightwriteCookieId.
-     *
+     * Gets brightwriteCookieId
      * @return string
      */
     public function getBrightwriteCookieId()
     {
         return $this->brightwriteCookieId;
     }
-
+  
     /**
-     * Sets brightwriteCookieId.
-     *
+     * Sets brightwriteCookieId
      * @param string $brightwriteCookieId BrightWrite cookie identifier
-     *
      * @return $this
      */
     public function setBrightwriteCookieId($brightwriteCookieId)
     {
+        
         $this->brightwriteCookieId = $brightwriteCookieId;
-
         return $this;
     }
-
+    
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @param int $offset Offset
-     *
-     * @return bool
+     * @param  integer $offset Offset 
+     * @return boolean
      */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
-
+  
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
-     *
-     * @return mixed
+     * @param  integer $offset Offset 
+     * @return mixed 
      */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
-
+  
     /**
      * Sets value based on offset.
-     *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param  integer $offset Offset 
+     * @param  mixed   $value  Value to be set
+     * @return void
      */
     public function offsetSet($offset, $value)
     {
         $this->$offset = $value;
     }
-
+  
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
+     * @param  integer $offset Offset 
+     * @return void
      */
     public function offsetUnset($offset)
     {
         unset($this->$offset);
     }
-
+  
     /**
-     * Gets the string presentation of the object.
-     *
+     * Gets the string presentation of the object
      * @return string
      */
     public function __toString()

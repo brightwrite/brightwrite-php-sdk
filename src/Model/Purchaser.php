@@ -1,18 +1,17 @@
 <?php
 /**
- * Purchaser.
+ * Purchaser
  *
  * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -34,27 +33,24 @@
 
 namespace BrightWrite\Model;
 
-use ArrayAccess;
-
+use \ArrayAccess;
 /**
- * Purchaser Class Doc Comment.
+ * Purchaser Class Doc Comment
  *
  * @category    Class
- * @description
- *
+ * @description 
+ * @package     BrightWrite
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see        https://github.com/swagger-api/swagger-codegen
+ * @link        https://github.com/swagger-api/swagger-codegen
  */
 class Purchaser implements ArrayAccess
 {
     /**
-     * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @var string[]
-     */
-    public static $swaggerTypes = [
+      * Array of property to type mappings. Used for (de)serialization 
+      * @var string[]
+      */
+    static $swaggerTypes = array(
         'customerId' => 'string',
         'partnerInsuredPersonId' => 'string',
         'countryOfResidence' => 'string',
@@ -63,20 +59,18 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'string',
         'secondaryLastName' => 'string',
         'name' => 'string',
-        'ipAddress' => 'string',
-    ];
-
-    public static function swaggerTypes()
-    {
+        'ipAddress' => 'string'
+    );
+  
+    static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
-    /**
-     * Array of attributes where the key is the local name, and the value is the original name.
-     *
-     * @var string[]
-     */
-    public static $attributeMap = [
+    /** 
+      * Array of attributes where the key is the local name, and the value is the original name
+      * @var string[] 
+      */
+    static $attributeMap = array(
         'customerId' => 'customerId',
         'partnerInsuredPersonId' => 'partnerInsuredPersonId',
         'countryOfResidence' => 'countryOfResidence',
@@ -85,20 +79,18 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'primaryLastName',
         'secondaryLastName' => 'secondaryLastName',
         'name' => 'name',
-        'ipAddress' => 'ipAddress',
-    ];
-
-    public static function attributeMap()
-    {
+        'ipAddress' => 'ipAddress'
+    );
+  
+    static function attributeMap() {
         return self::$attributeMap;
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @var string[]
-     */
-    public static $setters = [
+      * Array of attributes to setter functions (for deserialization of responses)
+      * @var string[]
+      */
+    static $setters = array(
         'customerId' => 'setCustomerId',
         'partnerInsuredPersonId' => 'setPartnerInsuredPersonId',
         'countryOfResidence' => 'setCountryOfResidence',
@@ -107,20 +99,18 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'setPrimaryLastName',
         'secondaryLastName' => 'setSecondaryLastName',
         'name' => 'setName',
-        'ipAddress' => 'setIpAddress',
-    ];
-
-    public static function setters()
-    {
+        'ipAddress' => 'setIpAddress'
+    );
+  
+    static function setters() {
         return self::$setters;
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @var string[]
-     */
-    public static $getters = [
+      * Array of attributes to getter functions (for serialization of requests)
+      * @var string[]
+      */
+    static $getters = array(
         'customerId' => 'getCustomerId',
         'partnerInsuredPersonId' => 'getPartnerInsuredPersonId',
         'countryOfResidence' => 'getCountryOfResidence',
@@ -129,361 +119,321 @@ class Purchaser implements ArrayAccess
         'primaryLastName' => 'getPrimaryLastName',
         'secondaryLastName' => 'getSecondaryLastName',
         'name' => 'getName',
-        'ipAddress' => 'getIpAddress',
-    ];
-
-    public static function getters()
-    {
+        'ipAddress' => 'getIpAddress'
+    );
+  
+    static function getters() {
         return self::$getters;
     }
 
+    
     /**
-     * $customerId Customer identifier as it appears in partner platform.
-     *
-     * @var string
-     */
+      * $customerId Customer identifier as it appears in partner platform
+      * @var string
+      */
     protected $customerId;
-
+    
     /**
-     * $partnerInsuredPersonId If the purchaser is also an Insured person, i.e. buying policy for his/herself.
-     *
-     * @var string
-     */
+      * $partnerInsuredPersonId If the purchaser is also an Insured person, i.e. buying policy for his/herself
+      * @var string
+      */
     protected $partnerInsuredPersonId;
-
+    
     /**
-     * $countryOfResidence Two character standard (ISO 3166). It's only required if the purchaser is not an Insured Person.
-     *
-     * @var string
-     */
+      * $countryOfResidence Two character standard (ISO 3166). It's only required if the purchaser is not an Insured Person
+      * @var string
+      */
     protected $countryOfResidence;
-
+    
     /**
-     * $billingPostalCode Collect this regardless of whether the purchaser is also an insured person.
-     *
-     * @var string
-     */
+      * $billingPostalCode Collect this regardless of whether the purchaser is also an insured person
+      * @var string
+      */
     protected $billingPostalCode;
-
+    
     /**
-     * $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property. Only required if the purchaser is not an Insured Person.
-     *
-     * @var string
-     */
+      * $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property. Only required if the purchaser is not an Insured Person
+      * @var string
+      */
     protected $firstName;
-
+    
     /**
-     * $primaryLastName Family name. Only required if the purchaser is not an Insured Person.
-     *
-     * @var string
-     */
+      * $primaryLastName Family name. Only required if the purchaser is not an Insured Person
+      * @var string
+      */
     protected $primaryLastName;
-
+    
     /**
-     * $secondaryLastName An additional last name for a person e.g. Spanish names have two last names. Only required if the purchaser is not an Insured Person.
-     *
-     * @var string
-     */
+      * $secondaryLastName An additional last name for a person e.g. Spanish names have two last names. Only required if the purchaser is not an Insured Person
+      * @var string
+      */
     protected $secondaryLastName;
-
+    
     /**
-     * $name Full name of a person. Can be send instead of combination of firstName, lastName.
-     *
-     * @var string
-     */
+      * $name Full name of a person. Can be send instead of combination of firstName, lastName
+      * @var string
+      */
     protected $name;
-
+    
     /**
-     * $ipAddress Client IP Address.
-     *
-     * @var string
-     */
+      * $ipAddress Client IP Address
+      * @var string
+      */
     protected $ipAddress;
+    
 
     /**
-     * Constructor.
-     *
+     * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
     public function __construct(array $data = null)
     {
+        
         if ($data != null) {
-            $this->customerId = $data['customerId'];
-            $this->partnerInsuredPersonId = $data['partnerInsuredPersonId'];
-            $this->countryOfResidence = $data['countryOfResidence'];
-            $this->billingPostalCode = $data['billingPostalCode'];
-            $this->firstName = $data['firstName'];
-            $this->primaryLastName = $data['primaryLastName'];
-            $this->secondaryLastName = $data['secondaryLastName'];
-            $this->name = $data['name'];
-            $this->ipAddress = $data['ipAddress'];
+            $this->customerId = $data["customerId"];
+            $this->partnerInsuredPersonId = $data["partnerInsuredPersonId"];
+            $this->countryOfResidence = $data["countryOfResidence"];
+            $this->billingPostalCode = $data["billingPostalCode"];
+            $this->firstName = $data["firstName"];
+            $this->primaryLastName = $data["primaryLastName"];
+            $this->secondaryLastName = $data["secondaryLastName"];
+            $this->name = $data["name"];
+            $this->ipAddress = $data["ipAddress"];
         }
     }
-
+    
     /**
-     * Gets customerId.
-     *
+     * Gets customerId
      * @return string
      */
     public function getCustomerId()
     {
         return $this->customerId;
     }
-
+  
     /**
-     * Sets customerId.
-     *
+     * Sets customerId
      * @param string $customerId Customer identifier as it appears in partner platform
-     *
      * @return $this
      */
     public function setCustomerId($customerId)
     {
+        
         $this->customerId = $customerId;
-
         return $this;
     }
-
+    
     /**
-     * Gets partnerInsuredPersonId.
-     *
+     * Gets partnerInsuredPersonId
      * @return string
      */
     public function getPartnerInsuredPersonId()
     {
         return $this->partnerInsuredPersonId;
     }
-
+  
     /**
-     * Sets partnerInsuredPersonId.
-     *
+     * Sets partnerInsuredPersonId
      * @param string $partnerInsuredPersonId If the purchaser is also an Insured person, i.e. buying policy for his/herself
-     *
      * @return $this
      */
     public function setPartnerInsuredPersonId($partnerInsuredPersonId)
     {
+        
         $this->partnerInsuredPersonId = $partnerInsuredPersonId;
-
         return $this;
     }
-
+    
     /**
-     * Gets countryOfResidence.
-     *
+     * Gets countryOfResidence
      * @return string
      */
     public function getCountryOfResidence()
     {
         return $this->countryOfResidence;
     }
-
+  
     /**
-     * Sets countryOfResidence.
-     *
+     * Sets countryOfResidence
      * @param string $countryOfResidence Two character standard (ISO 3166). It's only required if the purchaser is not an Insured Person
-     *
      * @return $this
      */
     public function setCountryOfResidence($countryOfResidence)
     {
+        
         $this->countryOfResidence = $countryOfResidence;
-
         return $this;
     }
-
+    
     /**
-     * Gets billingPostalCode.
-     *
+     * Gets billingPostalCode
      * @return string
      */
     public function getBillingPostalCode()
     {
         return $this->billingPostalCode;
     }
-
+  
     /**
-     * Sets billingPostalCode.
-     *
+     * Sets billingPostalCode
      * @param string $billingPostalCode Collect this regardless of whether the purchaser is also an insured person
-     *
      * @return $this
      */
     public function setBillingPostalCode($billingPostalCode)
     {
+        
         $this->billingPostalCode = $billingPostalCode;
-
         return $this;
     }
-
+    
     /**
-     * Gets firstName.
-     *
+     * Gets firstName
      * @return string
      */
     public function getFirstName()
     {
         return $this->firstName;
     }
-
+  
     /**
-     * Sets firstName.
-     *
+     * Sets firstName
      * @param string $firstName Given name, e.g. first name of a person in US. This can be used along with familyName instead of the name property. Only required if the purchaser is not an Insured Person
-     *
      * @return $this
      */
     public function setFirstName($firstName)
     {
+        
         $this->firstName = $firstName;
-
         return $this;
     }
-
+    
     /**
-     * Gets primaryLastName.
-     *
+     * Gets primaryLastName
      * @return string
      */
     public function getPrimaryLastName()
     {
         return $this->primaryLastName;
     }
-
+  
     /**
-     * Sets primaryLastName.
-     *
+     * Sets primaryLastName
      * @param string $primaryLastName Family name. Only required if the purchaser is not an Insured Person
-     *
      * @return $this
      */
     public function setPrimaryLastName($primaryLastName)
     {
+        
         $this->primaryLastName = $primaryLastName;
-
         return $this;
     }
-
+    
     /**
-     * Gets secondaryLastName.
-     *
+     * Gets secondaryLastName
      * @return string
      */
     public function getSecondaryLastName()
     {
         return $this->secondaryLastName;
     }
-
+  
     /**
-     * Sets secondaryLastName.
-     *
+     * Sets secondaryLastName
      * @param string $secondaryLastName An additional last name for a person e.g. Spanish names have two last names. Only required if the purchaser is not an Insured Person
-     *
      * @return $this
      */
     public function setSecondaryLastName($secondaryLastName)
     {
+        
         $this->secondaryLastName = $secondaryLastName;
-
         return $this;
     }
-
+    
     /**
-     * Gets name.
-     *
+     * Gets name
      * @return string
      */
     public function getName()
     {
         return $this->name;
     }
-
+  
     /**
-     * Sets name.
-     *
+     * Sets name
      * @param string $name Full name of a person. Can be send instead of combination of firstName, lastName
-     *
      * @return $this
      */
     public function setName($name)
     {
+        
         $this->name = $name;
-
         return $this;
     }
-
+    
     /**
-     * Gets ipAddress.
-     *
+     * Gets ipAddress
      * @return string
      */
     public function getIpAddress()
     {
         return $this->ipAddress;
     }
-
+  
     /**
-     * Sets ipAddress.
-     *
+     * Sets ipAddress
      * @param string $ipAddress Client IP Address
-     *
      * @return $this
      */
     public function setIpAddress($ipAddress)
     {
+        
         $this->ipAddress = $ipAddress;
-
         return $this;
     }
-
+    
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @param int $offset Offset
-     *
-     * @return bool
+     * @param  integer $offset Offset 
+     * @return boolean
      */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
-
+  
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
-     *
-     * @return mixed
+     * @param  integer $offset Offset 
+     * @return mixed 
      */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
-
+  
     /**
      * Sets value based on offset.
-     *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param  integer $offset Offset 
+     * @param  mixed   $value  Value to be set
+     * @return void
      */
     public function offsetSet($offset, $value)
     {
         $this->$offset = $value;
     }
-
+  
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
+     * @param  integer $offset Offset 
+     * @return void
      */
     public function offsetUnset($offset)
     {
         unset($this->$offset);
     }
-
+  
     /**
-     * Gets the string presentation of the object.
-     *
+     * Gets the string presentation of the object
      * @return string
      */
     public function __toString()

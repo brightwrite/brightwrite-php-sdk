@@ -1,18 +1,17 @@
 <?php
 /**
- * ApiClient.
+ * ApiClient
  *
  * PHP version 5
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2016 SmartBear Software.
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -35,42 +34,39 @@
 namespace BrightWrite;
 
 /**
- * ApiClient Class Doc Comment.
+ * ApiClient Class Doc Comment
  *
  * @category Class
- *
+ * @package  BrightWrite
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- *
- * @see     https://github.com/swagger-api/swagger-codegen
+ * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ApiClient
 {
-    public static $PATCH = 'PATCH';
-    public static $POST = 'POST';
-    public static $GET = 'GET';
-    public static $HEAD = 'HEAD';
-    public static $OPTIONS = 'OPTIONS';
-    public static $PUT = 'PUT';
-    public static $DELETE = 'DELETE';
+
+    public static $PATCH = "PATCH";
+    public static $POST = "POST";
+    public static $GET = "GET";
+    public static $HEAD = "HEAD";
+    public static $OPTIONS = "OPTIONS";
+    public static $PUT = "PUT";
+    public static $DELETE = "DELETE";
 
     /**
-     * Configuration.
-     *
+     * Configuration
      * @var Configuration
      */
     protected $config;
 
     /**
-     * Object Serializer.
-     *
+     * Object Serializer
      * @var ObjectSerializer
      */
     protected $serializer;
 
     /**
-     * Constructor of the class.
-     *
+     * Constructor of the class
      * @param Configuration $config config for this ApiClient
      */
     public function __construct(Configuration $config = null)
@@ -84,8 +80,7 @@ class ApiClient
     }
 
     /**
-     * Get the config.
-     *
+     * Get the config
      * @return Configuration
      */
     public function getConfig()
@@ -94,8 +89,7 @@ class ApiClient
     }
 
     /**
-     * Get the serializer.
-     *
+     * Get the serializer
      * @return ObjectSerializer
      */
     public function getSerializer()
@@ -104,10 +98,8 @@ class ApiClient
     }
 
     /**
-     * Get API key (with prefix if set).
-     *
-     * @param string $apiKeyIdentifier name of apikey
-     *
+     * Get API key (with prefix if set)
+     * @param  string $apiKeyIdentifier name of apikey
      * @return string API key with the prefix
      */
     public function getApiKeyWithPrefix($apiKeyIdentifier)
@@ -120,7 +112,7 @@ class ApiClient
         }
 
         if (isset($prefix)) {
-            $keyWithPrefix = $prefix.' '.$apiKey;
+            $keyWithPrefix = $prefix." ".$apiKey;
         } else {
             $keyWithPrefix = $apiKey;
         }
@@ -129,27 +121,25 @@ class ApiClient
     }
 
     /**
-     * Make the HTTP call (Sync).
-     *
+     * Make the HTTP call (Sync)
      * @param string $resourcePath path to method endpoint
      * @param string $method       method to call
      * @param array  $queryParams  parameters to be place in query URL
      * @param array  $postData     parameters to be placed in POST body
      * @param array  $headerParams parameters to be place in request header
      * @param string $responseType expected response type of the endpoint
-     *
      * @throws \BrightWrite\ApiException on a non 2xx response
-     *
      * @return mixed
      */
     public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null)
     {
-        $headers = [];
+
+        $headers = array();
 
         // construct the http header
         $headerParams = array_merge(
-            (array) $this->config->getDefaultHeaders(),
-            (array) $headerParams
+            (array)$this->config->getDefaultHeaders(),
+            (array)$headerParams
         );
 
         foreach ($headerParams as $key => $val) {
@@ -163,14 +153,14 @@ class ApiClient
             $postData = json_encode(\BrightWrite\ObjectSerializer::sanitizeForSerialization($postData));
         }
 
-        $url = $this->config->getHost().$resourcePath;
+        $url = $this->config->getHost() . $resourcePath;
 
         $curl = curl_init();
         // set timeout, if needed
         if ($this->config->getCurlTimeout() != 0) {
             curl_setopt($curl, CURLOPT_TIMEOUT, $this->config->getCurlTimeout());
         }
-        // return the result on success, rather than just true
+        // return the result on success, rather than just true 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -181,8 +171,8 @@ class ApiClient
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
         }
 
-        if (!empty($queryParams)) {
-            $url = ($url.'?'.http_build_query($queryParams));
+        if (! empty($queryParams)) {
+            $url = ($url . '?' . http_build_query($queryParams));
         }
 
         if ($method == self::$POST) {
@@ -191,19 +181,19 @@ class ApiClient
         } elseif ($method == self::$HEAD) {
             curl_setopt($curl, CURLOPT_NOBODY, true);
         } elseif ($method == self::$OPTIONS) {
-            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'OPTIONS');
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "OPTIONS");
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method == self::$PATCH) {
-            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PATCH");
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method == self::$PUT) {
-            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method == self::$DELETE) {
-            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method != self::$GET) {
-            throw new ApiException('Method '.$method.' is not recognized.');
+            throw new ApiException('Method ' . $method . ' is not recognized.');
         }
         curl_setopt($curl, CURLOPT_URL, $url);
 
@@ -238,10 +228,10 @@ class ApiClient
         // Handle the response
         if ($response_info['http_code'] == 0) {
             throw new ApiException("API call to $url timed out: ".serialize($response_info), 0, null, null);
-        } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
+        } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299 ) {
             // return raw body if response is a file
             if ($responseType == '\SplFileObject' || $responseType == 'string') {
-                return [$http_body, $response_info['http_code'], $http_header];
+                return array($http_body, $response_info['http_code'], $http_header);
             }
 
             $data = json_decode($http_body);
@@ -255,16 +245,15 @@ class ApiClient
             }
 
             throw new ApiException(
-                '['.$response_info['http_code']."] Error connecting to the API ($url)",
+                "[".$response_info['http_code']."] Error connecting to the API ($url)",
                 $response_info['http_code'], $http_header, $data
             );
         }
-
-        return [$data, $response_info['http_code'], $http_header];
+        return array($data, $response_info['http_code'], $http_header);
     }
 
     /**
-     * Return the header 'Accept' based on an array of Accept provided.
+     * Return the header 'Accept' based on an array of Accept provided
      *
      * @param string[] $accept Array of header
      *
@@ -282,7 +271,7 @@ class ApiClient
     }
 
     /**
-     * Return the content type based on an array of content-type provided.
+     * Return the content type based on an array of content-type provided
      *
      * @param string[] $content_type Array fo content-type
      *
@@ -299,48 +288,51 @@ class ApiClient
         }
     }
 
-    /**
-     * Return an array of HTTP response headers.
-     *
-     * @param string $raw_headers A string of raw HTTP response headers
-     *
-     * @return string[] Array of HTTP response heaers
-     */
+   /**
+    * Return an array of HTTP response headers
+    *
+    * @param string $raw_headers A string of raw HTTP response headers
+    *
+    * @return string[] Array of HTTP response heaers
+    */
     protected function http_parse_headers($raw_headers)
     {
         // ref/credit: http://php.net/manual/en/function.http-parse-headers.php#112986
-        $headers = [];
+        $headers = array();
         $key = ''; // [+]
-
-        foreach (explode("\n", $raw_headers) as $i => $h) {
+   
+        foreach(explode("\n", $raw_headers) as $i => $h)
+        {
             $h = explode(':', $h, 2);
-
-            if (isset($h[1])) {
-                if (!isset($headers[$h[0]])) {
+   
+            if (isset($h[1]))
+            {
+                if (!isset($headers[$h[0]]))
                     $headers[$h[0]] = trim($h[1]);
-                } elseif (is_array($headers[$h[0]])) {
+                elseif (is_array($headers[$h[0]]))
+                {
                     // $tmp = array_merge($headers[$h[0]], array(trim($h[1]))); // [-]
                     // $headers[$h[0]] = $tmp; // [-]
-                    $headers[$h[0]] = array_merge($headers[$h[0]], [trim($h[1])]); // [+]
-                } else {
+                    $headers[$h[0]] = array_merge($headers[$h[0]], array(trim($h[1]))); // [+]
+                }
+                else
+                {
                     // $tmp = array_merge(array($headers[$h[0]]), array(trim($h[1]))); // [-]
                     // $headers[$h[0]] = $tmp; // [-]
-                    $headers[$h[0]] = array_merge([$headers[$h[0]]], [trim($h[1])]); // [+]
+                    $headers[$h[0]] = array_merge(array($headers[$h[0]]), array(trim($h[1]))); // [+]
                 }
-
+   
                 $key = $h[0]; // [+]
-            } else { // [+]
-             // [+]
-                if (substr($h[0], 0, 1) == "\t") { // [+]
-                    $headers[$key] .= "\r\n\t".trim($h[0]);
-                } // [+]
-                elseif (!$key) { // [+]
-                    $headers[0] = trim($h[0]);
-                }
-                trim($h[0]); // [+]
+            }
+            else // [+]
+            { // [+]
+                if (substr($h[0], 0, 1) == "\t") // [+]
+                    $headers[$key] .= "\r\n\t".trim($h[0]); // [+]
+                elseif (!$key) // [+]
+                    $headers[0] = trim($h[0]);trim($h[0]); // [+]
             } // [+]
         }
-
+   
         return $headers;
     }
 }
