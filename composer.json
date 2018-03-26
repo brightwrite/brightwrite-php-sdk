@@ -1,5 +1,6 @@
 {
     "name": "brightwrite/brightwrite-php-sdk",
+    "version": "1.0.13",
     "description": "",
     "keywords": [
         "swagger",
